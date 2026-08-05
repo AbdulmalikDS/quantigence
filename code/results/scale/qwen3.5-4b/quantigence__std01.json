@@ -1,0 +1,48 @@
+{
+  "id": "std01",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 15,
+  "tool_calls": 16,
+  "llm_calls": 23,
+  "elapsed_s": 66.91,
+  "vram_mb": 5901,
+  "answer": "Based on the team findings, there is a critical contradiction regarding the finalization date that must be resolved before providing the answer.\n\n**1. Resolution of the Date Discrepancy**\nThe **threat_modeler** claims the standards were finalized in September 2022, citing NIST Special Publication 800-208. However, this source is incorrect regarding the specific FIPS numbers requested.\n*   **Fact Check:** NIST finalized the three specific post-quantum cryptography standards (FIPS 203, 204, and 205) in **August 2024**.\n*   **Correction:** The **threat_modeler** appears to have confused the timeline of the *standardization process* (which began in 2022 with the selection of algorithms) with the *final publication* of the FIPS documents. The **crypto_analyst** and **standards_specialist** findings regarding the **August 13, 2024** publication date are accurate based on the official NIST corpus search results provided.\n\n**2. Final Integrated Answer**\n\nThe three post-quantum cryptography standards finalized by NIST in August 2024 are:\n\n1.  **FIPS 203**: Module-Lattice-Based Key-Encapsulation Mechanism Standard (**ML-KEM**)\n2.  **FIPS 204**: Module-Lattice-Based Digital Signature Standard (**ML-DSA**)\n3.  **FIPS 205**: Stateless Hash-Based Digital Signature Standard (**SLH-DSA**)\n\nAll three were published and became effective on **August 13, 2024**.\n\n**Sources Cited:**\n*   NIST Official Corpus Search Results (FIPS 203, 204, 205 publication records).\n*   Team analysis by `standards_specialist` and `crypto_analyst`.\n*   *Note: The finding by `threat_modeler` regarding a 2022 finalization date was discarded as factually incorrect regarding the specific FIPS publication dates.*",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Retrieve the official NIST announcement and FIPS publication details for the three post-quantum cryptography standards finalized in August 2024.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Extract the specific standardized algorithm names (e.g., Kyber, Dilithium, etc.) and their corresponding FIPS numbers from the data provided by the standards_specialist.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "threat_modeler",
+      "task": "Verify that the selected algorithms are currently considered secure against known quantum attacks and have no critical implementation flaws that would invalidate their status as finalized standards.",
+      "depends_on": [
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Synthesize the verified algorithm names and FIPS numbers into a final list, ensuring the timeline (August 2024) is accurate and flagging any potential supply chain or adoption risks associated with these new standards.",
+      "depends_on": [
+        2,
+        3
+      ]
+    }
+  ]
+}

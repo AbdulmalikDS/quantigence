@@ -1,0 +1,16 @@
+{
+  "id": "std01",
+  "category": "standards",
+  "condition": "zeroshot",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 7.6,
+  "vram_mb": 5887,
+  "answer": "In August 2024, the National Institute of Standards and Technology (NIST) finalized three post-quantum cryptography (PQC) standards. These standards were published as Federal Information Processing Standards (FIPS) and incorporate the winning algorithms from the NIST PQC Standardization Project.\n\nHere are the three standards with their FIPS numbers and standardized algorithm names:\n\n1.  **FIPS 203**\n    *   **Algorithm Name:** **ML-KEM** (formerly known as Kyber)\n    *   **Purpose:** Key Encapsulation Mechanism (KEM)\n    *   **Context:** This standard provides a method for two parties to securely exchange a shared secret key.\n\n2.  **FIPS 204**\n    *   **Algorithm Name:** **ML-DSA** (formerly known as Dilithium)\n    *   **Purpose:** Digital Signature Algorithm (DSA)\n    *   **Context:** This standard provides a method for verifying the authenticity and integrity of digital messages.\n\n3.  **FIPS 205**\n    *   **Algorithm Name:** **SLH-DSA** (formerly known as SPHINCS+)\n    *   **Purpose:** Digital Signature Algorithm (DSA)\n    *   **Context:** This standard provides a digital signature scheme based on hash functions, offering a different security basis (hash-based cryptography) compared to ML-DSA.\n\n**Source Verification:**\nThese standards were officially published by NIST on August 10, 2024. The primary source is the NIST announcement titled \"NIST Finalizes Three Post-Quantum Cryptography Standards,\" which details the publication of FIPS 203, FIPS 204, and FIPS 205.\n\n*   **NIST Announcement:** [NIST Finalizes Three Post-Quantum Cryptography Standards](https://csrc.nist.gov/news-events/news/2024/08/nist-finalizes-three-post-quantum-cryptography-standards)\n*   **FIPS 203:** [FIPS 203: Module-Lattice-Based Key-Encapsulation Mechanism Standard](https://csrc.nist.gov/publications/detail/fips/203/final)\n*   **FIPS 204:** [FIPS 204: Module-Lattice-Based Digital Signature Standard](https://csrc.nist.gov/publications/detail/fips/204/final)\n*   **FIPS 205:** [FIPS 205: Stateless Hash-Based Digital Signature Standard](https://csrc.nist.gov/publications/detail/fips/205/final)",
+  "plan": []
+}

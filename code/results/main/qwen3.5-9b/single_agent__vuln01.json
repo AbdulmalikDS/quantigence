@@ -1,0 +1,16 @@
+{
+  "id": "vuln01",
+  "category": "vulnerability",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 1,
+  "tool_calls": 1,
+  "llm_calls": 2,
+  "elapsed_s": 5.26,
+  "vram_mb": 5897,
+  "answer": "CVE-2022-0778 affects the **OpenSSL** software library.\n\nThe vulnerability is a **denial-of-service (DoS) bug** in the `BN_mod_sqrt()` function, which computes a modular square root. The function can enter an infinite loop when processing non-prime moduli. This occurs when parsing certificates or private keys that contain elliptic curve parameters in compressed form or explicit form crafted by an attacker.\n\nBecause certificate parsing happens before signature verification, any process that parses externally supplied certificates or private keys is vulnerable. This includes:\n- TLS clients and servers\n- Hosting providers\n- Certificate authorities\n- Any application parsing ASN.1 elliptic curve parameters\n\nThe vulnerability was fixed in OpenSSL versions 1.1.1n, 3.0.2, and 1.0.2zd.",
+  "plan": []
+}

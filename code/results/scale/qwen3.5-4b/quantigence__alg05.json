@@ -1,0 +1,48 @@
+{
+  "id": "alg05",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 4,
+  "tool_calls": 5,
+  "llm_calls": 15,
+  "elapsed_s": 72.55,
+  "vram_mb": 3613,
+  "answer": "Based on the team findings, here is the integrated answer:\n\nThe classical public-key algorithms broken by a cryptographically relevant quantum computer (CRQC) running **Shor's algorithm** are:\n*   **RSA** (Rivest\u2013Shamir\u2013Adleman)\n*   **ECC** (Elliptic Curve Cryptography)\n\n**AES-256 is NOT broken** by Shor's algorithm. While it is a symmetric-key algorithm and thus immune to Shor's algorithm (which targets integer factorization and discrete logarithms), it faces a reduced security margin due to **Grover's algorithm**, which provides a quadratic speedup for brute-force searches.\n\n**Sources:**\n*   **crypto_analyst**: Confirmed that Shor's algorithm solves the Integer Factorization Problem (breaking RSA) and the Discrete Logarithm Problem (breaking ECC).\n*   **threat_modeler**: Explicitly stated that RSA and ECC are broken by a CRQC, while AES-256 remains secure against Shor's algorithm.\n*   **standards_specialist**: Cited **NIST IR 8547** and **NIST SP 800-208**, identifying RSA and ECC as vulnerable to quantum computers and confirming AES-256's resistance to Shor's algorithm (noting only the impact of Grover's algorithm).\n*   **risk_assessor**: Synthesized the consensus that RSA and ECC are the specific targets of Shor's algorithm.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Analyze the mathematical foundations of RSA and ECC to determine their vulnerability to Shor's algorithm, and contrast this with the security status of AES-256 against quantum attacks (specifically Grover's algorithm).",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "threat_modeler",
+      "task": "Define the specific threat landscape of a 'cryptographically relevant quantum computer' (CRQC) capable of running Shor's algorithm, and identify which of the listed algorithms (RSA, ECC, AES-256) fall within the scope of immediate compromise based on the analysis from Task 1.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "standards_specialist",
+      "task": "Review current NIST and IETF standards (e.g., FIPS 180-4, NIST SP 800-38D) to confirm the official stance on the post-quantum migration status of RSA, ECC, and AES-256, ensuring the threat modeler's findings align with established industry consensus.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Synthesize the findings from the crypto-analyst, threat modeler, and standards specialist to produce a definitive list of broken algorithms and formulate a risk assessment regarding the necessity of immediate migration for systems relying on RSA or ECC.",
+      "depends_on": [
+        2,
+        3
+      ]
+    }
+  ]
+}

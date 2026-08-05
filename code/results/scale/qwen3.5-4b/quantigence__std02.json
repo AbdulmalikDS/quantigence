@@ -1,0 +1,48 @@
+{
+  "id": "std02",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 24,
+  "tool_calls": 9,
+  "llm_calls": 15,
+  "elapsed_s": 58.09,
+  "vram_mb": 5901,
+  "answer": "Based on the findings from our specialized team, here is the integrated answer regarding FIPS 203:\n\n**Standardized Algorithm Name**\nThe algorithm specified in **FIPS 203** is the **Module-Lattice-Based Key-Encapsulation Mechanism**, commonly abbreviated as **ML-KEM**.\n*   *Source:* `standards_specialist` and `risk_assessor` confirm the explicit naming in the standard's Section 1.\n\n**Cryptographic Primitive Type**\nML-KEM is a **Key-Encapsulation Mechanism (KEM)**.\n*   *Classification:* It is a post-quantum cryptographic primitive designed to replace RSA and ECC in the Public Key Infrastructure (PKI) layer.\n*   *Underlying Mathematical Primitive:* The security of the KEM relies on the hardness of the **Module Learning with Errors (Module-LWE)** problem, placing it firmly within the category of **Lattice-Based Cryptography**.\n*   *Source:* `standards_specialist` and `crypto_analyst` identify the KEM structure and the Module-LWE foundation.\n\n**Security Context**\nThe standard defines three parameter sets (ML-KEM-512, ML-KEM-768, and ML-KEM-1024) to provide varying levels of security strength against both classical and quantum adversaries.\n*   *Source:* `risk_assessor` notes the quantum-resilience claims and parameter sets defined in the standard.\n\n**Final Conclusion**\nFIPS 203 standardizes the **ML-KEM**, which is a **Key-Encapsulation Mechanism (KEM)** built upon **Lattice-Based** cryptography (specifically the Module-LWE problem).",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Retrieve and verify the exact standardized algorithm name defined in FIPS 203.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Identify the specific cryptographic primitive type (e.g., stream cipher, block cipher, hash function) associated with the algorithm found in Task 1.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "threat_modeler",
+      "task": "Analyze the security assumptions and potential attack vectors specific to the primitive type identified in Task 2 within the context of FIPS 203.",
+      "depends_on": [
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Evaluate the current risk posture and compliance status of the algorithm based on the standards and threat analysis from Tasks 1, 2, and 3.",
+      "depends_on": [
+        2,
+        3
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "std05",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 4,
+  "tool_calls": 1,
+  "llm_calls": 7,
+  "elapsed_s": 12.55,
+  "vram_mb": 5901,
+  "answer": "ML-KEM (FIPS 203) is based on the **Module Learning with Errors (MLWE)** problem, a generalization of the Learning with Errors (LWE) problem in lattice-based cryptography. This is explicitly stated in the FIPS 203 document and corroborated by NIST PQC standards documentation (sources: standards_specialist, crypto_analyst).",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Retrieve the official documentation or specification for ML-KEM (FIPS 203) to identify the mathematical problem it is based on.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Analyze the retrieved documentation to determine the specific class of hard mathematical problem that underlies the ML-KEM algorithm.",
+      "depends_on": [
+        1
+      ]
+    }
+  ]
+}

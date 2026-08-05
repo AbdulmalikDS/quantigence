@@ -1,0 +1,47 @@
+{
+  "id": "std08",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 5,
+  "tool_calls": 4,
+  "llm_calls": 14,
+  "elapsed_s": 35.44,
+  "vram_mb": 5901,
+  "answer": "No, RSA-2048 will not remain allowed for federal use after 2035 under the NIST IR 8547 draft timeline. The draft emphasizes a transition to post-quantum cryptography (PQC) standards due to RSA-2048's vulnerability to quantum computing threats, such as Shor's algorithm (standards_specialist, risk_assessor, crypto_analyst, threat_modeler). While the exact phase-out date is not explicitly stated, the timeline indicates that RSA-2048 will be phased out as federal agencies adopt quantum-resistant algorithms by 2035 to ensure long-term security.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Review the NIST IR 8547 draft timeline and identify the transition schedule for cryptographic algorithms, specifically RSA-2048, including any proposed phase-out dates or restrictions after 2035.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "risk_assessor",
+      "task": "Evaluate the cryptographic risk of continuing to use RSA-2048 after 2035, considering advances in computational power, quantum computing threats, and any known vulnerabilities.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "crypto_analyst",
+      "task": "Analyze the technical feasibility and security implications of using RSA-2048 beyond 2035, including its resistance to known attacks and potential for replacement with stronger algorithms.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "role": "threat_modeler",
+      "task": "Assess the threat landscape relevant to federal systems using RSA-2048, including potential adversaries and their capabilities, to determine if continued use poses an unacceptable risk post-2035.",
+      "depends_on": [
+        1
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "std09",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 4,
+  "tool_calls": 1,
+  "llm_calls": 5,
+  "elapsed_s": 8.27,
+  "vram_mb": 5901,
+  "answer": "NIST IR 8547 is currently in the **Initial Public Draft (ipd)** stage and is not a finalized standard. It was published in November 2024 (Reference: [NIST IR 8547 ipd](https://doi.org/10.6028/NIST.IR.8547.ipd)).",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Identify the current publication status of NIST IR 8547, including whether it is finalized, a draft, or in another stage of development.",
+      "depends_on": []
+    }
+  ]
+}

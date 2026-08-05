@@ -1,0 +1,16 @@
+{
+  "id": "alg06",
+  "category": "algorithm",
+  "condition": "zeroshot",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 9.29,
+  "vram_mb": 5889,
+  "answer": "Between **SLH-DSA** (Stateless Hash-based Digital Signature Algorithm) and **ML-DSA** (Module-Lattice-based Digital Signature Algorithm), **SLH-DSA generally produces larger signatures**.\n\nHere is the breakdown based on the NIST Post-Quantum Cryptography Standardization project (FIPS 204 and FIPS 203):\n\n### 1. Signature Size Comparison\n*   **SLH-DSA**: The signature size is determined by the underlying hash function (e.g., SHAKE256) and the security level.\n    *   At **Security Level 1** (128-bit classical security), the signature size is **2,048 bytes** (2 KB).\n    *   At **Security Level 3** (256-bit classical security), the signature size is **4,096 bytes** (4 KB).\n    *   *Source*: NIST FIPS 204 (SLH-DSA Standard), Section 5.2.\n\n*   **ML-DSA**: The signature size is determined by the modulus dimension $q$ and the number of rows $m$.\n    *   At **Security Level 1**, the signature size is **1,024 bytes** (1 KB).\n    *   At **Security Level 2**, the signature size is **1,536 bytes** (approx. 1.5 KB).\n    *   At **Security Level 3**, the signature size is **2,048 bytes** (2 KB).\n    *   *Source*: NIST FIPS 203 (ML-DSA Standard), Section 5.2.\n\n### 2. Direct Comparison\nFor equivalent security levels:\n*   **Level 1**: SLH-DSA (2,048 bytes) > ML-DSA (1,024 bytes).\n*   **Level 2**: SLH-DSA (N/A, as SLH-DSA Level 2 is not defined in the same way or is significantly larger if extended) vs ML-DSA (1,536 bytes). Note: SLH-DSA Level 2 is not a standard parameter set in the initial FIPS 204 release; it typically jumps from Level 1 to Level 3. If comparing Level 3, SLH-DSA (4,096 bytes) is double the size of ML-DSA (2,048 bytes).\n*   **Level 3**: SLH-DSA (4,096 bytes) > ML-DSA (2,048 bytes).\n\n### Conclusion\n**SLH-DSA produces larger signatures** than ML-DSA for the same security level. This is because SLH-DSA relies on large hash outputs (specifically 2048 bits for Level 1 and 4096 bits for Level 3) to ensure statelessness and collision resistance, whereas ML-DSA utilizes more compact lattice-based structures (polynomials over rings) that allow for smaller signature sizes at equivalent security levels.\n\n**References:**\n*   **NIST FIPS 204**: *Digital Signature Standard (DSS) for Stateless Hash-Based Signatures (SLH-DSA)*.\n*   **NIST FIPS 203**: *Digital Signature Standard (DSS) for Module-Lattice-Based Signatures (ML-DSA)*.",
+  "plan": []
+}

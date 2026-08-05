@@ -1,0 +1,16 @@
+{
+  "id": "vuln04",
+  "category": "vulnerability",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 1,
+  "tool_calls": 1,
+  "llm_calls": 2,
+  "elapsed_s": 4.34,
+  "vram_mb": 5897,
+  "answer": "CVE-2023-0286 affects the **OpenSSL** library.\n\nThe vulnerability involves a **type confusion** related to **X.400 address processing** inside an **X.509 GeneralName**. Specifically, the issue arises because the `x400Address` field in the `GENERAL_NAME` structure is incorrectly defined as `ASN1_TYPE` instead of `ASN1_STRING`. This causes the `GENERAL_NAME_cmp` function to interpret the field as an `ASN1_TYPE` rather than an `ASN1_STRING`, leading to potential memory corruption or denial of service when CRL (Certificate Revocation List) checking is enabled.\n\nIn summary:\n- **Library**: OpenSSL\n- **Data type involved**: `ASN1_TYPE` vs. `ASN1_STRING` (specifically in the `x400Address` field of an X.509 `GENERAL_NAME` structure)",
+  "plan": []
+}

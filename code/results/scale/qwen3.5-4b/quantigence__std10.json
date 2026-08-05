@@ -1,0 +1,48 @@
+{
+  "id": "std10",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 24,
+  "tool_calls": 11,
+  "llm_calls": 21,
+  "elapsed_s": 54.84,
+  "vram_mb": 5901,
+  "answer": "Based on the team's analysis, the signature scheme derived from FALCON is standardized as **FIPS 204**, titled the \"Module-Lattice-Based Digital Signature Standard.\"\n\n**Publication Status:**\nThe standard has been **published** (Final) in **2024**. It is no longer a draft. This conclusion is supported by the presence of a \"How to Cite This Publication\" section, an official inquiry email (`fips-204-comments@nist.gov`), and a valid DOI (`10.6028/NIST.FIPS.204`) in the NIST corpus documents.\n\n**Key Findings:**\n*   **Standard Number:** FIPS 204\n*   **Scheme:** FALCON\n*   **Security Architecture:** The module-based lattice reduction architecture was specifically designed to provide high resistance to side-channel attacks (such as SPA and DPA) through constant-time execution, distinguishing it from other lattice-based schemes like Kyber or Dilithium.\n\n**Sources:**\n*   NIST FIPS 204 (Module-Lattice-Based Digital Signature Standard)\n*   NIST IR-8547-ipd (Corpus search results regarding standard status)",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Identify the specific FIPS standard number currently in development or recently published for the FALCON signature scheme, and verify its current publication status (draft vs. final).",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "standards_specialist",
+      "task": "Cross-reference the FALCON scheme's specifications against the latest NIST FIPS publications to confirm the exact standard number and review the timeline of its publication history.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "threat_modeler",
+      "task": "Analyze the security posture of the FALCON scheme within the context of the proposed FIPS standard, specifically evaluating resistance to side-channel attacks and implementation flaws.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Assess the operational readiness and adoption risk of the FALCON FIPS standard based on the publication status and security analysis provided by the other specialists.",
+      "depends_on": [
+        2,
+        3
+      ]
+    }
+  ]
+}

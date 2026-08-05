@@ -1,0 +1,46 @@
+{
+  "id": "alg04",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 22,
+  "tool_calls": 6,
+  "llm_calls": 16,
+  "elapsed_s": 62.46,
+  "vram_mb": 3613,
+  "answer": "Based on the findings from our specialized team, here is the integrated answer to your query.\n\nShor's algorithm efficiently solves two specific mathematical problems that currently underpin the security of RSA and Elliptic-Curve Cryptography (ECC):\n\n1.  **The Integer Factorization Problem (IFP)**\n    *   **Definition:** Given a composite integer $N$ (typically the product of two large primes, $N = p \\times q$), find the prime factors $p$ and $q$.\n    *   **Relevance to RSA:** The security of RSA relies entirely on the computational intractability of factoring large integers. As noted by the **crypto_analyst**, while computing $N$ from $p$ and $q$ is easy, reversing this process is infeasible for classical computers. Shor's algorithm provides a quantum polynomial-time solution to this problem, rendering RSA insecure if a sufficiently powerful quantum computer is available.\n\n2.  **The Elliptic Curve Discrete Logarithm Problem (ECDLP)**\n    *   **Definition:** Given an elliptic curve $E$ over a finite field $\\mathbb{F}_q$, a base point $P$, and a target point $Q$ (where $Q = kP$), find the integer scalar $k$.\n    *   **Relevance to ECC:** The security of ECC is predicated on the difficulty of solving the discrete logarithm problem in the group of points on an elliptic curve. According to the **threat_modeler**, classical algorithms (like Pollard's rho) require $O(\\sqrt{n})$ operations, making ECC secure with small key sizes. However, Shor's algorithm can solve the ECDLP efficiently, breaking ECC security.\n\n**Sources Cited:**\n*   **crypto_analyst:** Provided the formal definitions of IFP and ECDLP and detailed the specific relevance to RSA key generation and ECC group operations.\n*   **threat_modeler:** Confirmed the two problems and explicitly linked the solvability of IFP to RSA and ECDLP to ECC security, citing the source verification regarding Shor's algorithm's capability.\n*   **risk_assessor:** Provided context on the operational implications (Harvest Now, Decrypt Later) but did not alter the fundamental mathematical definitions of the problems.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Identify the specific integer factorization problem that Shor's algorithm solves and explain its relevance to RSA encryption.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Identify the specific discrete logarithm problem that Shor's algorithm solves and explain its relevance to elliptic-curve cryptography.",
+      "depends_on": []
+    },
+    {
+      "id": 3,
+      "role": "threat_modeler",
+      "task": "Synthesize the findings from the crypto_analysts to define the scope of the threat posed by Shor's algorithm to current public-key infrastructure.",
+      "depends_on": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Evaluate the operational risk and timeline for the deployment of fault-tolerant quantum computers capable of running Shor's algorithm against these specific mathematical problems.",
+      "depends_on": [
+        3
+      ]
+    }
+  ]
+}

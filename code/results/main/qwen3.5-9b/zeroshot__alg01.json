@@ -1,0 +1,16 @@
+{
+  "id": "alg01",
+  "category": "algorithm",
+  "condition": "zeroshot",
+  "correct": true,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 4.81,
+  "vram_mb": 5889,
+  "answer": "The NIST PQC fourth-round KEM candidate based on supersingular isogenies that was broken by a classical attack in 2022 is **SIKE** (Supersingular Isogeny Key Encapsulation).\n\nSpecifically, the attack was published in **April 2022** by Castryck and Decru. They demonstrated a classical algorithm that could solve the Supersingular Isogeny Diffie-Hellman (SIDH) problem in polynomial time, effectively breaking the security of SIKE.\n\nKey details:\n*   **Candidate:** SIKE (Supersingular Isogeny Key Encapsulation).\n*   **Attack:** A classical algorithm exploiting the structure of the isogeny graph, specifically using the \"torsion point\" method to recover the secret isogeny.\n*   **Publication:** \"An Efficient Classical Attack on SIKE\" by Wouter Castryck and Thomas Decru, presented at CRYPTO 2022 (published online in April 2022).\n*   **Impact:** This attack rendered all variants of SIKE (SIKEp233, SIKEp443, SIKEp751) insecure against classical computers. Consequently, NIST removed SIKE from the list of recommended algorithms in their final round results (announced in July 2024), and it is no longer a candidate for standardization.\n\n**Source:**\n*   Castryck, W., & Decru, T. (2022). \"An Efficient Classical Attack on SIKE\". *CRYPTO 2022*. (arXiv:2204.11077)",
+  "plan": []
+}

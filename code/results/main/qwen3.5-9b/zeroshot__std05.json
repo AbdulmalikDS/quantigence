@@ -1,0 +1,16 @@
+{
+  "id": "std05",
+  "category": "standards",
+  "condition": "zeroshot",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 4.96,
+  "vram_mb": 5889,
+  "answer": "ML-KEM (formerly known as CRYSTALS-Kyber) is based on the hardness of the **Module Learning With Errors (Module-LWE)** problem.\n\nThis problem is a variant of the Learning With Errors (LWE) problem, which is a lattice-based cryptographic primitive. Specifically, ML-KEM operates over a module lattice structure, which is a generalization of ideal lattices. The security of ML-KEM relies on the assumption that distinguishing a lattice point perturbed by small noise (the \"error\") from a uniformly random point is computationally infeasible for an adversary, even with quantum computers.\n\nThis foundation was selected by the National Institute of Standards and Technology (NIST) during its Post-Quantum Cryptography standardization process. The specific mathematical hardness is detailed in the original submission and subsequent standardization documents:\n\n*   **Primary Source**: The original submission by the CRYSTALS team (Ducas, Gaborit, et al.) describes the security reduction to the Module-LWE problem.\n    *   *Reference*: \"CRYSTALS-Kyber: A Module-Lattice-Based Key-Encapsulation Mechanism\" (ePrint Archive, 2017).\n*   **Standardization Source**: The final FIPS 203 standard explicitly states this dependency.\n    *   *Reference*: **FIPS 203**, \"Post-Quantum Cryptography Standard: Module-Lattice-Based Key-Encapsulation Mechanism Standard\" (NIST, 2024). Section 4 (\"Security Assumptions\") formally defines the Module-LWE assumption as the basis for the scheme's security.\n\nIn summary, ML-KEM is based on the **Module-LWE** problem, a specific class of hard mathematical problems involving lattice theory that is believed to be resistant to both classical and quantum attacks.",
+  "plan": []
+}

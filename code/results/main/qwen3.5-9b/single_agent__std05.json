@@ -1,0 +1,16 @@
+{
+  "id": "std05",
+  "category": "standards",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 3,
+  "tool_calls": 1,
+  "llm_calls": 2,
+  "elapsed_s": 4.64,
+  "vram_mb": 5897,
+  "answer": "Based on the NIST FIPS 203 standard, **ML-KEM is based on the hardness of the Module Learning with Errors (MLWE) problem**, which is a generalization of the Learning With Errors (LWE) problem introduced by Regev in 2005.\n\nThe MLWE problem is itself based on the presumed hardness of certain computational problems in **module lattices**. This is a lattice-based cryptographic problem where the security relies on the difficulty of distinguishing noisy linear equations from random ones in a module structure over a ring.\n\nThe standard explicitly states: \"The security of ML-KEM is based on the presumed hardness of the so-called Module Learning with Errors (MLWE) problem, which is a generalization of the Learning With Errors (LWE) problem.\"",
+  "plan": []
+}

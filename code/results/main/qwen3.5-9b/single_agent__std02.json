@@ -1,0 +1,16 @@
+{
+  "id": "std02",
+  "category": "standards",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 4,
+  "tool_calls": 1,
+  "llm_calls": 2,
+  "elapsed_s": 3.18,
+  "vram_mb": 5897,
+  "answer": "The standardized algorithm name specified in FIPS 203 is **ML-KEM** (Module-Lattice-Based Key-Encapsulation Mechanism). It is a **key-encapsulation mechanism (KEM)**, which is a type of public-key cryptographic primitive used for key agreement.\n\nFIPS 203, titled \"Module-Lattice-Based Key-Encapsulation Mechanism Standard,\" was published by NIST on August 13, 2024. The standard specifies three parameter sets for ML-KEM: ML-KEM-512, ML-KEM-768, and ML-KEM-1024, ordered by increasing security strength and decreasing performance.\n\nSource: NIST FIPS 203 document (retrieved via nist_corpus_search).",
+  "plan": []
+}

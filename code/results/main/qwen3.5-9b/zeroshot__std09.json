@@ -1,0 +1,16 @@
+{
+  "id": "std09",
+  "category": "standards",
+  "condition": "zeroshot",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 2.89,
+  "vram_mb": 5889,
+  "answer": "NIST IR 8547 is currently a **draft** document, specifically a **Draft Special Publication (Draft SP)**.\n\nIt is not yet a finalized standard. The document is titled **\"Draft Special Publication 800-218: Quantum Key Distribution (QKD) Security Requirements\"**.\n\n**Key Details:**\n*   **Status:** Draft Special Publication (Draft SP).\n*   **Document Type:** Informational Report (IR) was the initial format, but it has been transitioned to the Draft Special Publication process to allow for public comment and finalization.\n*   **Current State:** As of the latest available data, it remains in the draft phase awaiting final review and approval by the NIST Director before becoming a finalized Special Publication (SP).\n\nYou can verify this status on the NIST website under the \"Quantum Cryptography\" section or by searching for \"NIST SP 800-218\" where the status is explicitly listed as \"Draft.\"",
+  "plan": []
+}

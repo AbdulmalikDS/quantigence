@@ -1,0 +1,16 @@
+{
+  "id": "alg04",
+  "category": "algorithm",
+  "condition": "zeroshot",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 6.21,
+  "vram_mb": 5889,
+  "answer": "Shor's algorithm efficiently solves two specific mathematical problems that underpin modern public-key cryptography:\n\n1.  **Integer Factorization**: The problem of factoring a large composite integer $N$ into its prime factors. This is the mathematical foundation of **RSA** encryption.\n2.  **Discrete Logarithm Problem (DLP)**: The problem of finding an integer $x$ given a prime $p$, a generator $g$, and a value $h = g^x \\pmod p$. This is the mathematical foundation of many **elliptic-curve cryptography (ECC)** schemes (specifically the Elliptic Curve Discrete Logarithm Problem, or ECDLP) and other groups like Diffie-Hellman.\n\n**Grounding in Real Sources:**\n\n*   **Original Paper**: Peter Shor introduced the algorithm in his 1994 paper titled *\"Algorithms for Quantum Computation: Discrete Logarithms and Factoring\"*. In this work, he explicitly demonstrates that a quantum computer can solve both the discrete logarithm problem and the integer factorization problem in polynomial time, whereas the best known classical algorithms require sub-exponential or exponential time.\n    *   **Source**: Shor, P. W. (1994). *Algorithms for quantum computation: discrete logarithms and factoring*. Proceedings 35th Annual Symposium on Foundations of Computer Science, 124\u2013134. (Often cited as arXiv:quant-ph/9508027).\n*   **NIST Standards**: The National Institute of Standards and Technology (NIST) acknowledges this threat in its post-quantum cryptography standardization efforts. NIST documents explicitly state that Shor's algorithm poses a threat to RSA (via factorization) and ECC (via the discrete logarithm problem), necessitating the transition to post-quantum cryptographic algorithms.\n    *   **Source**: NIST. (2022). *Post-Quantum Cryptography Standardization*. (e.g., FIPS 203, 204, 205).\n\n**Conclusion:**\nShor's algorithm efficiently solves **integer factorization** and the **discrete logarithm problem**.",
+  "plan": []
+}

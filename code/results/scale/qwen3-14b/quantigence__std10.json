@@ -1,0 +1,31 @@
+{
+  "id": "std10",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 5,
+  "tool_calls": 2,
+  "llm_calls": 8,
+  "elapsed_s": 17.37,
+  "vram_mb": 5901,
+  "answer": "The FALCON-based signature scheme is expected to be developed into a FIPS standard in the future, as outlined in the draft NIST IR 8547 (Initial Public Draft) Transition to Post-Quantum Cryptography. However, as of the latest information available, it has not yet been published as a FIPS standard. This is cited from the NIST IR 8547-ipd document, specifically in the chunk with ID 10.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Identify the current status of FALCON-based signature schemes in the FIPS standardization process, including whether it has been published as a FIPS standard.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Analyze the technical details of the FALCON signature scheme to determine if it is compatible with or has been adapted for inclusion in a FIPS standard.",
+      "depends_on": [
+        1
+      ]
+    }
+  ]
+}

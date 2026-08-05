@@ -1,0 +1,17 @@
+{
+  "id": "cx03",
+  "condition": "single_agent",
+  "coverage": 0.8,
+  "hits": [
+    "Grover on AES",
+    "Shor on RSA",
+    "AES survives",
+    "NIST timeline"
+  ],
+  "n_rubric": 5,
+  "quality": 1.0,
+  "tool_calls": 4,
+  "llm_calls": 2,
+  "elapsed_s": 16.63,
+  "answer": "### Quantum Threats and Migration Decisions\n\n#### **AES-256: Can Remain with Larger Key (No Replacement Needed)**\n- **Threat Algorithm**: Grover's algorithm\n- **Impact**: Grover's algorithm provides a quadratic speedup for symmetric key search, reducing the effective security of AES-256 from 256 bits to approximately 128 bits of security.\n- **Decision**: **No replacement needed** - AES-256 can remain secure by using AES-256 (already at 256-bit key size). The algorithm itself doesn't need to be replaced, but organizations should ensure they're using the full 256-bit key variant.\n- **NIST Guidance**: NIST's post-quantum cryptography standards (FIPS 203/204/205) focus on asymmetric cryptography, not symmetric algorithms. AES-256 is considered quantum-resistant when properly implemented.\n\n#### **RSA-2048: Must Be Replaced**\n- **Threat Algorithm**: Shor's algorithm\n- **Impact**: Shor's algorithm can factor large integers in polynomial time, completely breaking RSA encryption. A 2048-bit RSA key would be vulnerable to a sufficiently powerful quantum computer.\n- **Decision**: **Must be replaced** - RSA-2048 cannot be made quantum-resistant by simply increasing key size. It requires migration to post-quantum cryptographic alternatives.\n- **NIST Standards**: NIST has standardized three PQC algorithms:\n  - **FIPS 203** (CRYSTALS-Kyber): Key encapsulation mechanism\n  - **FIPS 204** (CRYSTALS-Dilithium): Digital signature algorithm  \n  - **FIPS 205** (SPHINCS+): Stateless hash-based signature algorithm\n\n### NIST Timeline Pressure\n\nAccording to **NIST IR 8547**, the transition timeline presents significant pressure:\n\n- **Historical Context**: The journey from algorithm standardization to full integration into information systems typically takes **10 to 20 years**\n- **Current Status**: NIST has already released the three PQC standards (FIPS 203/204/205) to initiate the transition\n- **Urgency Factors**:\n  - **Harvest Now, Decrypt Later**: Adversaries may be collecting encrypted data now to decrypt later when quantum computers become available\n  - **Migration Complexity**: Organizations must update cryptographic implementations across web applications, databases, communication tools, cloud services, and enterprise software\n  - **Key Size Changes**: PQC algorithms often have larger key sizes, requiring code refactoring and extensive testing\n\n**Recommendation**: Organizations should begin migration planning immediately, as the 10-20 year integration timeline means that even starting today, full deployment may not occur until 2035-2045. RSA-2048 must be replaced with NIST-approved PQC algorithms, while AES-256 can remain but should be validated for proper implementation.\n\n**Sources**:\n- NIST IR 8547 (Post-Quantum Cryptography Standards)\n- arXiv:1512.04965 (Grover's algorithm analysis for AES)\n- arXiv:2607.14082 (Shor's algorithm formalization for RSA-2048)"
+}

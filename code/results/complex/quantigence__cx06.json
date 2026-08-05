@@ -1,0 +1,17 @@
+{
+  "id": "cx06",
+  "condition": "quantigence",
+  "coverage": 0.8,
+  "hits": [
+    "QARS value",
+    "KEM replacement",
+    "disallowance year",
+    "hybrid advisable"
+  ],
+  "n_rubric": 5,
+  "quality": 1.0,
+  "tool_calls": 8,
+  "llm_calls": 15,
+  "elapsed_s": 88.72,
+  "answer": "**To:** Research Team Lead\n**From:** Supervisor\n**Subject:** Final Assessment: VPN Concentrator Cryptographic Lifecycle & Migration Strategy\n\nBased on the decomposed analysis from the Crypto Analyst, Standards Specialist, Threat Modeler, and Risk Assessor, here is the synthesized final answer regarding the RSA-2048 VPN concentrator scenario.\n\n### 1. Risk Quantification & Verdict\n*   **Quantum-Adjusted Risk Score (QARS):** **0.7928**.\n    *   *Source:* Crypto Analyst / Threat Modeler.\n    *   *Assessment:* This score indicates a **High Risk** status. The critical factor is the urgency ratio of 1.33 (Shelf Life / Migration Time), signifying that the asset will remain in service well beyond the estimated collapse time of the algorithm.\n*   **Mosca Verdict:** **Vulnerable within the migration window (High Risk)**.\n    *   *Source:* Crypto Analyst / Threat Modeler.\n    *   *Assessment:* With a 10-year service life against a 9-year collapse time, the RSA-2048 keys will likely remain active while quantum decryption capabilities mature. The high sensitivity (0.7) further amplifies this threat.\n\n### 2. Regulatory Timeline (NIST IR 8547)\n*   **Disallowance Year:** **2035**.\n    *   *Source:* Standards Specialist (NIST IR 8547, Table 4).\n    *   *Assessment:* While the theoretical collapse time is 9 years, NIST mandates that key-establishment schemes providing 112 bits of security strength (RSA-2048) are **disallowed after 2035**. Given the asset's 10-year lifecycle, it will likely still be in operation when this regulatory cutoff takes effect.\n\n### 3. Standardized Replacement Strategy\n*   **Recommended Algorithm:** **ML-KEM (formerly Kyber)** for key establishment.\n    *   *Source:* Standards Specialist.\n    *   *Note:* While the Threat Modeler mentioned ML-DSA (for signatures), the specific requirement for *key establishment* in hybrid scenarios (e.g., IKEv2/IPsec) relies on ML-KEM.\n*   **Implementation Approach:** **Hybrid Classical+PQC Key Exchange**.\n    *   *Source:* Risk Assessor / Standards Specialist.\n    *   *Assessment:* A hybrid approach is **strongly advisable and should be implemented immediately**. Relying solely on PQC during the transition may introduce compatibility issues or performance overhead, while relying solely on RSA exposes the system to \"Harvest Now, Decrypt Later\" attacks. The hybrid method ensures forward secrecy against both classical and future quantum adversaries.\n\n### Summary of Action Items\n1.  **Immediate Action:** Deploy a hybrid key exchange mechanism (RSA-2048 + ML-KEM) to mitigate immediate \"Harvest Now, Decrypt Later\" risks.\n2.  **Migration Window:** Utilize the 2-year migration window (X=2) to fully transition to PQC-only or hybrid configurations before the 2035 disallowance deadline.\n3.  **Compliance:** Ensure the migration plan accounts for the 2035 NIST IR 8547 disallowance date, as the asset's 10-year life extends beyond the algorithm's theoretical collapse time.\n\n**Conclusion:** The asset is in a critical state. The combination of a high QARS (0.7928), the Mosca \"High Risk\" verdict, and the fixed 2035 regulatory deadline necessitates an immediate shift to hybrid cryptography and a rigorous migration plan to ensure compliance and security by 2035."
+}

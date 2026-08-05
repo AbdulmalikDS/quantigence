@@ -1,0 +1,31 @@
+{
+  "id": "vuln06",
+  "category": "vulnerability",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 1,
+  "tool_calls": 2,
+  "llm_calls": 8,
+  "elapsed_s": 24.41,
+  "vram_mb": 3617,
+  "answer": "**Final Answer:**\n\nCVE-2021-3711 affects the **OpenSSL** library, specifically the **SM2** cryptographic scheme, which is part of the Chinese National Standard for elliptic curve cryptography. The vulnerability arises from a buffer overflow during the decryption process when using the `EVP_PKEY_decrypt()` API function. This occurs when the function is called twice: the first call calculates the required buffer size, but due to a bug, the size may be underestimated, leading to a buffer overflow in the second call. This can allow an attacker to alter application behavior or cause it to crash.\n\nThe severity of this vulnerability is **Critical**, with a CVSS score of 9.8.\n\n**Sources:**\n- crypto_analyst\n- risk_assessor",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Look up CVE-2021-3711 and identify which library and cryptographic scheme (specifically SM2) is affected.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "risk_assessor",
+      "task": "Assess the impact of CVE-2021-3711 based on the findings from the crypto_analyst, including potential security risks and exposure.",
+      "depends_on": [
+        1
+      ]
+    }
+  ]
+}

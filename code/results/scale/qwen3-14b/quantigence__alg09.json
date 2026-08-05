@@ -1,0 +1,23 @@
+{
+  "id": "alg09",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": false,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 4,
+  "tool_calls": 1,
+  "llm_calls": 5,
+  "elapsed_s": 8.32,
+  "vram_mb": 3617,
+  "answer": "The submission name \"Dilithium\" corresponds to the now-standardized algorithm **CRYSTALS-DILITHIUM**, as noted in the FIPS-204 document. It is part of the NIST Post-Quantum Cryptography Standardization project.  \n*Source: FIPS-204.*",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Identify the standardized algorithm that was previously known under the submission name 'Dilithium'.",
+      "depends_on": []
+    }
+  ]
+}

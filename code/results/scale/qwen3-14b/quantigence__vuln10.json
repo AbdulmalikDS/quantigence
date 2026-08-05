@@ -1,0 +1,23 @@
+{
+  "id": "vuln10",
+  "category": "vulnerability",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 1,
+  "tool_calls": 1,
+  "llm_calls": 5,
+  "elapsed_s": 11.08,
+  "vram_mb": 3617,
+  "answer": "CVE-2022-3602 affects the **OpenSSL** library. The vulnerability is a **buffer overrun** in the X.509 certificate verification process, specifically during name constraint checking. This flaw can be triggered in scenarios such as connecting to a malicious server (in a TLS client) or when a malicious client connects to a TLS server requesting client authentication. The buffer overflow could lead to a crash (denial of service) or potentially remote code execution, though mitigations like stack overflow protections reduce the risk of remote code execution. The vulnerability was fixed in OpenSSL 3.0.7.\n\n*Source: crypto_analyst analysis.*",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Look up CVE-2022-3602 in a vulnerability database and identify the affected library and the type of memory-safety flaw described in the entry.",
+      "depends_on": []
+    }
+  ]
+}

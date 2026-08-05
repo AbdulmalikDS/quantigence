@@ -1,0 +1,23 @@
+{
+  "id": "std06",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 4,
+  "tool_calls": 1,
+  "llm_calls": 5,
+  "elapsed_s": 7.73,
+  "vram_mb": 5901,
+  "answer": "The three parameter sets defined for ML-KEM in FIPS 203 are:\n\n1. ML-KEM-512  \n2. ML-KEM-768  \n3. ML-KEM-1024  \n\nThese are listed in Table 2 of FIPS 203 (standards_specialist).",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Identify the parameter sets defined for ML-KEM in NIST FIPS 203.",
+      "depends_on": []
+    }
+  ]
+}

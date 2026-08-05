@@ -1,0 +1,31 @@
+{
+  "id": "vuln08",
+  "category": "vulnerability",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 1,
+  "tool_calls": 2,
+  "llm_calls": 8,
+  "elapsed_s": 21.29,
+  "vram_mb": 3617,
+  "answer": "**CVE-2018-0732** affects the **OpenSSL** cryptographic library. The vulnerability occurs during the **key agreement phase** of a **TLS handshake** when using a **DH(E)** (Diffie-Hellman ephemeral) based ciphersuite. A **malicious server** can exploit this by sending a **very large prime value** to the client, causing the client to spend an **excessive amount of time** generating a key for this prime. This results in a **denial-of-service (DoS)** condition, as the client becomes unresponsive during the key agreement process.\n\nThe vulnerability was fixed in OpenSSL versions **1.1.0i-dev** and **1.0.2p-dev**, with affected versions being **1.1.0-1.1.0h** and **1.0.2-1.0.2o**, respectively.\n\n*Sources: crypto_analyst, threat_modeler.*",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Look up CVE-2018-0732 and identify which cryptographic library is affected by this vulnerability.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "threat_modeler",
+      "task": "Analyze the vulnerability description for CVE-2018-0732 to determine the denial-of-service mechanism during key agreement.",
+      "depends_on": [
+        1
+      ]
+    }
+  ]
+}

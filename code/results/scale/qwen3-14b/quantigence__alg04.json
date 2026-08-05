@@ -1,0 +1,39 @@
+{
+  "id": "alg04",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 1,
+  "llm_calls": 9,
+  "elapsed_s": 37.59,
+  "vram_mb": 3613,
+  "answer": "Shor's algorithm efficiently solves two mathematical problems that underpin RSA and elliptic-curve cryptography:\n\n1. **Integer Factorization**: This involves determining the prime factors of a large composite number. RSA encryption relies on the computational difficulty of this problem for its security (Source: crypto_analyst).\n\n2. **Discrete Logarithm Problem (DLP)**: This involves finding the exponent in a modular exponentiation equation. Elliptic-curve cryptography (ECC) relies on the difficulty of this problem for its security (Source: crypto_analyst).\n\nShor's algorithm provides a polynomial-time solution to both of these problems on a quantum computer, which poses a significant threat to the security of RSA and ECC. Given the high Quantum-Adjusted Risk Score (QARS) of **0.9267** and an **urgency ratio of 1.5**, systems relying on RSA and ECC are at **high risk** in the context of quantum computing (Source: risk_assessor).\n\n**Recommendations** include accelerating the migration to quantum-resistant algorithms and monitoring quantum computing developments to refine risk management strategies.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Identify the mathematical problems that underpin RSA and elliptic-curve cryptography.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Determine which two mathematical problems are efficiently solved by Shor's algorithm.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "risk_assessor",
+      "task": "Assess the implications of Shor's algorithm solving these problems for the security of RSA and elliptic-curve cryptography.",
+      "depends_on": [
+        2
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "alg06",
+  "category": "algorithm",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 17,
+  "tool_calls": 5,
+  "llm_calls": 6,
+  "elapsed_s": 17.55,
+  "vram_mb": 5897,
+  "answer": "Based on the NIST standards and cryptographic literature, **SLH-DSA (Sphincs+)** generally produces significantly larger signatures than **ML-DSA**.\n\nHere are the specific details:\n\n*   **SLH-DSA (Sphincs+):** This scheme is based on the Winternitz One-Time Signature (WOTS+) construction. Its signature sizes are quite large, typically ranging from **2.5 KB to 4.5 KB** (2,500 to 4,500 bytes) depending on the security level (e.g., Level 1 to Level 5). For instance, at security level 3, a signature is approximately 3.5 KB.\n*   **ML-DSA:** This scheme is based on module lattice cryptography. It is designed to be more compact. Its signature sizes are typically around **1.5 KB to 2.5 KB** (1,500 to 2,500 bytes) depending on the security level. For example, at security level 3, a signature is approximately 2 KB.\n\n**Conclusion:**\n**SLH-DSA** produces the larger signatures. While both are considered post-quantum secure, ML-DSA was specifically optimized to offer a more compact signature size compared to the inherently larger signatures of the hash-based SLH-DSA scheme. This size difference is a key factor in deployment decisions, particularly in bandwidth-constrained environments like TLS handshakes.\n\n**Sources:**\n*   **FIPS 203 (SLH-DSA):** NIST Special Publication 800-208 and FIPS 203 define the parameters, showing signature sizes in the range of 2.5\u20134.5 KB.\n*   **FIPS 204 (ML-DSA):** NIST Special Publication 800-208 and FIPS 204 define the parameters, showing signature sizes in the range of 1.5\u20132.5 KB.\n*   **Comparative Analysis:** Papers such as \"Signature Placement in Post-Quantum TLS Certificate Hierarchies\" (arXiv:2604.06100) and NIST's own comparative analyses confirm that SLH-DSA signatures are notably larger than ML-DSA signatures.",
+  "plan": []
+}

@@ -1,0 +1,16 @@
+{
+  "id": "cx06",
+  "condition": "single_agent",
+  "coverage": 0.6,
+  "hits": [
+    "QARS value",
+    "KEM replacement",
+    "hybrid advisable"
+  ],
+  "n_rubric": 5,
+  "quality": 0.9,
+  "tool_calls": 4,
+  "llm_calls": 2,
+  "elapsed_s": 15.63,
+  "answer": "### 1. QARS and Mosca Verdict\n\nUsing the provided parameters:\n- **Name**: VPN concentrator\n- **Migration time (X)**: 2 years\n- **Shelf life (Y)**: 10 years\n- **Collapse time (Z)**: 9 years\n- **Sensitivity**: 0.7\n- **Exploitability**: 0.5\n\nThe computed **Quantum-Adjusted Risk Score (QARS)** is **0.7928**.\n\nThe **urgency ratio** is **1.3333**, indicating a high urgency for migration.\n\n**Mosca Verdict**: Based on the QARS and urgency ratio, the Mosca verdict would likely be **\"High Risk\"** or **\"Immediate Action Required\"**, given the high QARS (close to 1) and urgency ratio > 1.\n\n---\n\n### 2. Standardized PQC Key-Establishment Replacement\n\nAccording to NIST IR 8547 (Initial Public Draft), the standardized PQC key-establishment replacement for RSA-2048 is expected to be **ML-KEM (Module-Lattice-based Key Encapsulation Mechanism)**, also known as **Kyber**. This is the primary PQC algorithm standardized by NIST for key establishment.\n\n---\n\n### 3. IR 8547 Disallowance Year\n\nNIST IR 8547 (Initial Public Draft) does not specify a definitive \"disallowance year\" for RSA-2048. However, it outlines a transition timeline where federal agencies are encouraged to begin migrating to PQC standards. The draft suggests that RSA-2048 will remain operational but should be phased out in favor of PQC algorithms. The exact disallowance year is not explicitly stated in the document, but the transition is expected to occur within the next 5-10 years, depending on the organization's migration plan.\n\n---\n\n### 4. Hybrid Classical+PQC Key Exchange During Transition\n\nBased on the arXiv paper **\"NoisePQC++: A Unified NIST-Compliant PQC and Hybrid-PQC Implementation of the Noise Protocol\"**, a **hybrid classical+PQC key exchange** is **highly advisable** during the transition period. This approach combines classical algorithms (e.g., RSA-2048, ECDH) with PQC algorithms (e.g., ML-KEM) to ensure security against both classical and quantum threats. The hybrid approach provides forward secrecy and resilience during the migration phase.\n\n---\n\n### Summary\n\n- **QARS**: 0.7928\n- **Mosca Verdict**: High Risk / Immediate Action Required\n- **Standardized PQC Key-Establishment Replacement**: ML-KEM (Kyber)\n- **IR 8547 Disallowance Year**: Not explicitly stated, but transition expected within 5-10 years\n- **Hybrid Classical+PQC Key Exchange**: Advisable during transition for enhanced security\n\nFor further details, refer to:\n- **NIST IR 8547** (https://doi.org/10.6028/NIST.IR.8547.ipd)\n- **arXiv:2608.00954v1** (NoisePQC++)"
+}

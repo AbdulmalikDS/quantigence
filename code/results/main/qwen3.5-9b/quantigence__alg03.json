@@ -1,0 +1,45 @@
+{
+  "id": "alg03",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 3,
+  "citation_valid": 3,
+  "n_sources": 23,
+  "tool_calls": 15,
+  "llm_calls": 20,
+  "elapsed_s": 93.77,
+  "vram_mb": 5901,
+  "answer": "### Executive Summary: Impact of Grover's Algorithm on AES-128\n\n**Effect on Security**\nGrover's algorithm provides a quadratic speedup for unstructured search problems, effectively halving the security level of symmetric-key ciphers. For **AES-128**, which offers 128 bits of classical security, a quantum adversary utilizing Grover's algorithm reduces this to **64 bits of effective security**.\n\n*   **Classical Complexity:** $O(2^{128})$ operations.\n*   **Quantum Complexity:** $O(2^{64})$ operations.\n*   **Risk Implication:** A 64-bit security level is considered broken in modern cryptography, as it is computationally feasible for well-resourced adversaries.\n\n**Recommended Mitigation**\nTo maintain a security level equivalent to current 128-bit standards against a quantum adversary, the key length must be doubled.\n*   **Action:** Migrate from AES-128 to **AES-256**.\n*   **Result:** AES-256 provides 256 bits of classical security, which reduces to **128 bits of quantum security** ($256 / 2 = 128$) under Grover's attack.\n\n**Feasibility and Timeline**\nWhile the theoretical reduction is immediate, practical implementation faces significant hardware barriers. Current estimates suggest that breaking AES-128 would require approximately **100,000 to 200,000 physical qubits** (assuming surface code error correction) to execute the necessary logical operations. This places the threat in a \"Moderate Risk\" category (QARS Score: 0.56), implying a collapse time of roughly 30 years, allowing organizations a window for migration but necessitating proactive planning.\n\n---\n\n### Team Findings & Sources\n\n| Specialist | Key Contribution | Primary Sources Cited |\n| :--- | :--- | :--- |\n| **Crypto Analyst** | Established the theoretical basis: quadratic speedup reduces $n$-bit security to $n/2$ bits. | Bonnetain et al., *arXiv:2110.02836v1* |\n| **Standards Specialist** | Aligned findings with current NIST guidelines for post-quantum security categories. | **NIST IR 8547** (Initial Public Draft, Nov 2024) |\n| **Threat Modeler** | Analyzed resource requirements, estimating 64k\u2013200k physical qubits for fault-tolerant implementation. | *arXiv:2101.08483*, *arXiv:2006.08368* |\n| **Risk Assessor** | Quantified the risk using the QARS framework, assigning a \"Moderate Risk\" score and estimating a 30-year collapse timeline. | Mosca Parameters (Standard Risk Assessment Model) |\n\n**Supervisor Note:** The consensus across all team members is clear: AES-128 is no longer secure against a quantum adversary. Migration to AES-256 is the only viable mitigation strategy to preserve 128-bit security levels.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Calculate the effective security reduction for a 128-bit symmetric key under Grover's algorithm, specifically determining the number of quantum queries required to achieve a collision or key recovery compared to classical brute-force complexity.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "standards_specialist",
+      "task": "Identify current NIST and industry recommendations for symmetric key sizes (e.g., AES-192, AES-256) specifically designed to counteract the security reduction caused by Grover's algorithm in a post-quantum context.",
+      "depends_on": []
+    },
+    {
+      "id": 3,
+      "role": "threat_modeler",
+      "task": "Evaluate the feasibility of an adversary implementing the necessary quantum resources (qubit count, error correction overhead, and coherence time) to execute Grover's search against AES-128 within a relevant timeframe.",
+      "depends_on": []
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Synthesize the theoretical security reduction, standard mitigation guidelines, and implementation feasibility to determine the current risk level of AES-128 and provide a final recommendation on key migration or retention strategies.",
+      "depends_on": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}

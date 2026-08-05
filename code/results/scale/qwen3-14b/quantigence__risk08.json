@@ -1,0 +1,40 @@
+{
+  "id": "risk08",
+  "category": "risk",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 3,
+  "llm_calls": 12,
+  "elapsed_s": 42.48,
+  "vram_mb": 5901,
+  "answer": "The Quantum-Adjusted Risk Score (QARS) for the public web server, calculated using the provided parameters $ X = 0.5 $, $ Y = 0.5 $, $ Z = 12 $, $ S = 0.0 $, and $ E = 0.6 $, is **0.1201**. This score is derived using the default weights: temporal (0.5), sensitivity (0.3), and exploitability (0.2).\n\nAccording to the draft transition roadmap **NIST IR 8547**, a Mosca violation is defined as a QARS score exceeding **0.15**. Since the computed QARS score (**0.1201**) is **below** this threshold, this does **not** constitute a Mosca violation. The asset is considered to be at a **low to moderate risk** of quantum attacks and does not require immediate post-quantum migration at this time.\n\n**Sources:**\n- crypto_analyst (QARS formula and parameter interpretation)\n- standards_specialist (QARS threshold for Mosca violation)\n- risk_assessor (risk evaluation and context)",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Interpret the parameters X, Y, Z, S, and E in the context of the QARS formula and compute the QARS score using the default weights. Provide the numerical result.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "standards_specialist",
+      "task": "Determine the threshold for a Mosca violation based on the QARS score as defined by current quantum security standards. Provide the relevant standard or reference.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "risk_assessor",
+      "task": "Evaluate whether the computed QARS score meets or exceeds the threshold for a Mosca violation, and assess the associated risk implications for the public web server.",
+      "depends_on": [
+        1,
+        2
+      ]
+    }
+  ]
+}

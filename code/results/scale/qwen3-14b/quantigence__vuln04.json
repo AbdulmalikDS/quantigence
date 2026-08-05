@@ -1,0 +1,23 @@
+{
+  "id": "vuln04",
+  "category": "vulnerability",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 1,
+  "tool_calls": 1,
+  "llm_calls": 5,
+  "elapsed_s": 9.38,
+  "vram_mb": 3617,
+  "answer": "CVE-2023-0286 affects the **OpenSSL** library and involves the **X.509 GeneralName** data type, specifically when processing **X.400 addresses**. The vulnerability stems from a type confusion error during parsing, where X.400 addresses are treated as `ASN1_STRING` instead of the correct `ASN1_TYPE`, potentially allowing arbitrary pointer access.\n\n*Source: crypto_analyst analysis.*",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Look up CVE-2023-0286 in a vulnerability database and identify the affected library and data type associated with the vulnerability.",
+      "depends_on": []
+    }
+  ]
+}

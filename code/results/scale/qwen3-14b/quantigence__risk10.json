@@ -1,0 +1,31 @@
+{
+  "id": "risk10",
+  "category": "risk",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 1,
+  "llm_calls": 7,
+  "elapsed_s": 21.61,
+  "vram_mb": 5901,
+  "answer": "The Quantum-Adjusted Risk Score (QARS) for the VPN concentrator is **0.7928**, calculated using the default weights: temporal weight = 0.5, sensitivity weight = 0.3, and exploitability weight = 0.2. This score exceeds the threshold of **0.7**, which is used to define a Mosca violation, indicating that the asset is at significant risk from quantum threats and requires urgent action.\n\nThe urgency ratio is **1.3333**, derived from the collapse time (Z = 9 years) and shelf life (Y = 10 years), further emphasizing the need for immediate mitigation.\n\n**Conclusion**: This is a **Mosca violation**, as the QARS score of **0.7928** exceeds the threshold. Immediate action, such as accelerating migration or implementing quantum-resistant algorithms, is recommended.\n\n*Sources: crypto_analyst, risk_assessor.*",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Compute the QARS score using the given parameters (Y=10, X=2, Z=9, S=0.7, E=0.5) with default weights as defined in the QARS methodology.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "risk_assessor",
+      "task": "Interpret the computed QARS score to determine whether it constitutes a Mosca violation, based on established thresholds or criteria for such violations.",
+      "depends_on": [
+        1
+      ]
+    }
+  ]
+}

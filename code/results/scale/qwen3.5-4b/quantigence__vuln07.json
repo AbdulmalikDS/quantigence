@@ -1,0 +1,48 @@
+{
+  "id": "vuln07",
+  "category": "vulnerability",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 33,
+  "tool_calls": 22,
+  "llm_calls": 24,
+  "elapsed_s": 93.07,
+  "vram_mb": 3617,
+  "answer": "Based on the team's findings, timing side channels are a critical concern for lattice-based KEM implementations like ML-KEM (Kyber) because the core cryptographic operation\u2014**scalar multiplication** over the module ring $\\mathbb{Z}_q^m$\u2014is inherently data-dependent when implemented naively.\n\n### The Concrete Mechanism: Data-Dependent Branching in Double-and-Add\nThe specific vulnerability arises from the **Double-and-Add algorithm** used to compute the shared secret ($C = m \\cdot s + e$). In a naive implementation:\n1.  The algorithm iterates through the bits of the secret scalar $s$.\n2.  For every bit, it performs a \"double\" operation (squaring).\n3.  **Crucially**, if the bit is `1`, it performs an additional \"add\" operation.\n4.  **The Side Channel:** Since polynomial addition is computationally more expensive than squaring, the total execution time varies directly with the number of `1` bits in the secret scalar. An adversary with physical access can measure these timing variations to reconstruct the secret key bits.\n\n### Risk Context\nThe **risk_assessor** confirms this is a **critical risk (QARS: 0.89)** due to the high sensitivity of ML-KEM as a primary key establishment mechanism and the narrow window to fix such vulnerabilities before deployment.\n\n### Final Answer\nTiming side channels are a particular concern for ML-KEM because the **scalar multiplication** required for key generation and decryption relies on the **Double-and-Add algorithm**, which exhibits **data-dependent control flow**. In a naive implementation, the execution time varies based on the bits of the secret scalar because the \"add\" operation (performed only when a bit is `1`) is more expensive than the \"double\" operation. This allows an attacker with physical access to infer secret key bits by measuring execution time differences.\n\n**Sources:**\n*   **crypto_analyst**: Identified the data-dependent nature of scalar multiplication over $\\mathbb{Z}_q^m$.\n*   **threat_modeler**: Detailed the specific Double-and-Add mechanism and the cost disparity between add and double operations.\n*   **standards_specialist**: Cited NIST FIPS 203/204 regarding side channel mandates.\n*   **risk_assessor**: Quantified the critical risk level (QARS 0.89) associated with unmitigated timing vulnerabilities.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Analyze the specific mathematical operations in ML-KEM (specifically the Kyber module) that are susceptible to timing variations, such as modular exponentiation or scalar multiplication, and identify the primary concrete mechanism (e.g., data-dependent control flow or memory access patterns) that exposes these side channels.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "threat_modeler",
+      "task": "Model the threat landscape for ML-KEM implementations, specifically evaluating how an adversary with access to timing information (active or passive) could exploit the mechanism identified by the crypto_analyst to recover secret keys or private parameters.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "standards_specialist",
+      "task": "Review current NIST SP 800-208 guidelines and the specific requirements within the NIST PQC Standard (FIPS 204) regarding side-channel resistance for ML-KEM, and determine if the identified mechanism violates these mandates or if specific countermeasures are mandated.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Synthesize the findings from the crypto_analyst, threat_modeler, and standards_specialist to quantify the risk level of unmitigated timing side channels in ML-KEM, specifically assessing the probability of key compromise and the potential impact on the overall security posture of the system.",
+      "depends_on": [
+        2,
+        3
+      ]
+    }
+  ]
+}

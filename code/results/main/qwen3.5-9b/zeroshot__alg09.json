@@ -1,0 +1,16 @@
+{
+  "id": "alg09",
+  "category": "algorithm",
+  "condition": "zeroshot",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 3.93,
+  "vram_mb": 5889,
+  "answer": "\"Dilithium\" was the submission name for the **Dilithium** digital signature algorithm, which has since been standardized by **NIST** (National Institute of Standards and Technology) as **FIPS 204**.\n\nIt was selected as one of the three finalists in NIST's Post-Quantum Cryptography (PQC) Standardization Project (alongside Falcon and SPHINCS+) and was ultimately chosen as a primary standard due to its balance of security, performance, and implementation efficiency.\n\n**Key Grounding Sources:**\n*   **NIST FIPS 204:** The official standard document titled \"Digital Signature Standard (DSS) - Dilithium\" (published in 2024).\n*   **NIST PQC Project Finalist Announcement:** Dilithium was announced as a finalist in July 2022 and selected as a standard in July 2024.\n*   **Original Submission:** The algorithm was originally submitted to NIST in 2016 by the team led by **Jean-S\u00e9bastien Coron**, **Johannes Buchmann**, and **Christophe Petit** (among others), under the name \"Dilithium.\"\n\nThe algorithm is based on the **Module-Lattice Problem** (specifically the Module Shortest Vector Problem) and is designed to be secure against both classical and quantum computer attacks.",
+  "plan": []
+}

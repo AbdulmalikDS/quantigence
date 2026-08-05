@@ -1,0 +1,31 @@
+{
+  "id": "std04",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 8,
+  "tool_calls": 4,
+  "llm_calls": 8,
+  "elapsed_s": 27.82,
+  "vram_mb": 5901,
+  "answer": "Based on the team's findings, the correct standard is **FIPS 205**, which specifies the **SLH-DSA** (Stateless Hash-based Digital Signature Algorithm).\n\nHere is the breakdown of the three 2024 NIST PQC FIPS standards regarding hash-based signatures:\n\n*   **FIPS 204 (ML-DSA)**: Specifies a **lattice-based** scheme (Module Lattice-based Digital Signature Algorithm). While it is stateless, it is not hash-based.\n*   **FIPS 205 (SLH-DSA)**: Specifies a **stateless hash-based** scheme. It achieves statelessness through the use of a Forest of Random Subsets (FORS) and a Hypertree structure, eliminating the need for a stateful counter required by traditional hash-based schemes like XMSS.\n*   **FIPS 206 (SPHINCS+)**: Specifies a **stateful** hash-based scheme.\n\n**Conclusion:**\n**FIPS 205** is the only standard among the three that specifies a stateless hash-based digital signature scheme.\n\n*Sources: NIST PQC FIPS standards documentation (FIPS 204, FIPS 205, FIPS 206) as analyzed by the standards_specialist and crypto_analyst.*",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Retrieve and summarize the specific signature schemes defined in the three 2024 NIST PQC FIPS standards (FIPS 204, FIPS 205, and FIPS 206), explicitly noting whether each scheme is stateful or stateless.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Verify the technical classification of the identified stateless hash-based scheme, confirming its reliance on a Merkle tree structure and lack of state during the signing process.",
+      "depends_on": [
+        1
+      ]
+    }
+  ]
+}

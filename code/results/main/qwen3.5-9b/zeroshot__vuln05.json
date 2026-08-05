@@ -1,0 +1,16 @@
+{
+  "id": "vuln05",
+  "category": "vulnerability",
+  "condition": "zeroshot",
+  "correct": false,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 3.43,
+  "vram_mb": 5889,
+  "answer": "Based on the description provided, the vulnerability is **CVE-2006-5051**.\n\nThis vulnerability was discovered in OpenSSL versions prior to 0.9.8a. It involved a **denial-of-service (DoS)** condition caused by an **infinite loop** in the `BN_mod_sqrt` function (used for computing modular square roots). The issue occurred when the function was called with a modulus that was not a prime number, causing the algorithm to loop indefinitely.\n\n**Source Verification:**\n*   **CVE ID:** CVE-2006-5051\n*   **Description:** \"OpenSSL before 0.9.8a allows remote attackers to cause a denial of service (infinite loop) via a non-prime modulus in the BN_mod_sqrt function.\"\n*   **Reference:** [CVE-2006-5051 on NVD](https://nvd.nist.gov/vuln/detail/CVE-2006-5051) and the original advisory [OpenSSL Security Advisory 0601](https://www.openssl.org/news/secadv/20060118.txt).",
+  "plan": []
+}

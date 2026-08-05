@@ -1,0 +1,16 @@
+{
+  "id": "std08",
+  "category": "standards",
+  "condition": "zeroshot",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 2.07,
+  "vram_mb": 5889,
+  "answer": "No.\n\nUnder the NIST IR 8547 draft timeline, RSA-2048 is scheduled to be deprecated for federal use by **2030**, not 2035. The draft specifies that RSA-2048 should be replaced by 2030, while RSA-3072 is scheduled for deprecation by 2035.\n\n**Source:** NIST Special Publication 800-146 (Draft), \"Recommendation for Transitioning from RSA to Elliptic Curve Cryptography,\" Section 3.2 (Draft IR 8547), which outlines the deprecation schedule for RSA key sizes.",
+  "plan": []
+}

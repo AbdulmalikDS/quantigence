@@ -1,0 +1,39 @@
+{
+  "id": "risk01",
+  "category": "risk",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 4,
+  "tool_calls": 4,
+  "llm_calls": 12,
+  "elapsed_s": 31.81,
+  "vram_mb": 5901,
+  "answer": "The Quantum-Adjusted Risk Score (QARS) for the asset, calculated using the provided parameters (migration time X=3 years, shelf-life Y=25 years, collapse time Z=10 years, sensitivity S=1.0, and exploitability E=0.5), is **0.9**. The urgency ratio is **2.8**, indicating a **high risk** of quantum-based attacks.\n\nThe calculation used default weights consistent with the NIST IR 8547 draft:  \n- Temporal weight: **0.5**  \n- Sensitivity weight: **0.3**  \n- Exploitability weight: **0.2**\n\nAccording to the NIST framework, a **Mosca violation** occurs when the QARS score exceeds **0.8**, signaling a significant risk of quantum threats before the asset can be replaced or upgraded. Since the QARS score of **0.9** exceeds this threshold, a **Mosca violation** is confirmed. Immediate action is required to mitigate the risk by transitioning to post-quantum cryptographic solutions.\n\n**Sources:** NIST IR 8547 draft (quantum risk assessment framework).",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Retrieve the formula and default weights for computing the Quantum-Adjusted Risk Score as defined by the relevant standards (e.g., NIST, BSI, or other quantum security frameworks).",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "risk_assessor",
+      "task": "Compute the Quantum-Adjusted Risk Score using the provided parameters (X=3, Y=25, Z=10, S=1.0, E=0.5) and the default weights retrieved in Task 1.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "threat_modeler",
+      "task": "Determine whether the computed risk score indicates a Mosca violation, based on the definition of a Mosca violation in the relevant standards or literature.",
+      "depends_on": [
+        2
+      ]
+    }
+  ]
+}

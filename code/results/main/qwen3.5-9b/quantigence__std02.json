@@ -1,0 +1,31 @@
+{
+  "id": "std02",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 10,
+  "tool_calls": 3,
+  "llm_calls": 9,
+  "elapsed_s": 19.63,
+  "vram_mb": 5901,
+  "answer": "Based on the team's findings, here is the integrated answer:\n\nThe standardized algorithm specified in **FIPS 203** is **ML-KEM** (Module-Lattice-Based Key-Encapsulation Mechanism). It is classified as a **Key-Encapsulation Mechanism (KEM)**, which is a type of **public-key cryptographic primitive**.\n\nML-KEM is designed for post-quantum security and relies on the hardness of the Module-Learning With Errors (Module-LWE) problem. It facilitates key agreement by allowing a sender to encapsulate a shared secret using a recipient's public key, which the recipient then decapsulates using their private key.\n\n**Sources:**\n*   **FIPS 203:** \"Module-Lattice-Based Key-Encapsulation Mechanism Standard\" (NIST, August 13, 2024).\n*   **NIST Corpus Search Results** (referenced by the standards specialist).",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Retrieve the official title and standardized algorithm name defined in FIPS 203, and identify the specific cryptographic primitive category (e.g., symmetric-key, hash, key agreement) to which it belongs.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Verify the technical classification of the algorithm identified in Task 1 by analyzing its mathematical structure and operational mode to confirm it is a symmetric-key primitive.",
+      "depends_on": [
+        1
+      ]
+    }
+  ]
+}

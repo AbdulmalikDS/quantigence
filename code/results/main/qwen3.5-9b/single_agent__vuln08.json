@@ -1,0 +1,16 @@
+{
+  "id": "vuln08",
+  "category": "vulnerability",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 1,
+  "tool_calls": 1,
+  "llm_calls": 2,
+  "elapsed_s": 3.76,
+  "vram_mb": 5897,
+  "answer": "CVE-2018-0732 affects **OpenSSL**.\n\nThe denial-of-service mechanism during key agreement is as follows:\n- During a TLS handshake using a Diffie-Hellman (DH) or Elliptic Curve Diffie-Hellman (ECDH) based ciphersuite, a malicious server can send a **very large prime value** to the client.\n- This forces the client to spend an **unreasonably long period of time** generating a key for this large prime.\n- The client hangs until it finishes the computation, enabling a denial-of-service attack.\n\nThis vulnerability was fixed in OpenSSL 1.1.0i-dev and OpenSSL 1.0.2p-dev.",
+  "plan": []
+}

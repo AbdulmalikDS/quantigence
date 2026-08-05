@@ -1,0 +1,16 @@
+{
+  "id": "risk10",
+  "category": "risk",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 1,
+  "llm_calls": 2,
+  "elapsed_s": 4.05,
+  "vram_mb": 5897,
+  "answer": "The Quantum-Adjusted Risk Score (QARS) for the VPN concentrator is **0.7928**.\n\nTo determine if this is a Mosca violation, we need to check if the QARS exceeds the threshold of 0.5 (the standard Mosca violation threshold). Since 0.7928 > 0.5, this **is a Mosca violation**.\n\nThe urgency ratio is 1.3333, indicating the risk is elevated relative to the temporal factors.\n\n**Summary:**\n- QARS: 0.7928\n- Mosca Violation: **Yes** (QARS > 0.5)\n- Weights used: temporal=0.5, sensitivity=0.3, exploitability=0.2",
+  "plan": []
+}

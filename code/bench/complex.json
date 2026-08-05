@@ -1,0 +1,92 @@
+[
+  {"id": "cx01",
+   "query": "A government agency uses RSA-2048 for TLS key exchange and RSA signatures for its document archive, which must remain confidential for 20 years. Migration is estimated at 3 years and a cryptographically-relevant quantum computer is assumed by roughly 2033 (Z=8). Provide a migration assessment covering: the NIST-standardized replacement for key establishment, the NIST-standardized replacement for signatures, the relevant NIST IR 8547 deprecation timeline, at least one implementation-level vulnerability class to watch during migration, and a Quantum-Adjusted Risk Score with the Mosca-violation verdict (use X=3, Y=20, Z=8, S=1.0, E=0.4).",
+   "rubric": [
+     {"point": "KEM replacement", "check": {"type": "keywords_any", "groups": [["ml-kem", "fips 203", "kyber"]]}},
+     {"point": "signature replacement", "check": {"type": "keywords_any", "groups": [["ml-dsa", "fips 204", "slh-dsa", "fips 205", "dilithium"]]}},
+     {"point": "IR 8547 timeline", "check": {"type": "keywords_any", "groups": [["2030", "2035"]]}},
+     {"point": "implementation vuln class", "check": {"type": "keywords_any", "groups": [["side-channel", "side channel", "timing", "downgrade", "random number", "rng", "constant-time"]]}},
+     {"point": "QARS value", "check": {"type": "qars", "params": {"migration_time": 3, "shelf_life": 20, "collapse_time": 8, "sensitivity": 1.0, "exploitability": 0.4}}},
+     {"point": "Mosca violation stated", "check": {"type": "keywords_any", "groups": [["mosca violation", "at risk", "violation", "exceeds", "x+y > z", "x + y > z"]]}}
+   ]},
+  {"id": "cx02",
+   "query": "Evaluate ML-KEM for deployment on constrained IoT devices. Address: the hard problem it is based on, its FIPS designation, the approximate public-key size relative to RSA-2048, one class of implementation attack relevant to lattice KEMs, and whether it is standardized for general use.",
+   "rubric": [
+     {"point": "hard problem", "check": {"type": "keywords_any", "groups": [["lattice", "module learning with errors", "module-lwe", "mlwe"]]}},
+     {"point": "FIPS designation", "check": {"type": "keywords_any", "groups": [["fips 203"]]}},
+     {"point": "key size vs RSA", "check": {"type": "keywords_any", "groups": [["larger", "bigger", "1184", "1568", "kilobyte", "kb", "hundreds of bytes", "more memory"]]}},
+     {"point": "implementation attack", "check": {"type": "keywords_any", "groups": [["timing", "side-channel", "side channel", "decapsulation", "rejection sampling"]]}},
+     {"point": "standardized", "check": {"type": "keywords_any", "groups": [["standardized", "standardised", "standard", "approved"]]}}
+   ]},
+  {"id": "cx03",
+   "query": "A security team must decide whether to keep AES-256 or migrate it during their post-quantum transition, and separately whether RSA-2048 must be replaced. Explain the quantum threat to each (naming the relevant quantum algorithm), state which must be replaced versus which can remain with a larger key, and give the NIST timeline pressure.",
+   "rubric": [
+     {"point": "Grover on AES", "check": {"type": "keywords_any", "groups": [["grover"]]}},
+     {"point": "Shor on RSA", "check": {"type": "keywords_any", "groups": [["shor"]]}},
+     {"point": "AES survives", "check": {"type": "keywords_any", "groups": [["aes-256 remains", "aes remains", "larger key", "still secure", "quadratic", "256 is", "acceptable"]]}},
+     {"point": "RSA must be replaced", "check": {"type": "keywords_any", "groups": [["rsa must", "replace rsa", "rsa is broken", "rsa cannot", "migrate rsa", "rsa is vulnerable"]]}},
+     {"point": "NIST timeline", "check": {"type": "keywords_any", "groups": [["2030", "2035", "ir 8547"]]}}
+   ]},
+  {"id": "cx04",
+   "query": "Assess the risk of a healthcare records system using ECC (ECDSA/ECDH) that must protect patient data for 25 years, with a 5-year migration estimate and an assumed collapse time of 10 years. Cover the applicable quantum threat, the standardized replacements for key exchange and signatures, and compute the QARS (S=1.0, E=0.5) with the Mosca verdict.",
+   "rubric": [
+     {"point": "quantum threat to ECC", "check": {"type": "keywords_any", "groups": [["shor", "discrete log", "elliptic curve discrete"]]}},
+     {"point": "KEM replacement", "check": {"type": "keywords_any", "groups": [["ml-kem", "fips 203"]]}},
+     {"point": "signature replacement", "check": {"type": "keywords_any", "groups": [["ml-dsa", "fips 204", "slh-dsa", "fips 205"]]}},
+     {"point": "QARS value", "check": {"type": "qars", "params": {"migration_time": 5, "shelf_life": 25, "collapse_time": 10, "sensitivity": 1.0, "exploitability": 0.5}}},
+     {"point": "Mosca violation", "check": {"type": "keywords_any", "groups": [["violation", "at risk", "exceeds", "x+y"]]}}
+   ]},
+  {"id": "cx05",
+   "query": "Compare ML-DSA and SLH-DSA as post-quantum signature choices. Cover: the mathematical basis of each, their FIPS numbers, a trade-off in signature size or speed, and a scenario where the more conservative hash-based option is preferable.",
+   "rubric": [
+     {"point": "ML-DSA basis", "check": {"type": "keywords_any", "groups": [["lattice", "module"]]}},
+     {"point": "SLH-DSA basis", "check": {"type": "keywords_any", "groups": [["hash-based", "hash based", "hash function"]]}},
+     {"point": "FIPS numbers", "check": {"type": "keywords_all", "must": ["204", "205"]}},
+     {"point": "size/speed tradeoff", "check": {"type": "keywords_any", "groups": [["larger signature", "bigger signature", "signature size", "slower", "size", "performance"]]}},
+     {"point": "conservative scenario", "check": {"type": "keywords_any", "groups": [["conservative", "long-term", "long term", "well-understood", "well understood", "no lattice", "different assumption", "hedge"]]}}
+   ]},
+  {"id": "cx06",
+   "query": "A VPN concentrator uses RSA-2048, has a 10-year service life (Y=10), needs 2 years to migrate (X=2), and the assumed collapse time is 9 years (Z=9). With sensitivity 0.7 and exploitability 0.5, provide: the QARS and Mosca verdict, the standardized PQC key-establishment replacement, the IR 8547 disallowance year, and whether a hybrid classical+PQC key exchange is advisable during transition.",
+   "rubric": [
+     {"point": "QARS value", "check": {"type": "qars", "params": {"migration_time": 2, "shelf_life": 10, "collapse_time": 9, "sensitivity": 0.7, "exploitability": 0.5}}},
+     {"point": "Mosca verdict", "check": {"type": "keywords_any", "groups": [["violation", "at risk", "exceeds", "margin", "below"]]}},
+     {"point": "KEM replacement", "check": {"type": "keywords_any", "groups": [["ml-kem", "fips 203"]]}},
+     {"point": "disallowance year", "check": {"type": "keywords_any", "groups": [["2035"]]}},
+     {"point": "hybrid advisable", "check": {"type": "keywords_any", "groups": [["hybrid", "combined", "classical and", "defense in depth", "defence in depth"]]}}
+   ]},
+  {"id": "cx07",
+   "query": "Summarize the state of NIST post-quantum standardization for a CISO briefing: name the three standards finalized in 2024 and their algorithms, note the status of the transition roadmap document, name one fourth-round candidate that was broken and how, and state the practical first step an enterprise should take.",
+   "rubric": [
+     {"point": "three FIPS standards", "check": {"type": "keywords_all", "must": ["203", "204", "205"]}},
+     {"point": "algorithm names", "check": {"type": "keywords_any", "groups": [["ml-kem"], ["ml-dsa"], ["slh-dsa"]]}},
+     {"point": "roadmap is draft", "check": {"type": "keywords_any", "groups": [["draft", "8547"]]}},
+     {"point": "broken candidate", "check": {"type": "keywords_any", "groups": [["sike", "sidh", "isogeny"]]}},
+     {"point": "practical first step", "check": {"type": "keywords_any", "groups": [["inventory", "discovery", "cryptographic inventory", "identify", "audit", "assessment"]]}}
+   ]},
+  {"id": "cx08",
+   "query": "An OpenSSL-based service must be hardened for the post-quantum transition. Identify the standardized PQC KEM to adopt, one real OpenSSL CVE illustrating implementation risk in cryptographic code, the class of that vulnerability, and why 'harvest now, decrypt later' makes immediate action necessary for long-lived secrets.",
+   "rubric": [
+     {"point": "PQC KEM", "check": {"type": "keywords_any", "groups": [["ml-kem", "fips 203"]]}},
+     {"point": "real OpenSSL CVE", "check": {"type": "regex", "pattern": "CVE-\\d{4}-\\d{4,7}"}},
+     {"point": "vuln class", "check": {"type": "keywords_any", "groups": [["denial of service", "denial-of-service", "dos", "buffer overflow", "infinite loop", "padding oracle", "memory"]]}},
+     {"point": "HNDL rationale", "check": {"type": "keywords_any", "groups": [["harvest now", "store now", "decrypt later", "long-lived", "long lived", "future decryption"]]}}
+   ]},
+  {"id": "cx09",
+   "query": "Provide a prioritized post-quantum risk comparison of two assets: (A) a public marketing website with TLS (X=0.5, Y=0.5, Z=12, S=0.0, E=0.6) and (B) a classified archive (X=4, Y=30, Z=12, S=1.0, E=0.4). Compute the QARS for each, state which is more urgent and why, and recommend which to migrate first.",
+   "rubric": [
+     {"point": "QARS asset A", "check": {"type": "qars", "params": {"migration_time": 0.5, "shelf_life": 0.5, "collapse_time": 12, "sensitivity": 0.0, "exploitability": 0.6}}},
+     {"point": "QARS asset B", "check": {"type": "qars", "params": {"migration_time": 4, "shelf_life": 30, "collapse_time": 12, "sensitivity": 1.0, "exploitability": 0.4}}},
+     {"point": "B more urgent", "check": {"type": "keywords_any", "groups": [["archive", "asset b", "classified", "b is", "b first"]]}},
+     {"point": "recommendation", "check": {"type": "keywords_any", "groups": [["migrate", "prioritize", "prioritise", "first", "recommend"]]}}
+   ]},
+  {"id": "cx10",
+   "query": "Explain, for a mixed RSA and ECC environment, a complete migration strategy: which quantum algorithm threatens the current primitives, the standardized replacements for encryption/KEM and for signatures, the NIST deprecation and disallowance years, one implementation pitfall (e.g., downgrade or side-channel), and why crypto-agility matters going forward.",
+   "rubric": [
+     {"point": "quantum threat", "check": {"type": "keywords_any", "groups": [["shor"]]}},
+     {"point": "KEM replacement", "check": {"type": "keywords_any", "groups": [["ml-kem", "fips 203"]]}},
+     {"point": "signature replacement", "check": {"type": "keywords_any", "groups": [["ml-dsa", "fips 204", "slh-dsa", "fips 205"]]}},
+     {"point": "deprecation/disallow years", "check": {"type": "keywords_any", "groups": [["2030", "2035"]]}},
+     {"point": "implementation pitfall", "check": {"type": "keywords_any", "groups": [["downgrade", "side-channel", "side channel", "timing", "rollback"]]}},
+     {"point": "crypto-agility", "check": {"type": "keywords_any", "groups": [["crypto-agility", "crypto agility", "agile", "agility", "modular", "swap"]]}}
+   ]}
+]

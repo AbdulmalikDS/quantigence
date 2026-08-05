@@ -1,0 +1,16 @@
+{
+  "id": "std06",
+  "category": "standards",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 7,
+  "tool_calls": 5,
+  "llm_calls": 6,
+  "elapsed_s": 13.02,
+  "vram_mb": 5897,
+  "answer": "Based on **FIPS 203** (Module-Lattice-Based Key-Encapsulation Mechanism Standard), the three approved parameter sets for ML-KEM are:\n\n1.  **ML-KEM-512**\n2.  **ML-KEM-768**\n3.  **ML-KEM-1024**\n\nThese sets are defined in **Section 8 (Parameter Sets)** of the standard, specifically referenced in **Table 2**. Each set corresponds to a different security level and performance trade-off, with the name indicating the approximate security strength in bits (e.g., ML-KEM-512 provides roughly 128-bit security, while ML-KEM-1024 provides roughly 256-bit security).\n\nEach parameter set assigns specific numerical values to the following variables:\n*   $\\eta$ (eta)\n*   $\\delta_1$ (delta-1)\n*   $\\delta_2$ (delta-2)\n*   $q$ (modulus)\n*   $k$ (dimension)\n\nWhile $\\eta$ is always 256 and $\\delta$ is always 3329 across all sets, the values for $k$, $q$, and the other parameters vary between the three sets to achieve the desired security levels.\n\n**Source:** NIST FIPS 203, Section 8, Table 2 (\"Approved parameter sets for ML-KEM\").",
+  "plan": []
+}

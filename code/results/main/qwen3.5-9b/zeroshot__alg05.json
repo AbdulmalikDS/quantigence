@@ -1,0 +1,16 @@
+{
+  "id": "alg05",
+  "category": "algorithm",
+  "condition": "zeroshot",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 6.56,
+  "vram_mb": 5889,
+  "answer": "Based on current cryptographic consensus and the specific mechanics of Shor's algorithm, here is the breakdown of which algorithms are broken:\n\n**Broken by Shor's Algorithm:**\n*   **RSA**: Yes. Shor's algorithm solves the Integer Factorization Problem in polynomial time, which breaks the security foundation of RSA.\n*   **ECC (Elliptic Curve Cryptography)**: Yes. Shor's algorithm solves the Elliptic Curve Discrete Logarithm Problem (ECDLP) in polynomial time, breaking all ECC-based schemes (e.g., ECDSA, ECDH).\n\n**Not Broken by Shor's Algorithm:**\n*   **AES-256**: No. Shor's algorithm does not break symmetric-key algorithms like AES. AES security relies on the complexity of substitution-permutation networks, not number-theoretic problems solvable by Shor's algorithm.\n    *   *Note*: While Grover's algorithm can provide a quadratic speedup for symmetric-key search (reducing AES-256 security from $2^{256}$ to $2^{128}$ operations), this is generally considered sufficient security margin for post-quantum contexts. AES-256 is widely regarded as secure against quantum attacks, whereas RSA and ECC are not.\n\n**Sources:**\n*   **NIST Post-Quantum Cryptography Standardization**: NIST explicitly states that Shor's algorithm breaks RSA, Diffie-Hellman, and Elliptic Curve Cryptography, but symmetric algorithms like AES require key size increases (e.g., doubling key sizes) to maintain security against Grover's algorithm, not because they are broken by Shor's.\n    *   Reference: *NIST Post-Quantum Cryptography Standardization*, \"Why do we need post-quantum cryptography?\" (NIST IR 8413).\n*   **Shor's Original Paper**: Peter Shor's 1994 paper \"Algorithms for Quantum Computation: Discrete Logarithms and Factoring\" details the polynomial-time solutions for factoring and discrete logarithms, which underpin RSA and ECC.\n    *   Reference: Shor, P. W. (1994). \"Algorithms for quantum computation: discrete logarithms and factoring\". *Proceedings 35th Annual Symposium on Foundations of Computer Science*.",
+  "plan": []
+}

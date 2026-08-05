@@ -1,0 +1,22 @@
+# large / regenerable artifacts
+code/vendor/
+code/models/
+code/.venv/
+code/data/nist_pdfs/
+__pycache__/
+*.pyc
+*.gguf
+
+# build outputs and local packaging (not part of the repo)
+paper/build/
+build_pdf/
+Quantigence*.pdf
+*.tar.gz
+.claude/
+
+# superseded v1 artifacts (kept locally, not tracked)
+architecture.png
+landscape.png
+00README.json
+paper/main.bbl
+paper/

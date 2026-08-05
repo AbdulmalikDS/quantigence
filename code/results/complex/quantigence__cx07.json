@@ -1,0 +1,17 @@
+{
+  "id": "cx07",
+  "condition": "quantigence",
+  "coverage": 0.8,
+  "hits": [
+    "three FIPS standards",
+    "algorithm names",
+    "roadmap is draft",
+    "practical first step"
+  ],
+  "n_rubric": 5,
+  "quality": 1.0,
+  "tool_calls": 25,
+  "llm_calls": 28,
+  "elapsed_s": 109.97,
+  "answer": "**To:** CISO\n**From:** Supervisor, Quantum-Security Research Team\n**Subject:** Executive Briefing: NIST Post-Quantum Standardization Status (2024)\n\n### 1. Finalized Standards (March 2024)\nNIST finalized three standards in March 2024. These replace the initial Round 3 candidates and are now the approved algorithms for federal and recommended enterprise use.\n\n| Standard ID | Algorithm Name | Primary Function |\n| :--- | :--- | :--- |\n| **FIPS 203** | **ML-KEM** (formerly CRYSTALS-Kyber) | Key Encapsulation (replaces ECDH) |\n| **FIPS 204** | **ML-DSA** (formerly CRYSTALS-Dilithium) | Digital Signatures (replaces ECDSA/EdDSA) |\n| **FIPS 205** | **SLH-DSA** (formerly SPHINCS+) | Digital Signatures (Stateless, for constrained environments) |\n\n*Note: While SPHINCS+ was a finalist, it was selected as the third standard (SLH-DSA) rather than remaining solely as a \"fourth-round candidate.\" It is now a finalized standard, not a broken candidate.*\n\n### 2. Transition Roadmap Status\nThe **NIST Post-Quantum Cryptography Transition Roadmap (NIST IR 8547)** is currently in the **Initial Public Draft (IPD)** phase.\n*   **Publication:** November 2024.\n*   **Status:** Active and evolving.\n*   **Content:** It provides a high-level framework and realistic timeline for migration but does not yet contain detailed, hard calendar deadlines for specific phases (e.g., \"Phase 1 by 2025\"). It serves as a guiding framework for federal agencies and technology providers.\n\n### 3. Fourth-Round Candidate Breakdown\n**Correction on Premise:** There is currently **no broken fourth-round candidate** to report.\n*   **Context:** The \"fourth round\" of NIST PQC standardization concluded in 2024 with the finalization of the three standards listed above (FIPS 203, 204, 205).\n*   **Clarification:** The candidate **SPHINCS+** was part of the *third* round. It was **not broken**; it was selected as the winner for the stateless hash-based signature category and finalized as **FIPS 205 (SLH-DSA)**.\n*   **Future Outlook:** NIST has not yet announced a fourth round of candidates. Any claim suggesting a specific fourth-round candidate was broken is unsupported by current public records.\n\n### 4. Practical First Step for Enterprise\n**Immediate Action:** Conduct a **cryptographic inventory and risk assessment** focused on the algorithms identified in FIPS 203, 204, and 205.\n*   **Why:** You must identify where current elliptic curve cryptography (ECC) is used (signatures and key exchange) to plan the migration to ML-KEM and ML-DSA.\n*   **Secondary Action:** Monitor the NIST IR 8547 IPD for updates on specific migration phases, but do not wait for the final release to begin inventorying assets.\n\n***\n\n**Sources Cited:**\n*   *crypto_analyst*: FIPS 203, 204, 205 specifications and algorithm mappings.\n*   *standards_specialist*: Status of NIST IR 8547 (Initial Public Draft).\n*   *risk_assessor*: Consolidation of finalized standards and clarification on SPHINCS+/SLH-DSA status."
+}

@@ -1,0 +1,23 @@
+{
+  "id": "alg08",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": false,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 4,
+  "tool_calls": 1,
+  "llm_calls": 5,
+  "elapsed_s": 7.92,
+  "vram_mb": 3617,
+  "answer": "The submission name \"Kyber\" refers to the standardized algorithm **CRYSTALS-Kyber**, a lattice-based key-encapsulation mechanism (KEM) selected as a standard in the NIST Post-Quantum Cryptography (PQC) standardization process. This is documented in the NIST corpus, specifically in the context of the third round of the PQC standardization process (NIST IR 8413).",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Identify the standardized algorithm that was previously submitted under the name 'Kyber'.",
+      "depends_on": []
+    }
+  ]
+}

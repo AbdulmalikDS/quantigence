@@ -1,0 +1,31 @@
+{
+  "id": "alg07",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 1,
+  "llm_calls": 7,
+  "elapsed_s": 40.45,
+  "vram_mb": 3617,
+  "answer": "The \"Harvest Now, Decrypt Later\" (also called \"Store Now, Decrypt Later\") threat model describes a scenario in which an adversary intercepts and stores encrypted data without being able to decrypt it at the time of interception. The adversary plans to decrypt the data in the future using advanced computational capabilities, such as quantum computing, which may break the encryption algorithms used at the time of collection (threat_modeler).\n\nThis threat model assumes that the encryption used is vulnerable to future decryption methods, and that the adversary has the capability to store large volumes of data for extended periods (threat_modeler). The risk associated with this model is very high, as indicated by the Quantum-Adjusted Risk Score (QARS) of **0.93** and an urgency ratio of **2.5**, emphasizing the need for immediate action to mitigate the risks (risk_assessor).\n\nThe implications of this model highlight the importance of long-term data security and the urgent need to transition to quantum-resistant cryptographic algorithms (risk_assessor).",
+  "plan": [
+    {
+      "id": 1,
+      "role": "threat_modeler",
+      "task": "Describe the 'Harvest Now, Decrypt Later' (Store Now Decrypt Later) threat model, including its key components, assumptions, and typical scenarios in which it is applied.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "risk_assessor",
+      "task": "Assess the potential risks and implications of the 'Harvest Now, Decrypt Later' threat model in modern cryptographic systems and data security practices.",
+      "depends_on": [
+        1
+      ]
+    }
+  ]
+}

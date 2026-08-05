@@ -1,0 +1,18 @@
+{
+  "id": "cx02",
+  "condition": "single_agent",
+  "coverage": 1.0,
+  "hits": [
+    "hard problem",
+    "FIPS designation",
+    "key size vs RSA",
+    "implementation attack",
+    "standardized"
+  ],
+  "n_rubric": 5,
+  "quality": 1.0,
+  "tool_calls": 6,
+  "llm_calls": 4,
+  "elapsed_s": 19.2,
+  "answer": "Based on the provided sources and current cryptographic standards, here is an evaluation of ML-KEM for deployment on constrained IoT devices:\n\n**1. Hard Problem**\nML-KEM is based on the hardness of the **Module-Lattice Problem** (specifically, the Module Learning With Errors or MLWE problem). It relies on the difficulty of distinguishing a lattice point perturbed by small noise from a uniformly random point in a module lattice. This problem is believed to be resistant to attacks by both classical and quantum computers.\n\n**2. FIPS Designation**\nML-KEM is standardized as **FIPS 203** (Module-Lattice-Based Key-Encapsulation Mechanism). It was published by NIST in 2024 as a mandatory standard for federal information systems and is widely considered the primary post-quantum key encapsulation mechanism for general use.\n\n**3. Public-Key Size Relative to RSA-2048**\nML-KEM offers different parameter sets (ML-KEM-512, ML-KEM-768, ML-KEM-1024) to balance security and efficiency.\n*   **ML-KEM-512** (equivalent to 128-bit classical security): The public key size is **800 bytes**.\n*   **RSA-2048** public key size is typically **256 bytes** (2048 bits).\n*   **Comparison**: The ML-KEM-512 public key is approximately **3.1 times larger** than an RSA-2048 public key. While this is a significant increase, it is generally considered acceptable for many IoT applications where bandwidth and storage are not extremely tight, especially given the long-term security guarantees against quantum computers. For highly constrained devices, ML-KEM-512 is often the preferred parameter set due to its smaller footprint compared to higher-security variants.\n\n**4. Implementation Attack Class**\nA primary class of implementation attacks relevant to lattice-based KEMs like ML-KEM is **side-channel attacks**, particularly **timing attacks** and **power analysis**.\n*   **Timing Attacks**: These exploit variations in execution time caused by data-dependent operations (e.g., conditional branches or memory access patterns) during key generation, encapsulation, or decapsulation.\n*   **Power Analysis**: These analyze power consumption traces to infer secret information.\n*   **Relevance**: Lattice-based schemes often involve complex polynomial arithmetic and number-theoretic transforms (NTT), which can introduce data-dependent timing variations if not carefully implemented. Proper countermeasures (e.g., constant-time implementations, masking) are essential for secure deployment.\n\n**5. Standardization Status**\nYes, ML-KEM is **standardized for general use**. It is specified in **FIPS 203**, making it an approved algorithm for use in federal systems and a widely adopted standard in the broader industry for post-quantum cryptography. It is designed to be interoperable and is intended for widespread deployment in various applications, including IoT, provided that implementation constraints (such as memory and computational power) are met."
+}

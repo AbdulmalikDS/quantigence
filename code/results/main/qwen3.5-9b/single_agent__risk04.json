@@ -1,0 +1,16 @@
+{
+  "id": "risk04",
+  "category": "risk",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 1,
+  "llm_calls": 2,
+  "elapsed_s": 3.97,
+  "vram_mb": 5897,
+  "answer": "The Quantum-Adjusted Risk Score (QARS) for the asset is **0.98**, with an urgency ratio of **3.125**.\n\nTo determine if this is a **Mosca violation**, we need to check if the QARS exceeds the threshold typically associated with Mosca's criterion. Mosca's violation generally occurs when the QARS is greater than 1.0, indicating a high risk of quantum compromise before migration can occur.\n\nIn this case, the QARS is **0.98**, which is **below 1.0**. Therefore, **this is not a Mosca violation**.\n\nHowever, the urgency ratio of 3.125 suggests that the asset is still at significant risk and should be prioritized for migration or mitigation.",
+  "plan": []
+}

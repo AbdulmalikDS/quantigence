@@ -1,0 +1,49 @@
+{
+  "id": "alg03",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 4,
+  "tool_calls": 3,
+  "llm_calls": 13,
+  "elapsed_s": 63.36,
+  "vram_mb": 3613,
+  "answer": "Grover's algorithm, a quantum search algorithm, reduces the effective security strength of a 128-bit symmetric key cipher like AES-128 from 128 bits to 64 bits by halving the key space search time, requiring $ O(2^{64}) $ operations instead of $ O(2^{128}) $ (crypto_analyst, standards_specialist). This makes AES-128 vulnerable to quantum attacks, particularly in long-term security scenarios (threat_modeler).\n\nTo mitigate this risk, it is recommended to transition to longer key lengths such as AES-256, which provides 128-bit security against quantum attacks (crypto_analyst). Additionally, the NIST draft transition roadmap (NIST IR 8547) emphasizes the importance of moving to higher security categories, such as AES-192 or AES-256, for post-quantum resilience (standards_specialist).\n\nThe Quantum-Adjusted Risk Score (QARS) for AES-128 is 0.8504, indicating a high risk due to its vulnerability to Grover's algorithm (risk_assessor). Mitigation efforts should include transitioning to post-quantum cryptography (PQC) as NIST's standardization process progresses.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Analyze how Grover's algorithm affects the effective security strength of a 128-bit symmetric key cipher like AES-128, including the theoretical reduction in key space security.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "standards_specialist",
+      "task": "Review current cryptographic standards and recommendations (e.g., NIST, ISO) regarding the use of symmetric key algorithms in the context of quantum computing threats, specifically for AES-128.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "risk_assessor",
+      "task": "Assess the practical risk posed by Grover's algorithm to systems relying on AES-128, considering current and projected quantum computing capabilities, and evaluate the urgency of mitigation.",
+      "depends_on": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "role": "threat_modeler",
+      "task": "Model potential adversarial scenarios involving quantum computing capabilities that could exploit Grover's algorithm against AES-128, and identify system components most at risk.",
+      "depends_on": [
+        1,
+        3
+      ]
+    }
+  ]
+}

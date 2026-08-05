@@ -1,0 +1,31 @@
+{
+  "id": "alg08",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 5,
+  "tool_calls": 2,
+  "llm_calls": 8,
+  "elapsed_s": 16.78,
+  "vram_mb": 5901,
+  "answer": "The submission name **Kyber** corresponds to the now-standardized algorithm **ML-KEM** (Module-Lattice-based Key Encapsulation Mechanism).\n\nDeveloped by the Post-Quantum Cryptography (PQC) project team, Kyber was a finalist in Round 3 of the NIST standardization process. Following successful evaluation, it was finalized and published as **FIPS 203** in 2024. While \"Kyber\" remains the widely recognized project name, the official standardized designation within the FIPS document is ML-KEM.\n\n**Sources:**\n*   NIST FIPS 203: \"Module-Lattice-based Key Encapsulation Mechanism Standard\" (2024).\n*   NIST PQC Round 3 Finalists documentation.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Identify the specific NIST Post-Quantum Cryptography (PQC) standardization round and the final standardized algorithm name that corresponds to the submission code 'Kyber'.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "standards_specialist",
+      "task": "Verify the official NIST FIPS publication number and the exact standardized name (e.g., FIPS 203) associated with the 'Kyber' submission to ensure no naming discrepancies exist in the final standard.",
+      "depends_on": [
+        1
+      ]
+    }
+  ]
+}

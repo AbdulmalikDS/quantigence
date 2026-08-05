@@ -1,0 +1,38 @@
+{
+  "id": "vuln09",
+  "category": "vulnerability",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 11,
+  "tool_calls": 4,
+  "llm_calls": 10,
+  "elapsed_s": 62.1,
+  "vram_mb": 5901,
+  "answer": "### Executive Summary: Downgrade Attacks in Hybrid PQC Key Exchange\n\nA **downgrade attack** in the context of hybrid classical/post-quantum (PQC) key exchange is an adversarial technique where an on-path attacker manipulates the protocol negotiation to force communicating parties to utilize only the classical (non-quantum-resistant) component of the scheme, effectively disabling the post-quantum security guarantees.\n\nIn a standard hybrid implementation (e.g., combining ML-KEM with X25519), the protocol is designed to generate and exchange keys for both algorithms, deriving a final shared secret from both. However, if the protocol lacks strict integrity checks or explicit version negotiation, an attacker can intercept the exchange and strip or alter the PQC ciphertexts, causing the receiver to fall back to using only the classical key.\n\n### Why This Matters During PQC Migration\n\nThe risk of downgrade attacks is critical during the transition period for three primary reasons:\n\n1.  **Total Negation of Security Guarantees:** Hybrid schemes provide security only if *both* components are enforced. If an attacker forces a fallback to classical-only key exchange, the entire purpose of the migration is defeated.\n2.  **Legacy Vulnerabilities:** Classical algorithms (such as ECDHE) are susceptible to future quantum attacks and may possess known implementation weaknesses that PQC algorithms do not share.\n3.  **Harvest Now, Decrypt Later (HNDL):** Attackers can record encrypted traffic during the migration window. If they can downgrade the connection to classical, they can immediately decrypt the data or wait for quantum computers to break the classical keys, whereas PQC-protected traffic would remain secure against current and near-future quantum capabilities.\n\n### Risk Assessment\n\nAccording to the team's **Quantum-Adjusted Risk Score (QARS)** analysis, the risk of a successful downgrade attack on a hybrid key exchange is rated as **High (0.8567)**. This score reflects a high sensitivity (0.8) because the attack completely negates the primary security objective, combined with a significant temporal exposure window during the 5-year migration phase.\n\n### Recommendations\n\nRelying solely on the hybrid algorithm is insufficient. To mitigate this risk, organizations must implement **strict downgrade protection mechanisms**, including:\n*   Explicit version negotiation protocols.\n*   Certificate pinning.\n*   Strict TLS configuration that prevents fallback to legacy modes.\n\nWithout these controls, the migration strategy remains vulnerable to complete security regression.\n\n***\n\n**Sources:**\n*   **crypto_analyst**: Defined the mechanics of the attack vector and the protocol flow.\n*   **threat_modeler**: Analyzed the specific dangers during migration and the \"harvest now, decrypt later\" threat.\n*   **risk_assessor**: Provided the QARS score (0.8567) and urgency metrics.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Define the mechanics of a downgrade attack specifically within hybrid classical/post-quantum (PQC) key exchange protocols, detailing how an adversary forces the use of a weaker classical-only component.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "threat_modeler",
+      "task": "Analyze the specific threat vectors during PQC migration where downgrade attacks are most viable, focusing on the transition period where legacy classical infrastructure coexists with new PQC implementations.",
+      "depends_on": []
+    },
+    {
+      "id": 3,
+      "role": "risk_assessor",
+      "task": "Synthesize the security implications of downgrade attacks on the overall migration strategy, quantifying the risk of long-term key compromise if the classical component is downgraded.",
+      "depends_on": [
+        1,
+        2
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "alg05",
+  "category": "algorithm",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 5.35,
+  "vram_mb": 5897,
+  "answer": "Among the algorithms you listed, **RSA** and **ECC** are broken by a cryptographically relevant quantum computer running Shor's algorithm. **AES-256** is not broken by Shor's algorithm.\n\nHere is the breakdown:\n\n*   **RSA**: Broken. Shor's algorithm can factor large integers in polynomial time, which directly compromises the security of RSA, as its security relies on the difficulty of integer factorization.\n*   **ECC (Elliptic Curve Cryptography)**: Broken. Shor's algorithm can solve the Elliptic Curve Discrete Logarithm Problem (ECDLP) in polynomial time, breaking the security of ECC.\n*   **AES-256**: Not broken by Shor's algorithm. AES is a symmetric-key algorithm. While Grover's algorithm can provide a quadratic speedup for symmetric-key search (reducing the effective security of AES-256 from 256 bits to 128 bits), it does not break AES-256 in the same way Shor's algorithm breaks RSA and ECC. AES-256 remains secure against quantum attacks, though the security margin is reduced.\n\n**Sources:**\n*   **NIST PQC Standards**: NIST has standardized post-quantum cryptography (FIPS 203, 204, 205) specifically to replace RSA and ECC, acknowledging their vulnerability to Shor's algorithm.\n*   **arXiv**: Numerous papers discuss the impact of Shor's algorithm on public-key cryptography. For example, a search for \"Shor's algorithm RSA ECC\" would yield relevant literature.\n\nTherefore, the classical public-key algorithms broken by Shor's algorithm from your list are **RSA** and **ECC**.",
+  "plan": []
+}

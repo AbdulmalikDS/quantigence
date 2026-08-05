@@ -1,0 +1,31 @@
+{
+  "id": "std07",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 8,
+  "tool_calls": 2,
+  "llm_calls": 8,
+  "elapsed_s": 16.01,
+  "vram_mb": 5901,
+  "answer": "The algorithm standardized in **FIPS 204** is the **Module-Lattice-Based Digital Signature Standard (ML-DSA)**, as confirmed by the NIST corpus (standards_specialist). The mathematical structure underlying ML-DSA is based on **module lattices**, specifically leveraging the **Module Learning With Errors (MLWE)** problem, a variant of the Learning With Errors (LWE) problem adapted to module lattices (crypto_analyst). This problem is defined over a ring of integers extended with a prime modulus, typically denoted as $\\mathbb{Z}[\\xi]$, where $\\xi$ is a root of unity or a specific algebraic structure. The MLWE problem provides the cryptographic security foundation for ML-DSA, ensuring resistance to both classical and quantum attacks.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Identify the algorithm standardized in FIPS 204.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Determine the mathematical structure underlying the identified algorithm.",
+      "depends_on": [
+        1
+      ]
+    }
+  ]
+}

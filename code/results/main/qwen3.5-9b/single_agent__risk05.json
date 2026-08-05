@@ -1,0 +1,16 @@
+{
+  "id": "risk05",
+  "category": "risk",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 1,
+  "llm_calls": 2,
+  "elapsed_s": 3.99,
+  "vram_mb": 5897,
+  "answer": "The computed Quantum-Adjusted Risk Score (QARS) for the asset is **0.0201**.\n\nTo determine if this is a **Mosca violation**, we need to check if the QARS exceeds a certain threshold. According to the Mosca et al. framework, a violation typically occurs when the QARS is greater than 0.1 (or sometimes 0.05, depending on the specific risk tolerance).\n\nIn this case:\n- **QARS = 0.0201**\n- This is **below** the typical threshold of 0.1.\n\nTherefore, **this is not a Mosca violation** under standard thresholds.\n\nThe urgency ratio is 0.1, which is also relatively low, indicating that the asset does not pose an immediate quantum risk under the given parameters.",
+  "plan": []
+}

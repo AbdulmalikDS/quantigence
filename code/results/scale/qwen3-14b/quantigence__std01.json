@@ -1,0 +1,47 @@
+{
+  "id": "std01",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 4,
+  "tool_calls": 2,
+  "llm_calls": 12,
+  "elapsed_s": 41.35,
+  "vram_mb": 5901,
+  "answer": "The three post-quantum cryptography standards finalized by NIST in August 2024 are:\n\n1. **FIPS 203 - Module-Lattice-Based Key Encapsulation Mechanism (ML-KEM)**: This standard specifies three parameter sets: ML-KEM-512, ML-KEM-768, and ML-KEM-1024.  \n2. **FIPS 204 - Module-Lattice-Based Digital Signature Scheme (ML-DSA)**: This standard specifies three parameter sets: ML-DSA-40, ML-DSA-64, and ML-DSA-80.  \n3. **FIPS 205 - Stateless Hash-Based Digital Signature Standard (SLH-DSA)**: This standard specifies a stateless hash-based digital signature scheme based on SPHINCS+.\n\nThese standards were published on August 13, 2024, as part of NIST's Post-Quantum Cryptography Standardization process (verified by the standards_specialist and risk_assessor). The descriptions of the algorithms were corroborated by the crypto_analyst.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Identify the three post-quantum cryptography standards that NIST finalized in August 2024, including their standardized algorithm names.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "standards_specialist",
+      "task": "Retrieve the corresponding FIPS numbers for each of the three post-quantum cryptography standards identified in Task 1.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "risk_assessor",
+      "task": "Verify the accuracy of the FIPS numbers and algorithm names by cross-referencing with official NIST publications or announcements from August 2024.",
+      "depends_on": [
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "role": "crypto_analyst",
+      "task": "Confirm that the algorithms listed are indeed post-quantum cryptographic algorithms and provide a brief description of each.",
+      "depends_on": [
+        1
+      ]
+    }
+  ]
+}

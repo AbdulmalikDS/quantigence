@@ -1,0 +1,39 @@
+{
+  "id": "vuln07",
+  "category": "vulnerability",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 11,
+  "tool_calls": 8,
+  "llm_calls": 17,
+  "elapsed_s": 62.34,
+  "vram_mb": 3617,
+  "answer": "Timing side channels are a particular concern for lattice-based Key Encapsulation Mechanisms (KEMs) such as ML-KEM because they can leak sensitive information about the private key or the operations being performed during cryptographic computations. One concrete mechanism involves the **modular reduction** during the decapsulation phase, which is sensitive to timing variations (crypto_analyst). If this operation is not implemented in constant time, an attacker could measure the time taken for these operations and infer information about the private key (threat_modeler). This is especially critical in ML-KEM, where the decapsulation process involves solving noisy linear equations that depend on the private key, making timing variations a potential vector for side-channel attacks.\n\nThe risk associated with this vulnerability is quantified by a **Quantum-Adjusted Risk Score (QARS)** of **0.88**, with an urgency ratio of **5.0**, reflecting the high sensitivity of the private key to timing leaks and the moderate exploitability of the vulnerability (risk_assessor).",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Explain how lattice-based KEMs like ML-KEM operate, focusing on their key encapsulation mechanism and any operations that are sensitive to timing variations.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "threat_modeler",
+      "task": "Identify potential side-channel attack vectors that could be exploited in the context of lattice-based KEMs, with a focus on timing channels.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "risk_assessor",
+      "task": "Assess the risk associated with timing side channels in lattice-based KEMs, considering the impact on security and the likelihood of exploitation.",
+      "depends_on": [
+        2
+      ]
+    }
+  ]
+}

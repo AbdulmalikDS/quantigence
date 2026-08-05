@@ -1,0 +1,16 @@
+{
+  "id": "risk07",
+  "category": "risk",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 1,
+  "llm_calls": 2,
+  "elapsed_s": 3.03,
+  "vram_mb": 5897,
+  "answer": "The Quantum-Adjusted Risk Score (QARS) for the government archive is **0.88**.\n\nTo determine if this is a Mosca violation, we compare the QARS to the threshold of 0.5. Since 0.88 > 0.5, this **is a Mosca violation**.\n\nThe urgency ratio is 2.83, indicating a high level of urgency relative to the asset's risk profile.",
+  "plan": []
+}

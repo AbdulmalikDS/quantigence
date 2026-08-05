@@ -1,0 +1,16 @@
+{
+  "id": "alg04",
+  "category": "algorithm",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 6,
+  "tool_calls": 2,
+  "llm_calls": 3,
+  "elapsed_s": 10.26,
+  "vram_mb": 5897,
+  "answer": "Perfect! The third result specifically mentions \"Shor's discrete logarithm quantum algorithm for elliptic curves,\" which directly confirms that Shor's algorithm addresses the discrete logarithm problem for elliptic curves.\n\nBased on the search results and established cryptographic knowledge, I can now provide a definitive answer:\n\n**Shor's algorithm efficiently solves two mathematical problems:**\n\n1. **Integer Factorization** - Breaking down large composite numbers into their prime factors. This is the foundation of **RSA encryption**.\n\n2. **Discrete Logarithm Problem** - Finding an exponent given a base and result in a finite group. This underpins **elliptic-curve cryptography (ECC)** and other public-key cryptosystems.\n\nThe arXiv paper \"Shor's discrete logarithm quantum algorithm for elliptic curves\" (quant-ph/0301141v2 by Proos and Zalka) specifically demonstrates how Shor's algorithm can be adapted to solve the discrete logarithm problem on elliptic curves, which is the mathematical basis for ECC security.\n\nBoth problems are believed to be computationally intractable for classical computers (requiring exponential or sub-exponential time), but Shor's algorithm can solve them in polynomial time on a sufficiently large quantum computer, threatening the security of current public-key cryptographic infrastructure.",
+  "plan": []
+}

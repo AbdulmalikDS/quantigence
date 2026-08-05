@@ -1,0 +1,16 @@
+{
+  "id": "std06",
+  "category": "standards",
+  "condition": "zeroshot",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 5.65,
+  "vram_mb": 5889,
+  "answer": "Based on **FIPS 203** (Standard for Post-Quantum Cryptography: Module-Lattice-Based Key-Encapsulation Mechanism), the three parameter sets defined for ML-KEM are:\n\n1.  **ML-KEM-512**\n    *   **Security Level:** 128-bit\n    *   **Public Key Size:** 1,024 bytes\n    *   **Ciphertext Size:** 1,024 bytes\n    *   **Shared Secret Size:** 64 bytes\n    *   **Note:** This is the most efficient set in terms of key and ciphertext size but offers the lowest security margin against classical attacks.\n\n2.  **ML-KEM-768**\n    *   **Security Level:** 192-bit\n    *   **Public Key Size:** 1,536 bytes\n    *   **Ciphertext Size:** 1,536 bytes\n    *   **Shared Secret Size:** 64 bytes\n    *   **Note:** This set provides a balance between security and efficiency.\n\n3.  **ML-KEM-1024**\n    *   **Security Level:** 256-bit\n    *   **Public Key Size:** 2,048 bytes\n    *   **Ciphertext Size:** 2,048 bytes\n    *   **Shared Secret Size:** 64 bytes\n    *   **Note:** This set provides the highest security margin against classical attacks.\n\n**Source:**\n*   **NIST FIPS 203**, Section 5.2 (\"Parameter Sets\"), specifically Table 1.\n*   **NIST SP 800-208** (Post-Quantum Cryptography Standardization), which defines the security levels corresponding to these sets.\n\nThese parameter sets utilize the Module-Lattice-based Key-Encapsulation Mechanism (ML-KEM), formerly known as CRYSTALS-Kyber, selected by NIST in July 2024.",
+  "plan": []
+}

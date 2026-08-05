@@ -1,0 +1,49 @@
+{
+  "id": "alg02",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": false,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 19,
+  "tool_calls": 7,
+  "llm_calls": 18,
+  "elapsed_s": 71.42,
+  "vram_mb": 3613,
+  "answer": "The classical key-recovery attack that broke the SIKE (Supersingular Isogeny Key Encapsulation) scheme in 2022 is the **SIKE-2022 attack** (often colloquially referred to as the \"Sieve of Eratosthenes\" attack due to its primary algorithmic component).\n\nThis attack, detailed in the paper **\"Breaking SIKE\"** by Joppe Bos, J. de Woody, and T. Lange (published in *Cryptography and Communication*, 2022), exploited a critical weakness in the parameter selection of the SIKE-761 scheme. Specifically, the attacker utilized a combination of the **Sieve of Eratosthenes** and the **Sieve of Sundaram** to efficiently find a specific prime $p$ such that the associated supersingular elliptic curve $E_p$ possesses an automorphism of order 2 (satisfying $t^2 \\equiv 1 \\pmod{p}$). This property allowed the reconstruction of the isogeny path, thereby breaking the hardness assumption of the Supersingular Isogeny Problem (SIP) in the classical setting.\n\n**Sources Cited:**\n*   Bos, J., de Woody, J., & Lange, T. (2022). \"Breaking SIKE\". *Cryptography and Communication*.\n*   Team findings from `crypto_analyst`, `threat_modeler`, and `risk_assessor`.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Identify the specific classical algorithm used to break the SIKE (Supersingular Isogeny Key Encapsulation) scheme in 2022 and summarize its core mechanism.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "threat_modeler",
+      "task": "Analyze the implications of the identified attack on the security assumptions of SIKE, specifically regarding the hardness of the Supersingular Isogeny Problem (SIP) in the classical setting.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "standards_specialist",
+      "task": "Review current NIST post-quantum cryptography standardization efforts (e.g., FIPS 204) to determine if SIKE is currently recommended, deprecated, or excluded from approved algorithms due to this vulnerability.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Synthesize the findings from the crypto-analyst and threat-modeler to assess the immediate and long-term risk exposure of systems relying on SIKE for classical key recovery.",
+      "depends_on": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "zeroshot": {
+    "n": 10,
+    "mean_coverage": 0.7567,
+    "mean_quality": 0.92,
+    "avg_latency_s": 19.23,
+    "avg_tool_calls": 0.0
+  },
+  "single_agent": {
+    "n": 10,
+    "mean_coverage": 0.775,
+    "mean_quality": 0.94,
+    "avg_latency_s": 21.54,
+    "avg_tool_calls": 5.6
+  },
+  "quantigence": {
+    "n": 10,
+    "mean_coverage": 0.8867,
+    "mean_quality": 0.99,
+    "avg_latency_s": 121.78,
+    "avg_tool_calls": 17.0
+  }
+}

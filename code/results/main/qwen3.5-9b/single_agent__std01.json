@@ -1,0 +1,16 @@
+{
+  "id": "std01",
+  "category": "standards",
+  "condition": "single_agent",
+  "correct": false,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 4.56,
+  "vram_mb": 5897,
+  "answer": "In August 2024, NIST finalized three post-quantum cryptography (PQC) standards. These are:\n\n1. **FIPS 203** - **Kyber** (specifically, the ML-KEM algorithm)\n2. **FIPS 204** - **Dilithium** (specifically, the ML-DSA algorithm)\n3. **FIPS 205** - **SPHINCS+** (specifically, the ML-DSA algorithm, though SPHINCS+ is a hybrid scheme)\n\nThese standards were published as part of NIST's effort to standardize post-quantum cryptographic algorithms to protect against future quantum computer threats. The algorithms are designed to be resistant to attacks from both classical and quantum computers.\n\n- **FIPS 203** specifies the ML-KEM (Module-Lattice-based Key Encapsulation Mechanism) algorithm, which is based on the CRYSTALS-Kyber algorithm.\n- **FIPS 204** specifies the ML-DSA (Module-Lattice-based Digital Signature Algorithm) algorithm, which is based on the CRYSTALS-Dilithium algorithm.\n- **FIPS 205** specifies the ML-DSA algorithm, which is based on the SPHINCS+ algorithm.\n\nThese standards were finalized in August 2024 and are expected to be widely adopted in various cryptographic applications to ensure security against future quantum computing threats.",
+  "plan": []
+}

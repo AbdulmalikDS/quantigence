@@ -1,0 +1,47 @@
+{
+  "id": "vuln09",
+  "category": "vulnerability",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 4,
+  "tool_calls": 2,
+  "llm_calls": 12,
+  "elapsed_s": 55.3,
+  "vram_mb": 3617,
+  "answer": "A **downgrade attack** in the context of a hybrid classical/post-quantum key exchange occurs when an adversary manipulates the negotiation process to force the use of a weaker, classical (pre-quantum) cryptographic protocol instead of the intended post-quantum one. This is particularly concerning during the migration to post-quantum cryptography (PQC), as it could expose systems to quantum threats that classical algorithms like RSA or ECC are vulnerable to, undermining the security guarantees of the hybrid system (crypto_analyst, threat_modeler).\n\nDuring PQC migration, hybrid key exchanges are used to ensure backward compatibility and security against both classical and quantum threats. However, if an attacker successfully downgrades the exchange to a classical-only protocol, the system becomes susceptible to quantum attacks once quantum computers become capable of breaking classical algorithms (threat_modeler).\n\nThe **Quantum-Adjusted Risk Score (QARS)** for a downgrade attack during PQC migration is **0.66**, with an **urgency ratio of 1.0**, indicating that the risk is critical and requires immediate attention (risk_assessor). This highlights the importance of robust protocol design and implementation to prevent such attacks.\n\nWhile NIST IR 8547 (Initial Public Draft) discusses hybrid solutions incorporating both quantum-resistant and quantum-vulnerable algorithms, it does not explicitly address downgrade attacks or their mitigation in the context of hybrid key exchanges (standards_specialist). Therefore, further investigation into NIST standards or other references may be necessary to identify specific mitigation strategies.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Define what a downgrade attack is in the context of cryptographic key exchanges, with a focus on hybrid classical/post-quantum systems.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "threat_modeler",
+      "task": "Identify the specific threat scenarios where a downgrade attack could be exploited during the migration to post-quantum cryptography (PQC).",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "risk_assessor",
+      "task": "Assess the potential risks and impacts of a successful downgrade attack during PQC migration, including implications for security and system integrity.",
+      "depends_on": [
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "role": "standards_specialist",
+      "task": "Review current cryptographic standards and guidelines related to hybrid key exchanges and PQC migration to determine how they address or mitigate downgrade attacks.",
+      "depends_on": [
+        1
+      ]
+    }
+  ]
+}

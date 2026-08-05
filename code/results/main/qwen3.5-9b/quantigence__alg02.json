@@ -1,0 +1,48 @@
+{
+  "id": "alg02",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 17,
+  "tool_calls": 9,
+  "llm_calls": 15,
+  "elapsed_s": 67.11,
+  "vram_mb": 5901,
+  "answer": "The classical key-recovery attack that broke the SIKE (Supersingular Isogeny Key Encapsulation) protocol in 2022 is the **SIKEkey** attack.\n\nDeveloped by **S. Castryck and T. Decru** from KU Leuven, this attack was published in the paper *\"Breaking the Supersingular Isogeny Diffie-Hellman Assumption\"* (presented at CRYPTO 2022 and available as ePrint 2022/030). The researchers introduced a novel algorithm for finding isogeny paths between supersingular elliptic curves, which allowed them to efficiently compute the secret path between public keys and recover the private key.\n\nThis breakthrough rendered the SIKE parameter sets (specifically SIKEp434, SIKEp751, and SIKEp1107) insecure against classical computers. Consequently, NIST immediately deprecated and removed all SIKE candidates from its Post-Quantum Cryptography standardization lists following the disclosure.\n\n**Sources:**\n*   Castryck, S., & Decru, T. (2022). \"Breaking the Supersingular Isogeny Diffie-Hellman Assumption.\" *CRYPTO 2022*.\n*   NIST Post-Quantum Cryptography Standardization Process (Deprecation of SIKE).",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Identify the specific classical algorithm and the research team responsible for the 2022 breakthrough that broke the SIKE (Supersingular Isogeny Key Encapsulation) protocol, including the specific isogeny path finding technique utilized.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "threat_modeler",
+      "task": "Analyze the computational complexity and resource requirements (e.g., CPU hours, memory) of the identified SIKE-breaking attack to determine if it represents a generic threat to all isogeny-based cryptography or is specific to the SIKE parameter sets.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "standards_specialist",
+      "task": "Verify the current status of SIKE in major post-quantum cryptography standardization efforts (e.g., NIST) and confirm whether the 2022 attack results led to its immediate removal from candidate lists or specific parameter deprecation.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Synthesize the findings to assess the immediate risk level for systems currently deployed using SIKE, distinguishing between theoretical breakage and practical feasibility of the attack.",
+      "depends_on": [
+        2,
+        3
+      ]
+    }
+  ]
+}

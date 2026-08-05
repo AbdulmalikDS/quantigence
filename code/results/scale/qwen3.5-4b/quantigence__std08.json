@@ -1,0 +1,48 @@
+{
+  "id": "std08",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 15,
+  "tool_calls": 13,
+  "llm_calls": 22,
+  "elapsed_s": 45.14,
+  "vram_mb": 5901,
+  "answer": "**No**, RSA-2048 will **not** remain allowed for federal use after 2035.\n\n**Explanation:**\nAccording to the NIST IR 8547 draft timeline, RSA-2048 (specifically RSA [FIPS186]) provides **112 bits of security strength** against quantum attacks. The document explicitly categorizes schemes providing 112 bits of security strength as **\"Deprecated after 2030\"** and **\"Disallowed after 2035.\"** Therefore, despite the high key size, its security margin is insufficient to meet the post-2035 requirements, and it will be prohibited for federal use.\n\n**Sources:**\n*   NIST IR 8547, Table 2 (Digital Signature Algorithm Parameters Transition)\n*   NIST IR 8547, Table 3 (Key Establishment Scheme Parameters Transition)",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Retrieve and analyze the specific timeline provisions in NIST IR 8547 regarding the deprecation or continued allowance of RSA-2048 for federal use post-2035.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Evaluate the cryptographic strength of RSA-2048 against the threat landscape projected in NIST IR 8547 to determine if it meets the 'allowed' threshold for federal systems after 2035.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "threat_modeler",
+      "task": "Assess the feasibility of quantum attacks (e.g., via NISQ or fault-tolerant quantum computers) on RSA-2048 specifically within the 2035-2040 window defined by the draft.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Synthesize findings from the standards and technical analyses to determine the residual risk of using RSA-2048 post-2035 and provide a final compliance determination.",
+      "depends_on": [
+        2,
+        3
+      ]
+    }
+  ]
+}

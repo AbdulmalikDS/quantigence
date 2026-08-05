@@ -1,0 +1,16 @@
+{
+  "id": "vuln06",
+  "category": "vulnerability",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 1,
+  "tool_calls": 1,
+  "llm_calls": 2,
+  "elapsed_s": 5.21,
+  "vram_mb": 5897,
+  "answer": "CVE-2021-3711 affects the **OpenSSL** library, specifically its implementation of the **SM2** elliptic curve cryptographic scheme (a Chinese national standard).\n\n**Impact:**\nThe vulnerability is a **buffer overflow** in the SM2 decryption code. When an application calls the `EVP_PKEY_decrypt()` function twice to decrypt SM2 data (first to determine the required buffer size, then to perform the actual decryption), a bug causes the initial buffer size calculation to be smaller than the actual size needed. This allows an attacker to provide malicious SM2 ciphertext that, when decrypted, overflows the buffer by up to **62 bytes**.\n\nThis overflow can:\n- Alter adjacent memory contents\n- Change application behavior\n- Cause application crashes\n- Potentially lead to arbitrary code execution if the application is vulnerable to heap-based buffer overflows\n\nThe vulnerability has a **CVSS score of 9.8 (CRITICAL)** and was fixed in OpenSSL version 1.1.1l. It affects OpenSSL versions 1.1.1 through 1.1.1k.",
+  "plan": []
+}

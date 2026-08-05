@@ -1,0 +1,48 @@
+{
+  "id": "alg07",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 21,
+  "tool_calls": 5,
+  "llm_calls": 14,
+  "elapsed_s": 62.12,
+  "vram_mb": 3617,
+  "answer": "Based on the findings from our team specialists, here is the integrated answer to your query.\n\n### Final Answer: The 'Harvest Now, Decrypt Later' (HNDL) Threat Model\n\nThe **Harvest Now, Decrypt Later (HNDL)**, also known as **Store Now Decrypt Later (SNDL)**, is a threat model describing a scenario where an adversary intercepts and stores encrypted data while the encryption keys remain secure, with the specific intent of decrypting that data in the future once the encryption is broken or the keys are compromised.\n\n**Core Mechanics:**\n1.  **Interception:** An adversary (typically a nation-state or sophisticated actor) monitors network traffic or storage systems to capture ciphertext.\n2.  **Storage:** The adversary archives the encrypted data without attempting immediate decryption, as the current cryptographic algorithms (e.g., RSA, ECC) are considered secure.\n3.  **Future Compromise:** At a later date, the adversary gains access to the decryption key (via a breach of key management) or successfully breaks the encryption algorithm (e.g., via a sufficiently powerful quantum computer running Shor's algorithm).\n4.  **Decryption:** The adversary utilizes the stored ciphertext and the newly acquired capability to decrypt the archived data.\n\n**Critical Context:**\nThis model is particularly relevant to **Post-Quantum Cryptography (PQC)** transitions. Because current classical algorithms are vulnerable to quantum attacks, data encrypted today with these schemes may be harvested now and decrypted in the future, even if the encryption is currently secure. This highlights the necessity of considering long-term confidentiality requirements and implementing mitigation strategies such as **Forward Secrecy** (as noted in NIST SP 800-38D) to limit the window of exposure.\n\n**Sources:**\n*   *threat_modeler*: Core definition and mechanics of interception and future decryption.\n*   *crypto_analyst*: Specific relevance to Post-Quantum Cryptography (PQC) and quantum computing capabilities.\n*   *standards_specialist*: Context regarding long-term confidentiality and mitigation strategies (Forward Secrecy).\n*   *risk_assessor*: Synthesis of the threat model and sensitivity analysis regarding PQC transitions.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "threat_modeler",
+      "task": "Define the core mechanics of the 'Harvest Now, Decrypt Later' (HNDL) threat model, specifically detailing the attack vector where adversaries intercept and store encrypted traffic before the decryption key becomes available.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Analyze the cryptographic implications of HNDL, specifically evaluating how current and future post-quantum encryption standards might be vulnerable to this model if the adversary possesses sufficient computational resources to break the encryption later.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "standards_specialist",
+      "task": "Review relevant industry standards (e.g., NIST SP 800-38D, NIST SP 800-207) to identify specific recommendations or guidelines regarding the mitigation of HNDL threats, such as the use of forward secrecy or specific key management protocols.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Synthesize the findings from the threat modeler, crypto analyst, and standards specialist to assess the current risk level of HNDL attacks on deployed systems and propose a risk mitigation strategy based on the identified cryptographic weaknesses and standard recommendations.",
+      "depends_on": [
+        2,
+        3
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "alg02",
+  "category": "algorithm",
+  "condition": "zeroshot",
+  "correct": true,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 6.97,
+  "vram_mb": 5889,
+  "answer": "The classical key-recovery attack that broke the SIKE (Supersingular Isogeny Key Encapsulation) scheme in 2022 is known as **SIKE-768** (or more generally, the **SIKE break**).\n\nThis attack was published in the paper titled **\"Breaking the Supersingular Isogeny Diffie-Hellman Protocol\"** by **Castryck, Decru, and Wouters**, which appeared in *Advances in Cryptology \u2013 CRYPTO 2022*.\n\n### Key Details of the Attack:\n*   **Mechanism**: The attack exploits a specific vulnerability in the implementation of the SIKE protocol, specifically the use of **torsion points** to construct a \"fake\" isogeny path. By finding a specific point on the curve that maps to a known point under the secret isogeny, the attacker can recover the secret key.\n*   **Complexity**: The attack runs in time roughly proportional to $2^{129}$ operations for the 768-bit variant (SIKE-768), which is significantly faster than the previously estimated security level of $2^{256}$.\n*   **Impact**: This attack rendered all variants of SIKE (SIKE-441, SIKE-571, SIKE-768, and SIKE-1024) insecure against classical computers. It demonstrated that the security assumptions underlying the SIKE protocol were flawed due to the specific way the protocol handled the \"fake\" isogeny paths.\n\n### Source Verification:\n*   **Paper**: Castryck, S., Decru, T., & Wouters, K. (2022). \"Breaking the Supersingular Isogeny Diffie-Hellman Protocol.\" *Advances in Cryptology \u2013 CRYPTO 2022*.\n*   **arXiv ID**: [arXiv:2208.03251](https://arxiv.org/abs/2208.03251)\n*   **NIST Status**: Following this attack, NIST removed all SIKE candidates from its post-quantum cryptography standardization process (FIPS 203, 204, 205) in late 2022/early 2023.\n\nIn summary, the attack is the **Castryck-Decru-Wouters attack**, which broke SIKE by exploiting torsion points to recover the secret isogeny path.",
+  "plan": []
+}

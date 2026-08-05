@@ -1,0 +1,16 @@
+{
+  "id": "vuln08",
+  "category": "vulnerability",
+  "condition": "zeroshot",
+  "correct": true,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 5.81,
+  "vram_mb": 5889,
+  "answer": "CVE-2018-0732 affects the **OpenSSL** library (specifically versions prior to 1.1.0e, 1.0.2h, and 1.0.1l).\n\nThe vulnerability is a **denial-of-service (DoS)** issue located in the **Diffie-Hellman key agreement** implementation.\n\n### Mechanism of the Denial-of-Service\nThe vulnerability arises from a **missing validation of the Diffie-Hellman parameters** during the key agreement process. Specifically:\n\n1.  **Context**: When a client or server initiates a Diffie-Hellman key exchange, the library receives a public key (a large integer) from the peer.\n2.  **Flaw**: The affected versions of OpenSSL failed to verify that the received public key was within the valid mathematical range defined by the group parameters (specifically, it did not strictly check if the value was less than the prime modulus $p$ and greater than 1, or if it satisfied the necessary group order constraints).\n3.  **Exploitation**: An attacker can send a specially crafted, invalid Diffie-Hellman public key (e.g., a value that is too large, negative, or otherwise out of bounds for the group).\n4.  **Result**: Instead of rejecting the invalid key gracefully, the OpenSSL library attempts to perform modular exponentiation or other cryptographic operations on this invalid input. This causes the application to crash or hang, resulting in a denial of service.\n\n### Reference\nThis vulnerability is documented in the official OpenSSL security advisories and the CVE database.\n\n*   **CVE ID**: CVE-2018-0732\n*   **Affected Library**: OpenSSL\n*   **Source**: [CVE Details](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0732) and [OpenSSL Security Advisory](https://www.openssl.org/news/secadv/20180620.txt) (June 20, 2018).",
+  "plan": []
+}

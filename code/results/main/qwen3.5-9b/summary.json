@@ -1,0 +1,29 @@
+{
+  "zeroshot": {
+    "n": 40,
+    "accuracy": 0.575,
+    "citation_validity": 0.8462,
+    "citations_stated": 13,
+    "avg_latency_s": 7.63,
+    "avg_tool_calls": 0.0,
+    "peak_vram_mb": 5889
+  },
+  "single_agent": {
+    "n": 40,
+    "accuracy": 0.975,
+    "citation_validity": 1.0,
+    "citations_stated": 11,
+    "avg_latency_s": 6.14,
+    "avg_tool_calls": 1.52,
+    "peak_vram_mb": 5897
+  },
+  "quantigence": {
+    "n": 40,
+    "accuracy": 0.95,
+    "citation_validity": 1.0,
+    "citations_stated": 19,
+    "avg_latency_s": 59.13,
+    "avg_tool_calls": 8.18,
+    "peak_vram_mb": 5901
+  }
+}

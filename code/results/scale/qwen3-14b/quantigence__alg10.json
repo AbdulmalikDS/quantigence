@@ -1,0 +1,47 @@
+{
+  "id": "alg10",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 9,
+  "tool_calls": 4,
+  "llm_calls": 14,
+  "elapsed_s": 57.86,
+  "vram_mb": 3617,
+  "answer": "Two families of post-quantum signature schemes that do **not** rely on structured lattices are:\n\n1. **Hash-Based Signatures**: These include schemes such as **XMSS** (eXtended Merkle Signature Scheme), **LMS** (Leighton-Micali Signature), **HSS** (Hierarchical Signature System), and **XMSSMT** (multi-tree XMSS), as well as the stateless **SPHINCS+** (also known as **SLH-DSA**). These schemes rely on the security of cryptographic hash functions and are resistant to quantum attacks. They are recognized by NIST in standards such as **SP 800-208** and **FIPS 205**.\n\n2. **Isogeny-Based Signatures**: These schemes are based on the mathematical structure of elliptic curve isogenies. While not explicitly detailed in the NIST corpus, they are a well-known post-quantum approach that does not rely on structured lattices. Examples include variants of **SIDH** (Supersingular Isogeny Key Exchange), though they are more commonly used for key exchange than signatures.\n\nThese families are distinct from lattice-based schemes like **ML-DSA** or **FALCON**, which rely on structured lattices. The findings are supported by the NIST corpus and contributions from the crypto_analyst, standards_specialist, risk_assessor, and threat_modeler.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Identify post-quantum signature schemes that do not rely on structured lattices.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "standards_specialist",
+      "task": "Verify which of the identified schemes are recognized by standardization bodies (e.g., NIST, ISO) as valid post-quantum cryptographic algorithms.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "risk_assessor",
+      "task": "Assess the security and practicality of the identified schemes in real-world deployment scenarios.",
+      "depends_on": [
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "role": "threat_modeler",
+      "task": "Evaluate whether the identified schemes are suitable for environments with specific threat models (e.g., long-term data confidentiality, high-availability systems).",
+      "depends_on": [
+        3
+      ]
+    }
+  ]
+}

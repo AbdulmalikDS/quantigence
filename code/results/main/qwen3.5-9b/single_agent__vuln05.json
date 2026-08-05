@@ -1,0 +1,16 @@
+{
+  "id": "vuln05",
+  "category": "vulnerability",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 1,
+  "tool_calls": 2,
+  "llm_calls": 3,
+  "elapsed_s": 6.99,
+  "vram_mb": 5897,
+  "answer": "The vulnerability you're referring to is **CVE-2022-0778**.\n\nThis CVE describes a denial-of-service vulnerability in OpenSSL's `BN_mod_sqrt()` function, which can enter an infinite loop when processing non-prime moduli. The vulnerability is triggered by crafted certificates or private keys containing invalid explicit elliptic curve parameters, allowing attackers to cause denial of service in various OpenSSL-dependent applications.\n\nThe issue affects OpenSSL versions 1.0.2, 1.1.1, and 3.0, and was fixed in OpenSSL 1.1.1n, 3.0.2, and 1.0.2zd.",
+  "plan": []
+}

@@ -1,0 +1,16 @@
+{
+  "id": "alg10",
+  "category": "algorithm",
+  "condition": "zeroshot",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 7.13,
+  "vram_mb": 5889,
+  "answer": "Two families of post-quantum signature schemes that do **not** rely on structured lattices are:\n\n1.  **Code-Based Cryptography**\n    *   **Mechanism:** These schemes rely on the hardness of decoding random linear codes (specifically the syndrome decoding problem).\n    *   **Key Standard:** The **Classic McEliece** scheme (and its variants like BIKE, HQC) is the most prominent example. It was selected by NIST in the PQC standardization process.\n    *   **Source:** NIST FIPS 203 (Kyber), FIPS 204 (Dilithium), FIPS 205 (Sphincs+) cover lattice and hash-based schemes, while FIPS 203 (Classic McEliece) covers code-based. Specifically, the selection of **Classic McEliece** as a standard confirms its independence from lattice structures.\n    *   **Reference:** NIST Special Publication 800-208 (Post-Quantum Cryptography Glossary) and FIPS 203.\n\n2.  **Hash-Based Signatures**\n    *   **Mechanism:** These schemes rely on the security of cryptographic hash functions (specifically the collision resistance and one-way properties of the hash function). They do not use number-theoretic assumptions like factoring, discrete logs, or lattice problems.\n    *   **Key Standard:** The **SPHINCS+** family (including SPHINCS+, SPHINCS+, and SPHINCS+) is the primary standard.\n    *   **Source:** NIST FIPS 204 (Dilithium) and FIPS 205 (Sphincs+) explicitly define these standards. The security proof for SPHINCS+ relies entirely on the random oracle model and the security of the underlying hash function (SHA-2/SHA-3), not on lattice reduction.\n    *   **Reference:** NIST FIPS 205 (Standard for Post-Quantum Cryptography: SPHINCS+).\n\n**Summary of Non-Lattice Families:**\n*   **Code-Based** (e.g., Classic McEliece)\n*   **Hash-Based** (e.g., SPHINCS+)\n\n*Note: Other non-lattice families include Multivariate (e.g., Rainbow, which was submitted to NIST but not selected as a primary standard due to key size issues, though it remains a valid family) and Isogeny-Based (e.g., SIKE, though largely broken, was a distinct family).*",
+  "plan": []
+}

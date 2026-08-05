@@ -1,0 +1,48 @@
+{
+  "id": "std03",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 15,
+  "tool_calls": 10,
+  "llm_calls": 17,
+  "elapsed_s": 60.84,
+  "vram_mb": 5901,
+  "answer": "Based on the findings from the standards specialist, crypto analyst, threat modeler, and risk assessor, here is the integrated answer regarding the NIST IR 8547 transition roadmap:\n\nAccording to **NIST IR 8547**, the timeline for the transition away from classical algorithms is as follows:\n\n*   **Deprecation of 112-bit-Security Classical Algorithms:** NIST intends to **deprecate** classical digital signature algorithms (such as ECDSA and RSA) providing only 112-bit security in **2030**. This action signals that these algorithms are no longer suitable for new deployments or long-term use, providing a transition window for migration to post-quantum alternatives.\n*   **Disallowance of Quantum-Vulnerable Algorithms:** NIST intends to **disallow** (ban) the use of quantum-vulnerable algorithms, including RSA and ECC (at both 112-bit and \u2265128-bit security levels), in **2035**.\n\n**Source Citation:**\n*   **Document:** NIST IR 8547 (Draft)\n*   **Reference:** Table 2 and surrounding text regarding \"Quantum-vulnerable digital signature algorithms\" and the transition plans for ECDSA and RSA.\n\n*Note: The team notes that this 2035 disallowance date supersedes earlier projections in SP 800-57 Part 1 which had suggested a January 1, 2031, disallowance date.*",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Retrieve and summarize the specific timeline milestones outlined in NIST IR 8547 regarding the deprecation of 112-bit-security classical algorithms and the disallowance of quantum-vulnerable algorithms like RSA and ECC.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Cross-reference the retrieved NIST IR 8547 milestones with the current state of cryptographic standards (e.g., FIPS 204) to verify if the document accurately reflects the intended transition years for the specified algorithms.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "threat_modeler",
+      "task": "Analyze the security implications of the proposed deprecation dates to ensure the timeline accounts for the estimated time required for quantum computers to break RSA and ECC, validating the feasibility of the roadmap.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Synthesize the findings from the standards specialist and threat modeler to determine the final intended years for deprecation and disallowance, assessing any identified risks in adhering to this specific schedule.",
+      "depends_on": [
+        2,
+        3
+      ]
+    }
+  ]
+}

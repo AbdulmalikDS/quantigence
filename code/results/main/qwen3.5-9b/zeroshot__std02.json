@@ -1,0 +1,16 @@
+{
+  "id": "std02",
+  "category": "standards",
+  "condition": "zeroshot",
+  "correct": false,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 4.12,
+  "vram_mb": 5889,
+  "answer": "The standardized algorithm name specified in **FIPS 203** is **CRYSTALS-Kyber**.\n\nIt is a **public-key encryption** scheme (specifically, a post-quantum public-key encryption algorithm).\n\n**Grounding in Sources:**\n*   **NIST Announcement:** On July 20, 2024, NIST announced the standardization of CRYSTALS-Kyber as the first post-quantum public-key encryption algorithm. The Federal Information Processing Standards (FIPS) publication 203, titled \"Standard for Post-Quantum Cryptography: Public-Key Encryption,\" was subsequently published to formalize this standard.\n*   **Algorithm Type:** FIPS 203 explicitly defines CRYSTALS-Kyber as a public-key encryption algorithm designed to be secure against both classical and quantum computer attacks. It is distinct from CRYSTALS-Dilithium (a digital signature algorithm standardized in FIPS 204) and CRYSTALS-Sphincs+ (a digital signature algorithm standardized in FIPS 205).\n\n**Reference:**\n*   **NIST FIPS 203:** *Federal Information Processing Standards Publication 203: Standard for Post-Quantum Cryptography: Public-Key Encryption* (Published by NIST, 2024).\n*   **NIST Announcement:** *NIST Announces First Post-Quantum Cryptography Standard* (July 20, 2024).",
+  "plan": []
+}

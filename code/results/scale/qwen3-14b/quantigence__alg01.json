@@ -1,0 +1,39 @@
+{
+  "id": "alg01",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 9,
+  "tool_calls": 3,
+  "llm_calls": 11,
+  "elapsed_s": 25.19,
+  "vram_mb": 3611,
+  "answer": "The NIST PQC fourth-round KEM candidate based on supersingular isogenies is **SIKE (Supersingular Isogeny Key Encapsulation)**. However, based on the team's findings, there is no direct evidence in the reviewed sources that SIKE was broken by a classical attack in 2022. The available search results do not mention such an attack, and further investigation into academic publications and technical reports from 2022 is needed to confirm this.\n\n**Sources used:**\n- standards_specialist: NIST PQC standardization process documentation.\n- crypto_analyst and risk_assessor: Initial arXiv search results and subsequent search strategies.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Identify the NIST PQC fourth-round KEM candidates based on supersingular isogenies.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Review academic and technical publications from 2022 to determine which of the identified KEM candidates was broken by a classical attack.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "risk_assessor",
+      "task": "Assess the implications of the classical attack on the security of the identified KEM candidate.",
+      "depends_on": [
+        2
+      ]
+    }
+  ]
+}

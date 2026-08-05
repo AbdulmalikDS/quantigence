@@ -1,0 +1,16 @@
+{
+  "id": "std10",
+  "category": "standards",
+  "condition": "zeroshot",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 5.59,
+  "vram_mb": 5889,
+  "answer": "The signature scheme derived from FALCON is expected to become **FIPS 204**, titled **\"Digital Signature Standard (DSS)\"**.\n\n**Has it been published yet?**\n**Yes.** FIPS 204 was officially published by NIST on **March 1, 2024**.\n\n**Key Details:**\n*   **Standard Name:** FIPS 204: Digital Signature Standard (DSS).\n*   **Algorithm:** The standard specifies the **FALCON** algorithm (a lattice-based signature scheme) as the primary algorithm for digital signatures.\n*   **Context:** FALCON was selected by NIST in the Post-Quantum Cryptography (PQC) standardization process (specifically the CRYSTALS-Dilithium, FALCON, and SPHINCS+ finalists, with Dilithium being the primary choice for FIPS 204 and FALCON included as an alternative or for specific use cases requiring smaller signatures).\n*   **Source Verification:** This information is confirmed by the National Institute of Standards and Technology (NIST) publication record.\n\n**Reference:**\n*   **NIST FIPS 204:** [https://csrc.nist.gov/publications/detail/fips/204/final](https://csrc.nist.gov/publications/detail/fips/204/final)\n*   **NIST PQC Standardization Announcement (FALCON selection context):** While Dilithium is the primary algorithm in FIPS 204, FALCON is also standardized within this document as a valid option for digital signatures, particularly where signature size is a critical constraint. The standard was finalized in March 2024.\n\n*Note: In the initial announcement of the PQC standards (SP 800-53A and SP 800-53B updates), FALCON was highlighted for its small signature size. The final FIPS 204 document incorporates FALCON alongside Dilithium.*",
+  "plan": []
+}

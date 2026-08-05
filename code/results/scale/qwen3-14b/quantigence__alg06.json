@@ -1,0 +1,40 @@
+{
+  "id": "alg06",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 6,
+  "tool_calls": 6,
+  "llm_calls": 13,
+  "elapsed_s": 42.62,
+  "vram_mb": 3613,
+  "answer": "ML-DSA generally produces smaller signatures compared to SLH-DSA. This is due to several optimizations in ML-DSA, including reduced public key size, hashed commitments, and the use of a message representative derived from a hash of the public key and message (NIST documentation, FIPS 204). These optimizations result in more efficient storage and transmission of signatures, making ML-DSA more practical for real-world deployment, especially in resource-constrained environments (risk_assessor). Both algorithms have the same Quantum-Adjusted Risk Score (QARS) of 0.63 under the same assumptions, but ML-DSA's smaller signature size provides operational advantages.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Compare the signature sizes of SLH-DSA and ML-DSA algorithms based on their cryptographic specifications.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "standards_specialist",
+      "task": "Verify the standardization status and recommended signature sizes for SLH-DSA and ML-DSA from relevant cryptographic standards bodies (e.g., NIST, IETF).",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "risk_assessor",
+      "task": "Assess whether the difference in signature size between SLH-DSA and ML-DSA has practical implications for deployment in real-world systems.",
+      "depends_on": [
+        1,
+        2
+      ]
+    }
+  ]
+}

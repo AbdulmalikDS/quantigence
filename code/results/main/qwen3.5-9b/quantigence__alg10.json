@@ -1,0 +1,39 @@
+{
+  "id": "alg10",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 2,
+  "citation_valid": 2,
+  "n_sources": 21,
+  "tool_calls": 7,
+  "llm_calls": 15,
+  "elapsed_s": 81.87,
+  "vram_mb": 5901,
+  "answer": "Based on the team's analysis, here are the two families of post-quantum signature schemes that do not rely on structured lattice problems:\n\n### 1. Hash-Based Signatures\nThis family relies on the security of cryptographic hash functions and Merkle trees rather than lattice hardness assumptions.\n*   **Key Scheme:** **SLH-DSA** (Stateless Hash-based Digital Signature Algorithm), based on the SPHINCS+ construction.\n*   **Standardization:** It is the only signature scheme currently standardized by NIST under **FIPS 205**.\n*   **Status:** High maturity with active experimental deployment in protocols like TLS 1.3.\n\n### 2. Code-Based Signatures\nThis family relies on the hardness of decoding random linear codes (specifically the syndrome decoding problem) rather than lattice problems.\n*   **Key Scheme:** **HQC** (Hash-based Quantum-secure Code-based).\n*   **Standardization:** While NIST selected lattice and hash-based schemes for the initial FIPS standards (FIPS 203/204 and FIPS 205), Code-Based cryptography is recognized as a distinct, non-lattice family in the NIST standardization process (e.g., NIST IR 8547-ipd). HQC was a primary candidate for signature standardization.\n\n**Sources Cited:**\n*   NIST Post-Quantum Cryptography Standardization Project documents (FIPS 203, FIPS 204, FIPS 205).\n*   NIST IR 8547-ipd (Initial Public Draft Transition Roadmap).\n*   Research regarding SLH-DSA deployment in TLS 1.3 (e.g., arXiv:2604.06100v3).\n*   Analysis of Code-Based schemes and attacks on Rank Quasi-Cyclic codes (e.g., arXiv:2606.16473v1).",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Identify and list all major families of post-quantum signature schemes currently standardized or widely deployed, explicitly filtering out those based on structured lattice problems (e.g., NTRU, Ring-LWE variants).",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "standards_specialist",
+      "task": "Verify the classification of the identified non-lattice schemes against NIST Post-Quantum Cryptography Standardization Project (FIPS 203, 204, 205) to ensure they are recognized as distinct families (e.g., Code-based, Hash-based, Multivariate) and not misclassified lattice hybrids.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "risk_assessor",
+      "task": "Evaluate the current maturity and deployment status of the two selected non-lattice families to determine if they are viable alternatives for immediate adoption in a quantum-security context.",
+      "depends_on": [
+        2
+      ]
+    }
+  ]
+}

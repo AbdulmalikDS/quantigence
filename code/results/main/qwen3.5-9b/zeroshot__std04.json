@@ -1,0 +1,16 @@
+{
+  "id": "std04",
+  "category": "standards",
+  "condition": "zeroshot",
+  "correct": false,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 3.9,
+  "vram_mb": 5889,
+  "answer": "Among the three 2024 NIST PQC FIPS standards, **FIPS 204** specifies a stateless hash-based digital signature scheme.\n\nHere are the details for the three standards released in 2024:\n\n1.  **FIPS 204**: Specifies **SPHINCS+**, a stateless hash-based signature scheme.\n2.  **FIPS 203**: Specifies **ML-KEM** (formerly Kyber), a module-based lattice-based key encapsulation mechanism.\n3.  **FIPS 202**: Specifies **ML-DSA** (formerly Dilithium), a lattice-based digital signature scheme.\n\nTherefore, **FIPS 204** is the standard that defines the stateless hash-based signature scheme.\n\n**Source:**\n*   NIST. (2024). *FIPS 204: SPHINCS+ Stateless Hash-Based Signature Standard*. National Institute of Standards and Technology.\n*   NIST. (2024). *FIPS 203: ML-KEM Module-Lattice-Based Key-Encapsulation Mechanism Standard*. National Institute of Standards and Technology.\n*   NIST. (2024). *FIPS 202: ML-DSA Module-Lattice-Based Digital Signature Standard*. National Institute of Standards and Technology.",
+  "plan": []
+}

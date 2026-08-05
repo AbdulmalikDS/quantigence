@@ -1,0 +1,16 @@
+{
+  "id": "vuln07",
+  "category": "vulnerability",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 1,
+  "tool_calls": 1,
+  "llm_calls": 2,
+  "elapsed_s": 7.08,
+  "vram_mb": 5897,
+  "answer": "The NVD search confirms this concern with **CVE-2024-37880**, which specifically addresses a timing side channel in the Kyber reference implementation. This vulnerability demonstrates that even well-designed lattice-based KEMs like ML-KEM can be susceptible to timing attacks if not properly implemented with constant-time operations.\n\nThe vulnerability shows that secret-dependent branches in the `poly_frommsg` function can leak information about the secret key through timing variations, allowing attackers to recover the key in minutes under certain compilation conditions. This underscores the importance of implementing constant-time operations and avoiding secret-dependent branches in lattice-based cryptographic implementations.",
+  "plan": []
+}

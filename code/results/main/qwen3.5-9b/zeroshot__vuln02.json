@@ -1,0 +1,16 @@
+{
+  "id": "vuln02",
+  "category": "vulnerability",
+  "condition": "zeroshot",
+  "correct": false,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 3.46,
+  "vram_mb": 5889,
+  "answer": "CVE-2014-0160 is commonly known as **Shellshock** (specifically, it is the first of three related vulnerabilities often collectively referred to as Shellshock).\n\nThe affected library is **`bash`** (the Bourne Again Shell), which is a widely used Unix shell.\n\n**Grounding:**\n*   **CVE ID:** CVE-2014-0160\n*   **Common Name:** Shellshock\n*   **Affected Library/Software:** GNU Bash (Bourne Again Shell)\n*   **Source:** The National Vulnerability Database (NVD) and the Common Vulnerabilities and Exposures (CVE) project documentation confirm that CVE-2014-0160 affects the Bash shell, allowing remote code execution via environment variable injection.\n\nReference:\n*   NVD Entry for CVE-2014-0160: https://nvd.nist.gov/vuln/detail/CVE-2014-0160\n*   CVE Details: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0160",
+  "plan": []
+}

@@ -1,0 +1,16 @@
+{
+  "id": "std03",
+  "category": "standards",
+  "condition": "zeroshot",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 5.28,
+  "vram_mb": 5889,
+  "answer": "Based on **NIST IR 8547** (\"Transitioning to Post-Quantum Cryptography: A Roadmap\"), the specific timeline for deprecating and disallowing algorithms is as follows:\n\n*   **Deprecation of 112-bit-security classical algorithms:** NIST intends to deprecate these algorithms in **2030**.\n    *   *Context:* The roadmap defines \"112-bit security\" as the threshold for classical algorithms that are considered vulnerable to quantum attacks (specifically those offering less than 128-bit security). The deprecation date allows for a transition period where these algorithms are no longer recommended for new implementations but may still be used in existing systems until they are fully retired.\n\n*   **Disallowance of quantum-vulnerable algorithms (RSA and ECC):** NIST intends to disallow these algorithms in **2035**.\n    *   *Context:* By 2035, the roadmap states that RSA and ECC (along with other algorithms offering less than 128-bit security) should no longer be used in new applications or systems. This date marks the end of the transition period, ensuring that all new cryptographic implementations rely on post-quantum secure algorithms.\n\n**Source Verification:**\nThese dates are explicitly outlined in **NIST IR 8547**, specifically in the section detailing the \"Transition Roadmap\" (often visualized as a timeline figure in the report). The report distinguishes between the *deprecation* of lower-security classical algorithms (2030) and the final *disallowance* of widely used vulnerable algorithms like RSA and ECC (2035) to ensure a sufficient window for organizations to migrate to post-quantum cryptography (PQC).\n\n*Reference:* National Institute of Standards and Technology (NIST), *IR 8547: Transitioning to Post-Quantum Cryptography: A Roadmap*, published in 2024.",
+  "plan": []
+}

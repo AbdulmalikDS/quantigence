@@ -1,0 +1,39 @@
+{
+  "id": "std08",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 13,
+  "tool_calls": 6,
+  "llm_calls": 14,
+  "elapsed_s": 28.25,
+  "vram_mb": 5901,
+  "answer": "**No.**\n\nUnder the NIST IR 8547 draft timeline, RSA-2048 will **not** remain allowed for federal use after 2035. Because RSA-2048 provides approximately 112 bits of security strength, it is scheduled to be deprecated after 2030 and explicitly **disallowed after 2035**. This timeline is confirmed in Tables 2 and 4 of the draft, which categorize 112-bit RSA parameter sets under the \"Disallowed after 2035\" status.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Retrieve and summarize the specific timeline and deprecation schedule for RSA-2048 as outlined in NIST IR 8547, specifically identifying the exact date when it is scheduled to be removed from the approved cryptography list.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Verify the current cryptographic status of RSA-2048 against the timeline provided in NIST IR 8547 to confirm if any extensions or exceptions exist for federal use beyond the stated deprecation date.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "risk_assessor",
+      "task": "Synthesize the findings to determine the binary compliance status: confirm whether RSA-2048 is permitted for federal use after 2035 based on the finalized NIST IR 8547 draft requirements.",
+      "depends_on": [
+        2
+      ]
+    }
+  ]
+}

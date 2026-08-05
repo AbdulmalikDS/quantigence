@@ -1,0 +1,31 @@
+{
+  "id": "std03",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 5,
+  "tool_calls": 2,
+  "llm_calls": 8,
+  "elapsed_s": 44.21,
+  "vram_mb": 5901,
+  "answer": "According to NIST IR 8547, NIST intends to **deprecate 112-bit-security classical algorithms** such as ECDSA, EdDSA, and RSA **after 2030**, and to **disallow quantum-vulnerable algorithms** such as RSA and ECC **after 2035** (standards_specialist). These timelines are part of a broader transition plan aimed at enhancing cryptographic security in the face of evolving threats, including those posed by quantum computing (risk_assessor). Organizations are advised to begin planning for cryptographic upgrades to ensure compliance and maintain security post-2030 and post-2035.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Retrieve and analyze the NIST IR 8547 transition roadmap document to identify the timeline for deprecating 112-bit-security classical algorithms and disallowing quantum-vulnerable algorithms like RSA and ECC.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "risk_assessor",
+      "task": "Evaluate the implications of the deprecation timeline for cryptographic systems relying on 112-bit-security classical algorithms and quantum-vulnerable algorithms such as RSA and ECC.",
+      "depends_on": [
+        1
+      ]
+    }
+  ]
+}

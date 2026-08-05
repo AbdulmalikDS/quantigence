@@ -1,0 +1,16 @@
+{
+  "id": "vuln10",
+  "category": "vulnerability",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 1,
+  "tool_calls": 1,
+  "llm_calls": 2,
+  "elapsed_s": 3.4,
+  "vram_mb": 5897,
+  "answer": "CVE-2022-3602 affects the **OpenSSL** library.\n\nThe flaw is a **buffer overflow** (specifically a stack-based buffer overrun) that occurs during X.509 certificate verification, particularly in name constraint checking. This memory-safety flaw can be triggered by a maliciously crafted email address in a certificate, potentially leading to a denial of service (crash) or, in the absence of stack overflow protections, remote code execution.\n\nThe vulnerability was fixed in OpenSSL version 3.0.7 and affected versions 3.0.0 through 3.0.6.",
+  "plan": []
+}

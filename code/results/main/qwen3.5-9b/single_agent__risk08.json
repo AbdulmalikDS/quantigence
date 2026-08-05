@@ -1,0 +1,16 @@
+{
+  "id": "risk08",
+  "category": "risk",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 1,
+  "llm_calls": 2,
+  "elapsed_s": 3.63,
+  "vram_mb": 5897,
+  "answer": "The Quantum-Adjusted Risk Score (QARS) for the public web server is **0.1201**.\n\nTo determine if this is a Mosca violation, we need to check if the QARS exceeds the threshold defined by Mosca et al. (typically QARS > 0.1 indicates a violation). Since 0.1201 > 0.1, **this is a Mosca violation**.\n\nThe urgency ratio is 0.0833, and the default weights used were:\n- Temporal: 0.5\n- Sensitivity: 0.3\n- Exploitability: 0.2",
+  "plan": []
+}

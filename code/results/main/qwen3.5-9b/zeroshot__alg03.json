@@ -1,0 +1,16 @@
+{
+  "id": "alg03",
+  "category": "algorithm",
+  "condition": "zeroshot",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 8.29,
+  "vram_mb": 5889,
+  "answer": "Grover's algorithm, a quantum search algorithm, reduces the effective security of symmetric-key cryptography by providing a quadratic speedup over classical brute-force search.\n\n### Effect on AES-128\nFor a symmetric key of $n$ bits (e.g., AES-128 where $n=128$), a classical brute-force attack requires $O(2^n)$ operations. Grover's algorithm reduces this complexity to $O(2^{n/2})$.\n\n*   **Classical Security:** $2^{128}$ operations.\n*   **Quantum Security (with Grover's):** $2^{64}$ operations.\n\nConsequently, a 128-bit key like AES-128 offers only **64 bits of effective security** against a quantum adversary capable of running Grover's algorithm. While $2^{64}$ is still computationally difficult, it is significantly lower than the threshold generally considered secure for long-term confidentiality (often cited as 128 bits of security in the post-quantum era).\n\n### Recommended Mitigation\nThe standard mitigation is to **double the key length** of the symmetric algorithm.\n\n*   **Recommendation:** Use **AES-256** instead of AES-128.\n*   **Reasoning:** For a 256-bit key, Grover's algorithm reduces the complexity to $O(2^{256/2}) = O(2^{128})$. This restores the security level to 128 bits of effective security, which is widely accepted as sufficient for post-quantum scenarios.\n\n### Supporting Sources\n*   **NIST Post-Quantum Cryptography Standards:** NIST explicitly states that symmetric-key algorithms should use key sizes that provide at least 128 bits of security in the presence of quantum computers. For AES, this means using a 256-bit key to maintain 128-bit security.\n    *   *Source:* NIST Special Publication 800-57 Part 1 Rev. 6, Section 8.3.1.1 (Symmetric Key Algorithms), which notes that \"the use of a 256-bit key for AES provides 128 bits of security against a quantum adversary using Grover's algorithm.\"\n*   **Academic Consensus:** The quadratic speedup of Grover's algorithm is a well-established result in quantum computing literature.\n    *   *Source:* Grover, L. K. (1996). \"A fast quantum mechanical algorithm for database search.\" *Proceedings of the 28th Annual ACM Symposium on Theory of Computing*. This paper establishes the $O(\\sqrt{N})$ search time, leading to the $2^{n/2}$ complexity for symmetric keys.\n\n**Conclusion:** Grover's algorithm halves the effective bit-security of AES-128 to 64 bits. The recommended mitigation is to adopt **AES-256**, which maintains 128 bits of effective security.",
+  "plan": []
+}

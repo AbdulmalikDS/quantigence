@@ -1,0 +1,16 @@
+{
+  "id": "alg10",
+  "category": "algorithm",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 11,
+  "tool_calls": 3,
+  "llm_calls": 4,
+  "elapsed_s": 14.21,
+  "vram_mb": 5897,
+  "answer": "The search results confirm the existence of these families. The first result explicitly mentions \"Hard lattice problems are predominant in constructing post-quantum cryptosystems. However, we need to continue developing post-quantum cryptosystems based on other quantum hard problems... Solving large multivariate quadratic systems is one such quantum hard problem.\" This confirms that multivariate schemes are distinct from lattice-based schemes.\n\nBased on the available information and standard cryptographic knowledge, here are two families of post-quantum signature schemes that do **not** rely on structured lattices:\n\n1.  **Code-based schemes** (e.g., **McEliece**, **BIKE**, **HQC**)\n    *   These rely on the hardness of decoding random linear codes.\n\n2.  **Hash-based schemes** (e.g., **SPHINCS+**, **LMS**, **XMSS**)\n    *   These rely on the security of cryptographic hash functions and Merkle trees.\n\nOther families that also do not rely on structured lattices include:\n*   **Multivariate schemes** (e.g., **Rainbow**, **GeMSS**, **VDOO**) - based on the hardness of solving multivariate quadratic equations.\n*   **Isogeny-based schemes** (e.g., **SIKE**, **CSIDH**) - based on the hardness of finding isogenies between elliptic curves (though note that SIKE was recently broken).\n\nThese families are distinct from lattice-based schemes (such as Dilithium, Falcon, and SPHINCS+ uses hash functions, not lattices) and represent the main alternatives in the NIST Post-Quantum Cryptography standardization process.",
+  "plan": []
+}

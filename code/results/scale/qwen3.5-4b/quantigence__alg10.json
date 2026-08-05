@@ -1,0 +1,47 @@
+{
+  "id": "alg10",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 10,
+  "elapsed_s": 46.23,
+  "vram_mb": 3617,
+  "answer": "Based on the team's analysis, here are two families of post-quantum signature schemes that do **not** rely on structured lattices:\n\n1.  **Hash-Based Signatures**: These schemes rely on the security of cryptographic hash functions (specifically collision resistance and pre-image resistance) rather than algebraic structures like groups or lattices.\n    *   *Representative Scheme*: **SPHINCS+** (a fully deterministic, unstructured scheme) and **XMSS** (Extended Merkle Signature Scheme).\n    *   *Source*: Analysis provided by the **crypto_analyst** and **standards_specialist**.\n\n2.  **Code-Based Signatures**: These schemes rely on the computational hardness of decoding random linear codes (finding a low-weight codeword from a syndrome). They do not utilize the algebraic structure of lattices.\n    *   *Representative Scheme*: **Classic McEliece** (adapted for signatures).\n    *   *Source*: Analysis provided by the **standards_specialist** and **risk_assessor**.\n\n*Note: While SIKE (Supersingular Isogeny Key Encapsulation) was discussed by the crypto_analyst, it is primarily a KEM scheme, not a signature scheme, and relies on structured lattices/isogeny graphs, so it does not meet the criteria for this specific query.*",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Identify and list all known post-quantum signature schemes that rely on structured lattices (e.g., SIKE, Classic McEliece variants with structure) to establish the baseline of what to exclude.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Identify and list post-quantum signature schemes that rely on other mathematical foundations (e.g., hash-based, code-based, multivariate, or lattice-based unstructured schemes like Dilithium/Falcon) to establish the baseline of what to include.",
+      "depends_on": []
+    },
+    {
+      "id": 3,
+      "role": "standards_specialist",
+      "task": "Cross-reference the identified schemes against NIST PQC Round 3 finalization status and other major standards bodies to confirm which non-lattice-based schemes are currently standardized or widely accepted.",
+      "depends_on": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Synthesize the findings to select exactly two distinct families of post-quantum signature schemes that do not rely on structured lattices and are viable for deployment, ensuring no reliance on deprecated structured lattice assumptions.",
+      "depends_on": [
+        2,
+        3
+      ]
+    }
+  ]
+}

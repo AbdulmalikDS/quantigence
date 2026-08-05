@@ -1,0 +1,38 @@
+{
+  "id": "alg05",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 10,
+  "tool_calls": 4,
+  "llm_calls": 12,
+  "elapsed_s": 50.97,
+  "vram_mb": 5901,
+  "answer": "Based on the analysis provided by the team, here is the definitive assessment regarding the impact of a cryptographically relevant quantum computer (CRQC) running Shor's algorithm:\n\n### **Algorithms Broken by Shor's Algorithm**\nThe following public-key algorithms are **broken** because Shor's algorithm solves their underlying mathematical problems (Integer Factorization and Discrete Logarithm) in polynomial time:\n*   **RSA**: Relies on the difficulty of integer factorization.\n*   **ECC (Elliptic Curve Cryptography)**: Relies on the difficulty of the Elliptic Curve Discrete Logarithm Problem (ECDLP).\n\n### **Algorithms NOT Broken by Shor's Algorithm**\n*   **AES-256**: This symmetric-key algorithm is **not broken** by Shor's algorithm. Its security relies on the complexity of its substitution-permutation network structure, not on factoring or discrete logarithms.\n    *   *Note*: While Shor's algorithm does not threaten AES, **Grover's algorithm** provides a quadratic speedup for brute-force key searches. To maintain 128-bit security against Grover's algorithm, AES-256's 256-bit key length is sufficient (effectively halving the security margin to 128 bits, which remains secure).\n\n### **Source Grounding**\nThe team's findings rely on the following established references:\n1.  **Shor, P. W. (1994)**: \"Algorithms for quantum computation: discrete logarithms and factoring\" (arXiv:quant-ph/9508027), which established the polynomial-time solutions for factoring and discrete logs.\n2.  **NIST Standards**: FIPS 203 (Kyber) and FIPS 204 (Dilithium), which explicitly identify RSA and ECC as vulnerable to Shor's algorithm and mandate a transition to Post-Quantum Cryptography (PQC).",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Analyze the mathematical impact of Shor's algorithm on the integer factorization problem (RSA) and the discrete logarithm problem (ECC), specifically determining if a cryptographically relevant quantum computer renders these algorithms insecure.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Evaluate the security of AES-256 against quantum attacks, specifically distinguishing between Grover's algorithm (which affects symmetric key search) and Shor's algorithm, to determine if AES-256 is broken by Shor's algorithm.",
+      "depends_on": []
+    },
+    {
+      "id": 3,
+      "role": "risk_assessor",
+      "task": "Synthesize the findings from the crypto_analyst tasks to definitively list which of the specified algorithms (RSA, ECC, AES-256) are broken by a cryptographically relevant quantum computer running Shor's algorithm.",
+      "depends_on": [
+        1,
+        2
+      ]
+    }
+  ]
+}

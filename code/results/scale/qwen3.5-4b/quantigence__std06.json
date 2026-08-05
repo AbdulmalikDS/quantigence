@@ -1,0 +1,50 @@
+{
+  "id": "std06",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 20,
+  "tool_calls": 6,
+  "llm_calls": 13,
+  "elapsed_s": 73.53,
+  "vram_mb": 5901,
+  "answer": "Based on the findings from our team specialists, here is the integrated answer regarding the parameter sets defined for ML-KEM in FIPS 203.\n\n### Final Answer: ML-KEM Parameter Sets (FIPS 203)\n\nThe three parameter sets defined in **FIPS 203** are **ML-KEM-512**, **ML-KEM-768**, and **ML-KEM-1024**. The following table synthesizes the data provided by the *Standards Specialist* and *Threat Modeler*, which aligns with the official NIST standard (Table 2).\n\n| Parameter Set | Security Level | Encapsulation Key | Decapsulation Key | Ciphertext | Shared Secret |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| **ML-KEM-512** | ~128-bit | 800 bytes | 1632 bytes | 768 bytes | 32 bytes |\n| **ML-KEM-768** | ~192-bit | 1184 bytes | 2400 bytes | 1088 bytes | 32 bytes |\n| **ML-KEM-1024** | ~256-bit | 1568 bytes | 3168 bytes | 1568 bytes | 32 bytes |\n\n### Supervisor's Review & Notes\n*   **Data Consistency:** The *Standards Specialist* and *Threat Modeler* provided consistent data for the key sizes and ciphertext lengths. The *Crypto Analyst* and *Risk Assessor* provided conflicting data in their tables (e.g., claiming ML-KEM-768 ciphertext is 1024 bytes or 1152 bytes); these discrepancies have been resolved in favor of the primary source (FIPS 203 Table 2) cited by the Standards Specialist.\n*   **Security Levels:** The security levels are approximate equivalents to classical symmetric security (128, 192, and 256 bits respectively), derived from the hardness of the underlying Module-Lattice Learning With Errors (ML-LWE) problem.\n*   **Source Citation:** All values are derived from **FIPS 203, Section 8 (Parameter Sets) and Table 2**.\n\n*Note: The *Risk Assessor*'s claim that ciphertext sizes were \"inferred\" is incorrect; the values in the final table are explicitly defined in the standard, not inferred.*",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Extract and list the three specific parameter sets (e.g., Kyber-512, Kyber-768, Kyber-1024) defined in FIPS 203, including their security levels and key/ciphertext sizes.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Verify the mathematical security assumptions (e.g., Module-LWE hardness) and the specific lattice dimensions associated with each of the three parameter sets identified by the standards_specialist.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "threat_modeler",
+      "task": "Analyze the resistance of each parameter set against known quantum and classical attacks (e.g., BKZ, GCD-based attacks) and identify any potential implementation side-channels specific to these parameters.",
+      "depends_on": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Evaluate the operational risk and suitability of each parameter set for different security contexts (e.g., high-security vs. low-security applications) based on the data provided by the standards_specialist, crypto_analyst, and threat_modeler.",
+      "depends_on": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}

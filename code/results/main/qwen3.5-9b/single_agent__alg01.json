@@ -1,0 +1,16 @@
+{
+  "id": "alg01",
+  "category": "algorithm",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 3.86,
+  "vram_mb": 5897,
+  "answer": "The NIST PQC fourth-round KEM candidate based on supersingular isogenies that was broken by a classical attack in 2022 is **SIKE** (Supersingular Isogeny Key Encapsulation).\n\nSIKE was submitted to NIST in the fourth round of the PQC standardization process. However, in 2022, researchers (specifically Castryck and Decru) discovered a classical attack that broke the security of SIKE, rendering it insecure. This attack exploited the structure of the supersingular isogeny problem and showed that SIKE could be broken in polynomial time on a classical computer, which was a significant surprise given the long-standing belief that isogeny-based cryptography was resistant to classical attacks.\n\nAs a result, NIST removed SIKE from the list of recommended algorithms and it is no longer considered a viable candidate for standardization.\n\nSource:\n- Castryck, S., & Decru, T. (2022). \"An Efficient Classical Attack on SIKE\". This paper details the attack that broke SIKE.\n- NIST PQC Standardization Process: SIKE was removed from the fourth-round candidates list following this attack.",
+  "plan": []
+}

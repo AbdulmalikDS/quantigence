@@ -1,0 +1,39 @@
+{
+  "id": "std07",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 17,
+  "tool_calls": 24,
+  "llm_calls": 18,
+  "elapsed_s": 86.34,
+  "vram_mb": 5901,
+  "answer": "Based on the coordinated findings from the standards specialist, crypto analyst, and risk assessor, here is the integrated answer regarding FIPS 204:\n\n**Algorithm Standardized**\n**FIPS 204** standardizes the **Module-Lattice-Based Digital Signature Algorithm (ML-DSA)**. This is the first post-quantum digital signature standard published by NIST, designed to replace or supplement existing standards like FIPS 186 (which covers RSA, ECDSA, and EdDSA) for applications requiring authentication, integrity, and non-repudiation in a post-quantum era.\n\n**Underlying Mathematical Structure**\nThe security of ML-DSA is founded on the hardness of lattice problems within a **Module over a Polynomial Ring**. Specifically:\n*   **Algebraic Foundation:** The algorithm operates over the ring $R_q = (\\mathbb{Z}/q\\mathbb{Z})[X] / (X^k + 1)$, where coefficients are in a finite field $\\mathbb{Z}_q$ and the polynomial modulus $X^k + 1$ is cyclotomic. This structure ensures the ring is a Principal Ideal Domain (PID), facilitating efficient arithmetic.\n*   **Lattice Hardness:** The core security relies on the difficulty of finding short vectors in a module lattice, specifically reducing to the **Shortest Vector Problem (SVP)** and related problems like the **Learning With Errors (LWE)** and **Short Integer Solution (SIS)** problems.\n*   **Quantum Resistance:** Unlike classical schemes vulnerable to Shor's algorithm, ML-DSA is designed to resist attacks from large-scale quantum computers, as the best-known quantum algorithms (e.g., BKZ with quantum speedup) require resources beyond current feasibility.\n\n**Sources:**\n*   NIST FIPS 204 Standardization of ML-DSA.\n*   Analysis of Dilithium family algorithms (the basis for ML-DSA).\n*   Risk assessment regarding lattice-based cryptographic hardness assumptions.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Identify the specific cryptographic algorithm defined in FIPS 204 and summarize its primary function and scope.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Analyze the mathematical foundations of the algorithm identified in Task 1, specifically detailing the underlying algebraic structures (e.g., lattices, rings, polynomials) and the hardness assumptions it relies upon.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "risk_assessor",
+      "task": "Evaluate the current security posture of the algorithm based on the mathematical analysis, including known attacks, parameter recommendations, and suitability for quantum-resistant applications.",
+      "depends_on": [
+        2
+      ]
+    }
+  ]
+}

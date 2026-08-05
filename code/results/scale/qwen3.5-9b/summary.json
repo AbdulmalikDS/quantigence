@@ -1,0 +1,7 @@
+{
+  "quantigence": {
+    "n": 40,
+    "accuracy": 0.95,
+    "peak_vram_mb": 5875
+  }
+}

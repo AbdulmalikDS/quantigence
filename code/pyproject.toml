@@ -1,0 +1,18 @@
+[project]
+name = "quantigence"
+version = "0.2.0"
+description = "Multi-agent framework for quantum-security research analysis"
+requires-python = ">=3.11"
+dependencies = [
+    "openai>=1.40",
+    "requests>=2.31",
+    "rank-bm25>=0.2.2",
+    "pymupdf>=1.24",
+    "numpy>=1.26",
+    "matplotlib>=3.8",
+    "jsonschema>=4.21",
+    "huggingface-hub>=0.24",
+]
+
+[tool.uv]
+package = false

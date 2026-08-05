@@ -1,0 +1,48 @@
+{
+  "id": "alg05",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 3,
+  "llm_calls": 11,
+  "elapsed_s": 61.18,
+  "vram_mb": 3613,
+  "answer": "A cryptographically relevant quantum computer running Shor's algorithm breaks **RSA** and **Elliptic Curve Cryptography (ECC)**, as both rely on mathematical problems (integer factorization and discrete logarithms, respectively) that Shor's algorithm can solve efficiently. These findings are supported by the **crypto_analyst** and **standards_specialist**, citing NIST's draft transition roadmap (NIST IR 8547).\n\n**AES-256**, a symmetric encryption algorithm, is not broken by Shor's algorithm. However, it is vulnerable to Grover's algorithm, which reduces its effective key strength by half. Despite this, AES-256 remains resistant to quantum attacks for practical purposes, as noted by the **crypto_analyst**.\n\nThe **risk_assessor** further emphasizes the high risk associated with RSA and ECC, assigning them a **Quantum-Adjusted Risk Score (QARS)** of **0.9267** with an **urgency ratio of 1.5**, indicating a need for immediate transition to post-quantum cryptographic algorithms.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Analyze how Shor's algorithm impacts classical public-key cryptography, specifically RSA and ECC, and determine whether they are broken by a cryptographically relevant quantum computer.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Analyze how Shor's algorithm impacts AES-256, and determine whether it is broken by a cryptographically relevant quantum computer.",
+      "depends_on": []
+    },
+    {
+      "id": 3,
+      "role": "standards_specialist",
+      "task": "Verify the current cryptographic standards (e.g., NIST, ISO) regarding the status of RSA, ECC, and AES-256 in the context of quantum computing threats.",
+      "depends_on": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Assess the risk implications of quantum computers breaking RSA, ECC, or AES-256, based on the findings from the crypto_analyst and standards_specialist.",
+      "depends_on": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}

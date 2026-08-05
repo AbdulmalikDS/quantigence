@@ -1,0 +1,16 @@
+{
+  "id": "std08",
+  "category": "standards",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 4,
+  "tool_calls": 1,
+  "llm_calls": 2,
+  "elapsed_s": 3.08,
+  "vram_mb": 5897,
+  "answer": "No. According to NIST IR 8547 (Initial Public Draft), RSA with 112 bits of security strength (which includes RSA-2048) is deprecated after 2030 and disallowed after 2035. RSA with \u2265128 bits of security strength is also disallowed after 2035. Therefore, RSA-2048 will not be allowed for federal use after 2035.",
+  "plan": []
+}

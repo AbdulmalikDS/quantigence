@@ -1,0 +1,47 @@
+{
+  "id": "vuln09",
+  "category": "vulnerability",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 29,
+  "tool_calls": 13,
+  "llm_calls": 21,
+  "elapsed_s": 91.77,
+  "vram_mb": 3617,
+  "answer": "### Final Answer: Downgrade Attacks in Hybrid PQC Key Exchange\n\nA **downgrade attack** in the context of hybrid classical/post-quantum (PQC) key exchange is a cryptographic attack where an adversary manipulates the negotiation protocol to force a session to utilize a classical (quantum-vulnerable) scheme exclusively, bypassing the intended PQC component.\n\n#### Technical Mechanism\nHybrid key exchanges (e.g., combining ML-KEM/Kyber with ECDH) are designed to provide forward secrecy by deriving a shared secret from both classical and PQC components. However, these protocols often rely on asymmetric handshake flows. An attacker can intercept the exchange and present a certificate or offer that supports only classical algorithms (e.g., RSA or ECC) or lacks the PQC component entirely. By forcing the client to accept this limited offer, the attacker ensures the session key is derived solely from the classical component ($Z_{Classical}$), rendering the PQC protection ineffective.\n\n#### Why It Matters During PQC Migration\nDowngrade attacks pose a critical threat during the migration phase for three primary reasons:\n1.  **Exploitability:** Adversaries currently possess the capability to exploit classical vulnerabilities (e.g., via Shor's algorithm once quantum computers are ready) while the PQC algorithms are still being deployed.\n2.  **Session Compromise:** If a downgrade succeeds, the session key is immediately vulnerable to quantum decryption, nullifying the migration's security goals.\n3.  **High Risk Profile:** Risk assessments indicate a **High** risk level (Quantum-Adjusted Risk Score: **0.66**) during migration, driven by the long \"collapse time\" of classical algorithms (estimated at ~15 years) and the high exploitability of downgrade vectors.\n\n#### Mitigation Strategies\nTo prevent these attacks, systems must enforce strict protocol validation:\n*   **Reject Downgrades:** Configure systems to terminate connections rather than downgrade them if a client or server does not support the intended hybrid scheme.\n*   **Enforce Hybrid/PQC-Only Modes:** Explicitly reject any negotiation resulting in a classical-only key exchange.\n*   **Certificate Pinning:** Implement certificate pinning and validation to ensure only trusted, PQC-capable certificates are accepted.\n\n**Sources:**\n*   *crypto_analyst*: Definition and technical mechanism of downgrade attacks.\n*   *threat_modeler*: Analysis of asymmetric capabilities and session key compromise.\n*   *standards_specialist*: Mechanism details and consequences regarding classical-only algorithms.\n*   *risk_assessor*: Quantitative risk scoring (QARS = 0.66) and temporal factors.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Define the technical mechanism of a downgrade attack specifically within hybrid classical/post-quantum (PQC) key exchange protocols, detailing how an adversary forces the use of the classical component.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "threat_modeler",
+      "task": "Analyze the specific threat landscape during PQC migration, identifying scenarios where an adversary with current capabilities can successfully execute the downgrade mechanism defined in Task 1.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "standards_specialist",
+      "task": "Review current NIST and IETF standards regarding hybrid key exchange implementations to determine if there are mandated protections or specific protocol versions that mitigate downgrade risks.",
+      "depends_on": []
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Synthesize the findings from the crypto analysis, threat modeling, and standards review to quantify the risk of downgrade attacks during the migration phase and propose mitigation strategies.",
+      "depends_on": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}

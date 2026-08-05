@@ -1,0 +1,45 @@
+{
+  "id": "alg04",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 13,
+  "tool_calls": 6,
+  "llm_calls": 16,
+  "elapsed_s": 66.55,
+  "vram_mb": 5901,
+  "answer": "**Final Answer: Supervisor Synthesis**\n\nShor's algorithm efficiently solves two fundamental mathematical problems that currently secure public-key cryptography:\n\n1.  **Integer Factorization**: The problem of decomposing a large composite integer $N$ into its prime factors. This underpins the security of **RSA** encryption.\n2.  **The Discrete Logarithm Problem (DLP)**: The problem of finding an exponent $x$ such that $g^x = h$ within a cyclic group. This underpins **Elliptic-Curve Cryptography (ECC)** (specifically the Elliptic Curve Discrete Logarithm Problem, or ECDLP), as well as Diffie-Hellman and DSA.\n\n**Risk Implications:**\nAs noted by the risk assessment team, these problems are considered \"quantum-vulnerable.\" Once fault-tolerant quantum computers are realized, Shor's algorithm can solve these problems in polynomial time, rendering RSA and ECC insecure. This necessitates an immediate migration to Post-Quantum Cryptography (PQC) standards to mitigate \"Harvest Now, Decrypt Later\" threats.\n\n**Sources Cited:**\n*   **Crypto Analyst**: Provided the mathematical definitions of Integer Factorization and DLP, and their specific relationships to RSA and ECC.\n*   **Standards Specialist**: Referenced **NIST IR 8547**, which categorizes RSA and ECDSA as quantum-vulnerable algorithms based on these two foundations.\n*   **Risk Assessor**: Quantified the existential threat level and urgency for organizational migration.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Identify the specific integer factorization problem that Shor's algorithm solves and explain its direct relationship to the security of RSA encryption.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Identify the specific discrete logarithm problem (specifically over elliptic curves) that Shor's algorithm solves and explain its direct relationship to the security of Elliptic-Curve Cryptography (ECC).",
+      "depends_on": []
+    },
+    {
+      "id": 3,
+      "role": "standards_specialist",
+      "task": "Verify current NIST and ISO standards regarding the classification of these two problems as 'broken' or 'quantum-vulnerable' and confirm if any post-quantum migration guidelines explicitly cite Shor's algorithm as the threat vector.",
+      "depends_on": []
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Synthesize the findings from the crypto analysis and standards review to define the immediate and long-term risk posture for organizations relying on RSA and ECC, specifically addressing the timeline of Shor's algorithm implementation on fault-tolerant quantum computers.",
+      "depends_on": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}

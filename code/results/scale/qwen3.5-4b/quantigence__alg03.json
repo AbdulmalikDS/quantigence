@@ -1,0 +1,47 @@
+{
+  "id": "alg03",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 16,
+  "tool_calls": 10,
+  "llm_calls": 21,
+  "elapsed_s": 64.07,
+  "vram_mb": 3613,
+  "answer": "**Final Answer: Impact of Grover's Algorithm on AES-128 and Recommended Mitigation**\n\n**1. Effect on Security**\nGrover's algorithm provides a quadratic speedup for unstructured search, effectively halving the security strength of symmetric key algorithms when measured in bits.\n*   **AES-128**: While it offers **128 bits** of security against classical attacks, Grover's algorithm reduces this to approximately **64 bits** of security against quantum adversaries ($2^{128} \\to 2^{64}$).\n*   **Implication**: A 64-bit security margin is considered insufficient for long-term quantum resistance, as it would be vulnerable to a sufficiently powerful quantum computer within a projected 10\u201320 year timeframe.\n\n**2. Recommended Mitigation**\nTo maintain **128 bits** of security against quantum attacks, the standard recommendation is to upgrade from AES-128 to **AES-256**.\n*   **AES-256**: Provides 256 bits of classical security, which translates to **128 bits** of quantum security ($2^{256} \\to 2^{128}$) against Grover's algorithm.\n*   **Action Plan**: Immediate migration to AES-256 is advised. Current risk assessments (QARS ~0.55) indicate a moderate-to-high risk profile, necessitating a migration window of **5 years** to avoid critical obsolescence.\n\n**Sources Cited:**\n*   **NIST Special Publication 800-63 Rev. 2** (Digital Identity Guidelines)\n*   **NIST SP 800-38D** (Recommendation for Block Cipher Modes of Operation)\n*   **NIST IR 8547** (Draft transition roadmap and security categories)\n*   **NIST SP 800-208** (Post-Quantum Cryptography)",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Analyze the theoretical complexity of Grover's algorithm against AES-128 to determine the effective reduction in key search space and the resulting security margin loss.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "threat_modeler",
+      "task": "Evaluate the practical feasibility of running Grover's algorithm on current and near-future quantum hardware (NISQ era vs. fault-tolerant) to assess the realistic timeline for AES-128 compromise.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "standards_specialist",
+      "task": "Review NIST SP 800-208 and related post-quantum cryptography guidelines to identify the officially recommended key size upgrades for symmetric algorithms like AES.",
+      "depends_on": []
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Synthesize the theoretical vulnerability, practical timeline, and standard recommendations to formulate a risk profile and propose a specific migration strategy for AES-128 systems.",
+      "depends_on": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}

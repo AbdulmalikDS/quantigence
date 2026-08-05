@@ -1,0 +1,16 @@
+{
+  "id": "vuln03",
+  "category": "vulnerability",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 2,
+  "citation_valid": 2,
+  "n_sources": 1,
+  "tool_calls": 1,
+  "llm_calls": 2,
+  "elapsed_s": 3.59,
+  "vram_mb": 5897,
+  "answer": "CVE-2016-2107 enables a **padding-oracle attack** against OpenSSL.\n\nSpecifically, the vulnerability exists in the AES-NI implementation in OpenSSL versions before 1.0.1t and 1.0.2 before 1.0.2h. The flaw occurs because the implementation does not properly consider memory allocation during a certain padding check. This allows remote attackers to obtain sensitive cleartext information by exploiting the padding-oracle attack against an AES CBC session.\n\nThis vulnerability was introduced due to an incorrect fix for CVE-2013-0169.",
+  "plan": []
+}

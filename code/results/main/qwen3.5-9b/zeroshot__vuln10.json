@@ -1,0 +1,16 @@
+{
+  "id": "vuln10",
+  "category": "vulnerability",
+  "condition": "zeroshot",
+  "correct": false,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 3.5,
+  "vram_mb": 5889,
+  "answer": "CVE-2022-3602 affects the **libpng** library (specifically versions prior to 1.6.39).\n\nThe vulnerability is a **heap-based buffer overflow** (also classified as a memory safety flaw). It occurs in the `png_read_filter_row` function when processing PNG images with the `PNG_FILTER_VALUE_NONE` filter. If an attacker provides a crafted PNG image with specific filter values, they can cause the library to write data beyond the allocated buffer, potentially leading to arbitrary code execution or a denial of service.\n\n**Source:**\n*   **CVE Record:** [CVE-2022-3602](https://nvd.nist.gov/vuln/detail/CVE-2022-3602)\n*   **NIST NVD Description:** \"A heap-based buffer overflow in libpng before 1.6.39 allows remote attackers to execute arbitrary code or cause a denial of service (application crash) via a crafted PNG image.\"\n*   **Vendor Advisory:** [libpng Security Advisory](https://sourceforge.net/p/libpng/mailman/message/38066660/)",
+  "plan": []
+}

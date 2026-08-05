@@ -1,0 +1,16 @@
+{
+  "id": "alg07",
+  "category": "algorithm",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 4.29,
+  "vram_mb": 5897,
+  "answer": "The \"Harvest Now, Decrypt Later\" (HNDL) threat model describes a scenario where adversaries collect and store encrypted data today with the intention of decrypting it in the future. This is particularly concerning because:\n\n1. **Current encryption is vulnerable**: Even with strong encryption today, if an adversary has sufficient computational resources and storage, they can collect encrypted communications, store them, and decrypt them later when quantum computers or other advances make decryption feasible.\n\n2. **Long-term data sensitivity**: This threat is especially relevant for data that needs to remain confidential for many years (e.g., government secrets, medical records, financial data, intellectual property).\n\n3. **Post-quantum implications**: The threat becomes particularly acute with the advent of quantum computing, which could break current public-key encryption schemes (like RSA and ECC) that protect most digital communications.\n\n4. **Storage now, decrypt later**: The alternative name \"Store Now, Decrypt Later\" emphasizes that adversaries don't need to decrypt immediately; they can simply store the encrypted data and wait for future technological advances.\n\nThis threat model is a primary driver for the transition to post-quantum cryptography (PQC), as organizations need to migrate to quantum-resistant algorithms before quantum computers become powerful enough to break current encryption.\n\nWould you like me to search for more specific information about this threat model from academic sources or NIST documents?",
+  "plan": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "cx08",
+  "condition": "single_agent",
+  "error": "InternalServerError('Error code: 500 - {\\'error\\': {\\'code\\': 500, \\'message\\': \\'Failed to parse tool call arguments as JSON: [json.exception.parse_error.101] parse error at line 1, column 25: syntax error while parsing value - invalid string: missing closing quote; last read: \\\\\\'\"CVE-2024-0823\\\\\\'\\', \\'type\\': \\'server_error\\'}}')",
+  "coverage": 0.0,
+  "quality": 1.0,
+  "answer": ""
+}

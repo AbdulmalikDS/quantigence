@@ -1,0 +1,39 @@
+{
+  "id": "std01",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 6,
+  "tool_calls": 3,
+  "llm_calls": 11,
+  "elapsed_s": 23.68,
+  "vram_mb": 5901,
+  "answer": "Based on the coordinated findings from the standards specialist, crypto analyst, and risk assessor, NIST finalized three post-quantum cryptography standards on August 13, 2024. These standards represent the culmination of the NIST Post-Quantum Cryptography Standardization Project.\n\nHere are the finalized standards with their corresponding FIPS numbers and algorithm names:\n\n1.  **FIPS 203** \u2013 **Module-Lattice-Based Key-Encapsulation Mechanism Standard (ML-KEM)**\n2.  **FIPS 204** \u2013 **Module-Lattice-Based Digital Signature Standard (ML-DSA)**\n3.  **FIPS 205** \u2013 **Stateless Hash-Based Digital Signature Standard (SLH-DSA)**\n\nAll three standards were published and became effective simultaneously on August 13, 2024.\n\n**Sources:**\n*   NIST FIPS 203, FIPS 204, and FIPS 205 (Published August 13, 2024).\n*   NIST Post-Quantum Cryptography Standardization Project documentation.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Verify the specific NIST announcements and FIPS publication dates from August 2024 to confirm which three post-quantum cryptography standards were officially finalized in that month.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Extract the precise FIPS numbers and the corresponding standardized algorithm names for the three standards identified in Task 1.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "risk_assessor",
+      "task": "Synthesize the final list of the three finalized standards, ensuring the FIPS numbers and algorithm names are accurate and cross-referenced against the latest NIST documentation.",
+      "depends_on": [
+        2
+      ]
+    }
+  ]
+}

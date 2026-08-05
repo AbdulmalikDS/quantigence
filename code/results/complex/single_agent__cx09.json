@@ -1,0 +1,16 @@
+{
+  "id": "cx09",
+  "condition": "single_agent",
+  "coverage": 0.75,
+  "hits": [
+    "QARS asset B",
+    "B more urgent",
+    "recommendation"
+  ],
+  "n_rubric": 4,
+  "quality": 1.0,
+  "tool_calls": 2,
+  "llm_calls": 2,
+  "elapsed_s": 9.17,
+  "answer": "## QARS Comparison Results\n\n| Asset | QARS Score | Urgency Ratio |\n|-------|------------|---------------|\n| **Public Marketing Website** | **0.42** | 1.04 |\n| **Classified Archive** | **0.88** | 2.83 |\n\n## Priority Recommendation\n\n**Migrate the Classified Archive FIRST.**\n\n### Why?\n\n1. **Higher Risk Score**: The Classified Archive has a QARS of 0.88 vs. 0.42 for the marketing website - more than double the risk.\n\n2. **Critical Sensitivity**: The Classified Archive has maximum sensitivity (S=1.0), meaning it contains highly sensitive data that would cause severe damage if compromised. The marketing website has zero sensitivity (S=0.0).\n\n3. **Longer Exposure Window**: The Classified Archive has a 30-year shelf life compared to 12 years for the website, meaning it remains vulnerable for a longer period.\n\n4. **Higher Urgency Ratio**: The urgency ratio of 2.83 for the archive indicates it's nearly 3x more urgent than the website's ratio of 1.04.\n\n### Key Insight\n\nDespite the marketing website having higher exploitability (E=0.6 vs. 0.4), the **sensitivity parameter dominates** the risk calculation. The classified archive's high sensitivity (S=1.0) combined with its long shelf life creates a much more critical situation. Even though it takes longer to migrate (4 years vs. 0.5 years), the potential damage from compromising classified information far outweighs the risk to a public website.\n\n**Recommendation**: Prioritize the Classified Archive migration immediately, as it represents the most critical quantum-vulnerability risk to your organization."
+}

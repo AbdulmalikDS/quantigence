@@ -1,0 +1,11 @@
+{
+  "quantigence": {
+    "n": 40,
+    "accuracy": 0.9,
+    "citation_validity": 1.0,
+    "citations_stated": 10,
+    "avg_latency_s": 65.24,
+    "avg_tool_calls": 9.93,
+    "peak_vram_mb": 3593
+  }
+}

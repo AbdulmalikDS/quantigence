@@ -1,0 +1,16 @@
+{
+  "id": "alg09",
+  "category": "algorithm",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 10,
+  "tool_calls": 5,
+  "llm_calls": 6,
+  "elapsed_s": 10.31,
+  "vram_mb": 5897,
+  "answer": "\"Dilithium\" was the submission name for the **CRYSTALS-Dilithium** algorithm, which was standardized by NIST as **FIPS 204** (Digital Signature Standard for Post-Quantum Cryptography).\n\nThe algorithm was selected by NIST in 2022 after three rounds of evaluation. While the original submission was known as \"CRYSTALS-Dilithium,\" the standardized version published in FIPS 204 is referred to as **ML-DSA** (Module-Lattice-Based Digital Signature Algorithm), with specific parameter sets derived from the CRYSTALS-Dilithium design. The standard explicitly notes the relationship, stating that \"ML-DSA is derived from one of the selected schemes, CRYSTALS-DILITHIUM.\"\n\n**Source:** NIST Special Publication 800-185 (IR-8547-ipd) and FIPS 204.",
+  "plan": []
+}

@@ -1,0 +1,31 @@
+{
+  "id": "risk07",
+  "category": "risk",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 3,
+  "llm_calls": 10,
+  "elapsed_s": 38.81,
+  "vram_mb": 5901,
+  "answer": "The Quantum-Adjusted Risk Score (QARS) for the government archive is **0.88**, calculated using the parameters:\n\n- **Migration Time (X)**: 4 years  \n- **Shelf Life (Y)**: 30 years  \n- **Collapse Time (Z)**: 12 years  \n- **Sensitivity (S)**: 1.0  \n- **Exploitability (E)**: 0.4  \n\nThe QARS is computed as:\n$$\n\\text{QARS} = (\\text{Urgency Ratio} \\times \\text{Temporal Weight}) + (\\text{Sensitivity} \\times \\text{Sensitivity Weight}) + (\\text{Exploitability} \\times \\text{Exploitability Weight})\n$$\n$$\n\\text{Urgency Ratio} = \\frac{Z}{Y - X} = \\frac{12}{26} \\approx 2.8333\n$$\n$$\n\\text{QARS} = (2.8333 \\times 0.5) + (1.0 \\times 0.3) + (0.4 \\times 0.2) = 1.4167 + 0.3 + 0.08 = 0.88\n$$\n\nSince the QARS is **greater than 0.8**, this indicates a **Mosca violation**, meaning the system is not sufficiently secure against quantum threats (Source: crypto_analyst).",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Compute the QARS (Quantum Attack Resistance Score) using the provided parameters: Y=30 years (confidentiality period), X=4 years (migration time), Z=12 years (estimated collapse time), S=1.0 (security margin), and E=0.4 (error margin).",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "risk_assessor",
+      "task": "Assess whether the computed QARS score indicates a Mosca violation, based on the definition of a Mosca violation in the context of long-term cryptographic security.",
+      "depends_on": [
+        1
+      ]
+    }
+  ]
+}

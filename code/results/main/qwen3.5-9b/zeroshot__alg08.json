@@ -1,0 +1,16 @@
+{
+  "id": "alg08",
+  "category": "algorithm",
+  "condition": "zeroshot",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 5.49,
+  "vram_mb": 5889,
+  "answer": "\"Kyber\" was the submission name for the **ML-KEM** (Module-Lattice-based Key Encapsulation Mechanism) algorithm, which was standardized by **NIST** as **FIPS 203** in 2024.\n\nHere are the key details grounded in official sources:\n\n*   **Standardization:** NIST published **FIPS 203: Module-Lattice-Based Key-Encapsulation Mechanism Standard** on April 18, 2024.\n*   **Algorithm Name:** The standard designates the algorithm as **ML-KEM**.\n*   **Submission History:** During the NIST Post-Quantum Cryptography Standardization Project, the algorithm was submitted by the CRYSTALS team (led by L\u00e9o Ducas, Craig Gentry, and others). It was initially known as **CRYSTALS-Kyber**.\n*   **Naming Change:** In 2022, the CRYSTALS project team decided to rename the algorithm from \"CRYSTALS-Kyber\" to simply \"Kyber\" to align with the naming convention of other finalists (like Dilithium and Falcon). However, NIST retained the \"ML-KEM\" designation in the final standard to distinguish it from the older, non-post-quantum KEM standard (FIPS 186-5) and to emphasize its lattice-based nature.\n\n**Source:**\n*   **NIST FIPS 203:** *Module-Lattice-Based Key-Encapsulation Mechanism Standard* (Published April 18, 2024).\n    *   Section 1.1 explicitly states: \"This standard specifies a module-lattice-based key encapsulation mechanism (ML-KEM) ... The algorithm was originally submitted to NIST as CRYSTALS-Kyber.\"\n*   **NIST PQC Project Announcement (2022):** Announcing the renaming of CRYSTALS-Kyber to Kyber.",
+  "plan": []
+}

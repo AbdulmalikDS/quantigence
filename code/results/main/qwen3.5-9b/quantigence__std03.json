@@ -1,0 +1,38 @@
+{
+  "id": "std03",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 9,
+  "tool_calls": 4,
+  "llm_calls": 12,
+  "elapsed_s": 37.43,
+  "vram_mb": 5901,
+  "answer": "Based on the findings from the standards specialist, crypto analyst, and risk assessor regarding **NIST IR 8547** (Information: Post-Quantum Cryptography Standardization), here is the integrated transition roadmap:\n\n*   **Deprecation of 112-bit Security Classical Algorithms:** NIST intends to deprecate classical digital signature algorithms (including RSA and ECDSA) providing **112-bit security strength** after **2030**.\n*   **Disallowance of Quantum-Vulnerable Algorithms:** NIST intends to disallow quantum-vulnerable algorithms, such as RSA and ECC-based schemes (regardless of key size), after **2035**.\n\n**Source:** NIST IR 8547, specifically Table 2 and associated text detailing the transition roadmap.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Extract the specific timeline milestones from NIST IR 8547 regarding the deprecation of 112-bit security levels and the disallowance of quantum-vulnerable algorithms (RSA, ECC).",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Verify the technical definitions of '112-bit security' and confirm which specific classical algorithms fall under the 'quantum-vulnerable' category mentioned in the extracted timeline.",
+      "depends_on": []
+    },
+    {
+      "id": 3,
+      "role": "risk_assessor",
+      "task": "Synthesize the extracted timeline and technical definitions to provide a definitive answer on the years for deprecation and disallowance, noting any potential conflicts or ambiguities in the roadmap.",
+      "depends_on": [
+        1,
+        2
+      ]
+    }
+  ]
+}

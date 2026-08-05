@@ -1,0 +1,16 @@
+{
+  "id": "vuln09",
+  "category": "vulnerability",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 5.78,
+  "vram_mb": 5897,
+  "answer": "A **downgrade attack** in the context of hybrid classical/post-quantum (PQC) key exchange is an attack where an adversary forces the protocol to use only the classical (legacy) key exchange instead of the hybrid (classical + PQC) key exchange. This matters during PQC migration because it undermines the security guarantees of the hybrid approach, potentially exposing communications to future quantum attacks.\n\n### Why Downgrade Attacks Matter\n\nHybrid key exchange combines classical algorithms (like ECDH) with PQC algorithms (like Kyber or Dilithium) to provide:\n1. **Forward security** against future quantum computers\n2. **Defense-in-depth** - if one algorithm is broken, the other may still protect the key\n\nA downgrade attack bypasses this protection by:\n- Forcing the protocol to use only classical key exchange\n- Making the system vulnerable to quantum attacks once quantum computers become available\n- Undermining the migration effort's security goals\n\n### Technical Context\n\nDuring PQC migration, protocols often support both classical-only and hybrid modes for backward compatibility. An attacker could:\n1. Intercept the negotiation\n2. Manipulate the protocol to select classical-only mode\n3. Exploit the weakened security posture\n\nThis is particularly dangerous because:\n- The attacker may not need to break the PQC algorithm\n- They only need to force the weaker classical-only mode\n- The attack may be undetectable if the protocol doesn't properly validate the chosen mode\n\n### Mitigation Strategies\n\nTo prevent downgrade attacks:\n- **Cryptographic binding**: Ensure the protocol explicitly binds the chosen mode to cryptographic signatures\n- **Protocol versioning**: Use version numbers that indicate hybrid support\n- **Certificate validation**: Verify that certificates support the hybrid mode\n- **Explicit negotiation**: Require explicit agreement on the hybrid mode rather than defaulting to classical\n\nThe NIST PQC standards and migration guidelines emphasize the importance of protecting against downgrade attacks to ensure that hybrid deployments actually provide the intended security benefits.\n\nWould you like me to search for specific research papers or NIST documents on this topic?",
+  "plan": []
+}

@@ -1,0 +1,31 @@
+{
+  "id": "vuln03",
+  "category": "vulnerability",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 2,
+  "citation_valid": 2,
+  "n_sources": 1,
+  "tool_calls": 2,
+  "llm_calls": 8,
+  "elapsed_s": 16.17,
+  "vram_mb": 3617,
+  "answer": "CVE-2016-2107 is a vulnerability in OpenSSL that enables a **padding oracle attack** against AES CBC (Cipher Block Chaining) sessions. This type of attack allows remote attackers to obtain sensitive cleartext information by exploiting weaknesses in the padding scheme, based on responses to padding validation errors. The vulnerability was introduced due to an incorrect fix for CVE-2013-0169 (crypto_analyst, threat_modeler).",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Look up CVE-2016-2107 and determine the specific vulnerability it describes in OpenSSL.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "threat_modeler",
+      "task": "Based on the vulnerability described in CVE-2016-2107, identify the class of attack it enables (e.g., buffer overflow, man-in-the-middle, etc.).",
+      "depends_on": [
+        1
+      ]
+    }
+  ]
+}

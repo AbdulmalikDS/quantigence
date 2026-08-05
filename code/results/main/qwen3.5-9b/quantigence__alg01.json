@@ -1,0 +1,48 @@
+{
+  "id": "alg01",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 20,
+  "tool_calls": 15,
+  "llm_calls": 23,
+  "elapsed_s": 95.71,
+  "vram_mb": 5901,
+  "answer": "**Final Answer**\n\nThe NIST PQC fourth-round KEM candidate based on supersingular isogenies that was broken by a classical attack in 2022 is **SIKE** (Supersingular Isogeny Key Encapsulation).\n\nSpecifically, the attack compromised the variants **SIKEp434**, **SIKEp751**, and **SIKEp1107**. Following the publication of the vulnerability, the SIKE submission was withdrawn from the NIST standardization process and is no longer considered a viable candidate.\n\n**Key Details:**\n*   **Attack Vector:** The attack, titled *\"Breaking the Supersingular Isogeny Diffie-Hellman Assumption,\"* exploits the ability to compute the endomorphism ring of the public curve using classical algorithms. This allows an adversary to recover the secret isogeny path, thereby breaking the key encapsulation mechanism.\n*   **Publication:** The attack was published by **Wouter Castryck and Thomas Decru** at **CRYPTO 2022** (October 2022).\n*   **Current Status:** Due to this fundamental compromise, SIKE was disqualified from the NIST PQC standardization process. Systems relying on these specific parameters are considered critically vulnerable.\n\n**Sources:**\n*   Castryck, W., & Decru, T. (2022). *Breaking the Supersingular Isogeny Diffie-Hellman Assumption*. Advances in Cryptology \u2013 CRYPTO 2022.\n*   NIST PQC Standardization Process Documentation (Fourth Round submissions and subsequent withdrawal notices).",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Identify the specific NIST PQC fourth-round KEM candidate based on supersingular isogenies (SIKE) and summarize the technical details of the classical attack published in 2022 that broke it.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "standards_specialist",
+      "task": "Verify the official NIST PQC standardization timeline to confirm whether the broken candidate was part of the fourth round and determine its current status (e.g., withdrawn, not advanced).",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "threat_modeler",
+      "task": "Analyze the implications of the 2022 classical attack on the security assumptions of supersingular isogeny-based cryptography and assess the impact on the broader SIKE family of protocols.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Synthesize the findings to provide a final conclusion on the specific candidate name, the nature of the break, and the resulting risk level for systems relying on this specific algorithm.",
+      "depends_on": [
+        2,
+        3
+      ]
+    }
+  ]
+}

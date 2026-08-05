@@ -1,0 +1,16 @@
+{
+  "id": "std07",
+  "category": "standards",
+  "condition": "zeroshot",
+  "correct": false,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 4.8,
+  "vram_mb": 5889,
+  "answer": "FIPS 204 standardizes the **CRYSTALS-Kyber** algorithm, which is a post-quantum cryptographic algorithm designed for **public-key encryption** and **key establishment**.\n\nThe mathematical structure underlying CRYSTALS-Kyber is based on **Module-Lattice-Based Cryptography**, specifically utilizing the **Ring Learning With Errors (Ring-LWE)** problem.\n\nHere are the specific details:\n\n*   **Algorithm Name**: CRYSTALS-Kyber\n*   **Standard**: FIPS 204 (published by NIST in 2024)\n*   **Underlying Mathematical Structure**:\n    *   **Lattices**: The security relies on the hardness of finding short vectors in high-dimensional lattices.\n    *   **Ring-LWE**: Specifically, it operates over polynomial rings $R_q = \\mathbb{Z}_q[x] / (x^n + 1)$, where $q$ is a prime modulus and $n$ is a power of 2.\n    *   **Module Structure**: Unlike the original LWE problem, Kyber uses a \"module\" structure, meaning the secret key and public key are vectors of polynomials rather than single polynomials. This allows for more compact key sizes while maintaining security.\n    *   **Error Distribution**: The scheme introduces small noise (errors) sampled from a discrete Gaussian distribution, making it computationally infeasible for classical computers (and currently believed to be resistant to quantum computers) to distinguish the noisy linear equations from random ones.\n\nKyber was selected by NIST as the primary post-quantum algorithm after a rigorous multi-year standardization process involving public competition and analysis.",
+  "plan": []
+}

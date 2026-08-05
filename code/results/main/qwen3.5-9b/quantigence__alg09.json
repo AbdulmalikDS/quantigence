@@ -1,0 +1,31 @@
+{
+  "id": "alg09",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 10,
+  "tool_calls": 3,
+  "llm_calls": 9,
+  "elapsed_s": 20.76,
+  "vram_mb": 5901,
+  "answer": "The algorithm originally submitted to NIST as **Dilithium** (formally known as **CRYSTALS-Dilithium**) has been standardized as **ML-DSA** (Module-Lattice-Based Digital Signature Algorithm).\n\nThis standardization was finalized under **FIPS 204**, published by NIST in August 2024. While the submission name \"Dilithium\" was retained for the algorithm's identity, the official designation within the standard is ML-DSA. It is important to note that the specific variant selected for standardization was \"Dilithium II,\" as the earlier \"Dilithium I\" was deemed less secure.\n\n**Sources:**\n*   **crypto_analyst**: Confirmed the transition from the submission name \"Dilithium\" to the standardized name ML-DSA under FIPS 204, noting the distinction between Dilithium II (selected) and Dilithium I.\n*   **standards_specialist**: Verified the standard name (FIPS 204), the algorithm designation (ML-DSA), and the explicit reference to \"CRYSTALS-DILITHIUM\" in Appendix D of the standard.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Identify the specific NIST post-quantum cryptography standardization process and confirm the final name assigned to the algorithm originally submitted as 'Dilithium', distinguishing it from any variants or related schemes.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "standards_specialist",
+      "task": "Verify the official FIPS or NIST SP 800-208 publication details that formally adopted the standardized name for the 'Dilithium' submission, ensuring the current designation matches the historical submission name.",
+      "depends_on": [
+        1
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "alg02",
+  "category": "algorithm",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 4.01,
+  "vram_mb": 5897,
+  "answer": "The classical key-recovery attack that broke SIKE (Supersingular Isogeny Key Encapsulation) in 2022 is known as **SIKE-768** (or more generally, the **SIKE attack**).\n\nThis attack was published by **Castryck and Decru** in October 2022. It exploited a flaw in the implementation of the SIKE protocol, specifically related to the use of the **torsion-point-based isogeny** and the **torsion equivalence** of the supersingular curves. The attack reduced the security of SIKE-768 from its claimed 128-bit security to approximately 64-bit security, effectively breaking it.\n\nThe attack is based on the **torsion equivalence** of the supersingular curves and the **torsion-point-based isogeny** used in the SIKE protocol. It leverages the fact that the torsion points on the supersingular curves can be used to compute the isogeny path, which allows an attacker to recover the shared secret key.\n\nThe attack was published in the paper:\n- **\"An Efficient Key Recovery Attack on Supersingular Isogeny Diffie-Hellman\"** by Castryck and Decru, published in October 2022.\n\nThis attack demonstrated that the SIKE protocol was vulnerable to classical attacks, leading to its deprecation and the need for new post-quantum cryptographic standards.",
+  "plan": []
+}

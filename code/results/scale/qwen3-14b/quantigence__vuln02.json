@@ -1,0 +1,23 @@
+{
+  "id": "vuln02",
+  "category": "vulnerability",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 1,
+  "tool_calls": 1,
+  "llm_calls": 5,
+  "elapsed_s": 7.94,
+  "vram_mb": 3617,
+  "answer": "CVE-2014-0160 is commonly known as the **Heartbleed bug**. It affects the **OpenSSL** library, specifically versions 1.0.1 before 1.0.1g. This vulnerability allows remote attackers to obtain sensitive information from process memory via crafted packets that trigger a buffer over-read. *(Source: crypto_analyst)*",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Look up CVE-2014-0160 in a vulnerability database and identify its common name and the affected library.",
+      "depends_on": []
+    }
+  ]
+}

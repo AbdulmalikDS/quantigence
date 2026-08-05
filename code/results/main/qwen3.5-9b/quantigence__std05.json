@@ -1,0 +1,47 @@
+{
+  "id": "std05",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 2,
+  "citation_valid": 2,
+  "n_sources": 11,
+  "tool_calls": 10,
+  "llm_calls": 17,
+  "elapsed_s": 77.22,
+  "vram_mb": 5901,
+  "answer": "Based on the team's analysis, ML-KEM (FIPS 203) is based on the **Module Learning with Errors (Module-LWE)** problem.\n\nWhile the `crypto_analyst` initially identified it as \"Module-LWE\" and the `threat_modeler` focused on implementation vulnerabilities, the `standards_specialist` and `risk_assessor` clarified the precise terminology used in the official specification. FIPS 203 explicitly defines the security of ML-KEM as relying on the hardness of the **Module Learning with Errors (MLWE)** problem.\n\nKey technical details include:\n*   **Problem Definition:** MLWE is a generalization of the Learning with Errors (LWE) problem, operating over a module structure (typically $\\mathbb{Z}_q[x]/(x^n+1)$) rather than a scalar ring.\n*   **Security Reduction:** The security of the ML-KEM Key-Encapsulation Mechanism is reduced to the worst-case hardness of specific computational problems in module lattices.\n*   **Parameter Sets:** The standard defines three parameter sets (ML-KEM-512, ML-KEM-768, and ML-KEM-1024), where security levels correspond to the difficulty of solving the Module-LWE problem with specific ranks ($n$), moduli ($q$), and noise parameters ($\\eta$).\n\n**Note on Implementation vs. Algorithm:** The team identified that while the underlying mathematical problem (Module-LWE) remains secure, recent CVEs (e.g., CVE-2024-37880) highlight critical timing side-channel vulnerabilities in specific library implementations (such as CRYSTALS-Kyber) when compiled with certain optimization flags. These are implementation flaws, not weaknesses in the Module-LWE problem itself.\n\n**Sources:**\n*   NIST FIPS 203 Specification (cited by `standards_specialist` and `risk_assessor`).\n*   NVD Search Results regarding CVE-2024-37880 and CVE-2024-36405 (cited by `threat_modeler`).",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Identify the specific lattice-based mathematical problem (e.g., Module-LWE, Ring-LWE) and the security reduction parameters defined in FIPS 203 for ML-KEM.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "standards_specialist",
+      "task": "Verify the official NIST FIPS 203 specification text to confirm the exact problem class and any stated assumptions regarding the hardness of the underlying problem.",
+      "depends_on": []
+    },
+    {
+      "id": 3,
+      "role": "threat_modeler",
+      "task": "Analyze potential structural weaknesses or side-channel attack vectors specific to the identified lattice problem implementation in ML-KEM that could compromise the assumed hardness.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Synthesize the findings to determine the current risk level of the ML-KEM security assumption and provide a final classification of the hard mathematical problem it relies upon.",
+      "depends_on": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}

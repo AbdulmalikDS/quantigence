@@ -1,0 +1,47 @@
+{
+  "id": "vuln07",
+  "category": "vulnerability",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 22,
+  "tool_calls": 8,
+  "llm_calls": 19,
+  "elapsed_s": 84.18,
+  "vram_mb": 5901,
+  "answer": "Timing side channels pose a critical threat to lattice-based Key Encapsulation Mechanisms (KEMs) like ML-KEM because the latency of low-level arithmetic operations\u2014specifically **modular reduction** and **Montgomery multiplication**\u2014varies based on the magnitude of the operands. Since these operand values are directly determined by the secret key and intermediate ciphertexts, an attacker can infer key bits by measuring the precise execution time of the encapsulation or decapsulation functions.\n\nWhile ML-KEM is designed to be constant-time at the instruction level (avoiding data-dependent branches), the physical latency of arithmetic operations often remains data-dependent. This vulnerability is not merely theoretical; it has been validated in the wild. **CVE-2024-37880** demonstrated that compiler optimizations (specifically in LLVM Clang) can inadvertently reintroduce secret-dependent branches in functions like `poly_frommsg`, allowing an attacker to recover an ML-KEM 512 secret key in minutes.\n\n**Concrete Mechanism: Data-Dependent Latency in Modular Reduction**\nThe primary mechanism for this leak is the variability in the number of CPU cycles required for modular reduction. During polynomial multiplication (via the Number Theoretic Transform), the system performs massive amounts of modular arithmetic. If the reduction algorithm (e.g., Barrett or Montgomery reduction) takes a different amount of time depending on the input value's magnitude, the execution time becomes a function of the secret key. An attacker can exploit this by measuring timing differences to reconstruct the private key.\n\n**Sources:**\n*   **crypto_analyst**: Analysis of operand-dependent latency in NTT and modular reduction.\n*   **threat_modeler**: Confirmation via CVE-2024-37880 regarding compiler-induced secret-dependent branches.\n*   **standards_specialist**: Review of NIST standards regarding iteration counts and coefficient sensitivity.\n*   **risk_assessor**: Risk quantification (QARS Score: 0.93) and mitigation recommendations for constant-time arithmetic.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Analyze the specific computational operations within the ML-KEM key encapsulation mechanism (specifically the polynomial multiplication and NTT steps) to identify where execution time varies based on secret key bits or intermediate values.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "threat_modeler",
+      "task": "Model the attack vector where an adversary measures the timing of the ML-KEM encapsulation to infer information about the private key, assuming the variations identified by the crypto_analyst are observable.",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "standards_specialist",
+      "task": "Review NIST FIPS 203/204/205 and FIPS 140-3 requirements regarding constant-time execution for lattice-based KEMs and determine if ML-KEM's current implementation satisfies these constraints or if specific timing side-channel mitigations are mandated.",
+      "depends_on": []
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Synthesize the findings from the cryptographic analysis, threat modeling, and standards review to evaluate the severity of timing side-channel risks in ML-KEM and provide a concrete mechanism of failure if constant-time guarantees are not strictly enforced.",
+      "depends_on": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}

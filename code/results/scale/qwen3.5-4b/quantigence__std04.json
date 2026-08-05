@@ -1,0 +1,48 @@
+{
+  "id": "std04",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": false,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 14,
+  "tool_calls": 7,
+  "llm_calls": 17,
+  "elapsed_s": 36.05,
+  "vram_mb": 5901,
+  "answer": "Based on the team's findings, the standard that specifies a stateless hash-based digital signature scheme is **FIPS 205**.\n\n**Final Answer:**\n**FIPS 205** (published August 13, 2024) is the standard that specifies the **SPHINCS+** signature scheme. It is explicitly classified as a \"Stateless Hash-Based Digital Signature Standard.\" In contrast, FIPS 203 and FIPS 204 specify Module-Lattice-Based schemes (ML-KEM and ML-DSA, respectively).\n\n**Sources Cited:**\n*   **standards_specialist**: Identified FIPS 205 as the \"Stateless Hash-Based Digital Signature Standard\" standardizing SPHINCS+.\n*   **crypto_analyst**: Confirmed the alignment of SPHINCS+ with stateless hash-based constructions and distinguished it from lattice-based schemes.\n*   **threat_modeler**: Validated the identification of FIPS 205 and analyzed its reliance on hash function collision/preimage resistance.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Retrieve and list the three specific NIST PQC FIPS standards published in 2024, including their full titles and primary cryptographic primitives (e.g., lattice-based, hash-based, code-based).",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Analyze the cryptographic signature mechanisms defined in the standards identified by the standards_specialist to determine which one utilizes a stateless hash-based construction (e.g., SPHINCS+ or similar).",
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "role": "threat_modeler",
+      "task": "Evaluate the security assumptions and potential attack vectors specific to the hash-based signature scheme identified by the crypto_analyst, contrasting them with the other two standards.",
+      "depends_on": [
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Synthesize the findings from the crypto_analyst and threat_modeler to provide a final determination of which standard meets the criteria and assess its current deployment readiness risks.",
+      "depends_on": [
+        2,
+        3
+      ]
+    }
+  ]
+}

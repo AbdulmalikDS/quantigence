@@ -1,0 +1,38 @@
+{
+  "id": "risk06",
+  "category": "risk",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 0,
+  "tool_calls": 2,
+  "llm_calls": 10,
+  "elapsed_s": 25.73,
+  "vram_mb": 5901,
+  "answer": "The Quantum-Adjusted Risk Score (QARS) for the asset with parameters X=4, Y=11, Z=12, S=0.7, and E=0.3 is **0.7321**, with an urgency ratio of **1.25** (crypto_analyst, standards_specialist, risk_assessor).\n\nAccording to the QARS framework, a **Mosca violation** occurs when the QARS exceeds a threshold of **0.7**, indicating significant risk from quantum threats (standards_specialist, risk_assessor). Since the computed QARS of **0.7321** exceeds this threshold, this **is** a **Mosca violation**, and the asset requires urgent action to mitigate quantum threats.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Compute the Quantum Attack Resistance Score (QARS) using the provided parameters: X=4, Y=11, Z=12, S=0.7, E=0.3, with default weights. Provide the final QARS value.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "standards_specialist",
+      "task": "Determine the threshold for a Mosca violation based on current quantum security standards and the QARS framework. Provide the relevant criteria or threshold value.",
+      "depends_on": []
+    },
+    {
+      "id": 3,
+      "role": "risk_assessor",
+      "task": "Evaluate whether the computed QARS value meets or exceeds the threshold for a Mosca violation, based on the standards provided by the standards_specialist. Determine if the asset is in violation.",
+      "depends_on": [
+        1,
+        2
+      ]
+    }
+  ]
+}

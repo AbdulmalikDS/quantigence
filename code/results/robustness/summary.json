@@ -1,0 +1,26 @@
+{
+  "retrieval": {
+    "none": {
+      "mean_poison_in_topk": 2.25,
+      "poison_at_rank1_rate": 0.625,
+      "k": 5
+    },
+    "source_hierarchy": {
+      "mean_poison_in_topk": 0.75,
+      "poison_at_rank1_rate": 0.0,
+      "k": 5
+    }
+  },
+  "generation": {
+    "none": {
+      "n": 8,
+      "attack_asr": 0.125,
+      "utility": 0.875
+    },
+    "all": {
+      "n": 8,
+      "attack_asr": 0.125,
+      "utility": 0.875
+    }
+  }
+}

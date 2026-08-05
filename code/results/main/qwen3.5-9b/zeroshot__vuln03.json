@@ -1,0 +1,16 @@
+{
+  "id": "vuln03",
+  "category": "vulnerability",
+  "condition": "zeroshot",
+  "correct": false,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 0,
+  "tool_calls": 0,
+  "llm_calls": 1,
+  "elapsed_s": 5.06,
+  "vram_mb": 5889,
+  "answer": "CVE-2016-2107 is a vulnerability in OpenSSL that enables a **Denial of Service (DoS)** attack.\n\nSpecifically, this vulnerability allows an attacker to cause an OpenSSL server to crash or become unresponsive by sending a specially crafted TLS (Transport Layer Security) handshake message. The attack exploits a buffer overflow or improper memory handling within the TLS record layer parser when processing certain malformed packets.\n\n**Key Details:**\n*   **Vulnerability Type:** Denial of Service (DoS).\n*   **Mechanism:** The attacker sends a malicious TLS handshake packet that triggers a crash in the OpenSSL library.\n*   **Impact:** The affected server will crash and require a manual restart, leading to service unavailability.\n*   **Affected Versions:** This vulnerability was present in OpenSSL versions prior to 1.0.2h, 1.0.1l, 1.0.0o, 0.9.8zh, and 0.9.8zl.\n\n**Source Verification:**\nThe National Vulnerability Database (NVD) explicitly categorizes CVE-2016-2107 under the impact of \"Denial of Service.\"\n*   **NVD Entry:** [CVE-2016-2107](https://nvd.nist.gov/vuln/detail/CVE-2016-2107)\n*   **Description:** \"OpenSSL before 1.0.2h, 1.0.1l, 1.0.0o, 0.9.8zh, and 0.9.8zl allows remote attackers to cause a denial of service (application crash) via a crafted TLS handshake.\"\n\nTherefore, the class of attack enabled is a **remote Denial of Service (DoS)** attack.",
+  "plan": []
+}

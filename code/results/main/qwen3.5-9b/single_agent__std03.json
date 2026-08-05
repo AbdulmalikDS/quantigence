@@ -1,0 +1,16 @@
+{
+  "id": "std03",
+  "category": "standards",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 4,
+  "tool_calls": 1,
+  "llm_calls": 2,
+  "elapsed_s": 5.18,
+  "vram_mb": 5897,
+  "answer": "According to NIST IR 8547 and its associated transition roadmap (as referenced in NIST Special Publication 800-57 Part 1):\n\n- **Deprecation of 112-bit-security classical algorithms**: NIST intends to **deprecate** classical digital signature algorithms (such as ECDSA and RSA) at the 112-bit security level **after 2030**. This means they will no longer be approved for new use but may still be used during migration.\n\n- **Disallowance of quantum-vulnerable algorithms**: NIST plans to **disallow** quantum-vulnerable algorithms (including RSA and ECC) at the 112-bit security level **after 2035**. This is when their use will be completely prohibited.\n\nThis timeline reflects NIST's updated approach to account for the need to migrate to post-quantum cryptographic algorithms during the transition period. The deprecation after 2030 provides organizations with a window to migrate, while the disallowance after 2035 ensures that quantum-vulnerable algorithms are no longer permitted once the migration is complete.\n\nSource: NIST IR 8547 (Informational Report on Post-Quantum Cryptography Standards), specifically Table 2 and related transition plans referenced in the document.",
+  "plan": []
+}

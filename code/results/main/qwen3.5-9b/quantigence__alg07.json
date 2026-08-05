@@ -1,0 +1,45 @@
+{
+  "id": "alg07",
+  "category": "algorithm",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 1,
+  "citation_valid": 1,
+  "n_sources": 26,
+  "tool_calls": 14,
+  "llm_calls": 15,
+  "elapsed_s": 108.23,
+  "vram_mb": 5901,
+  "answer": "**Subject:** Analysis of the \"Harvest Now, Decrypt Later\" (HNDL) Threat Model\n\n**Executive Summary**\nThe \"Harvest Now, Decrypt Later\" (HNDL), also known as \"Store Now, Decrypt Later\" (SNDL), is a critical adversarial strategy where encrypted data is intercepted and stored today with the intent to decrypt it in the future. This threat model exploits the latency between data encryption and the availability of decryption capabilities, specifically targeting the transition from classical to post-quantum cryptography (PQC).\n\n**Core Mechanism**\nThe HNDL strategy relies on the vulnerability of current public-key cryptographic standards (e.g., RSA, ECC) to future quantum computing capabilities.\n*   **Immediate Phase (Harvest):** Adversaries, typically state-sponsored actors or Advanced Persistent Threat (APT) groups, intercept and archive massive volumes of ciphertext and associated public keys. They do not attempt immediate decryption, as this would trigger alerts or require computational resources unavailable today.\n*   **Delayed Phase (Decrypt):** Once a cryptographically relevant quantum computer (CRQC) becomes available, adversaries can utilize algorithms like Shor's algorithm to break the classical encryption, deriving private keys to decrypt historical data archives.\n\n**Risk Assessment**\nAccording to our team's Quantum-Adjusted Risk Score (QARS) analysis, the HNDL threat model presents a **very high risk (Score: 0.93)**. The urgency for immediate action is rated as high (Ratio: 3.0), driven by the temporal window of vulnerability and the sensitivity of long-term retained data. Organizations with long-term data retention policies are particularly exposed, as data encrypted today may remain vulnerable for decades.\n\n**Strategic Recommendations**\nTo mitigate HNDL risks, the following actions are prioritized based on NIST standards and current best practices:\n1.  **Inventory:** Identify all data requiring long-term confidentiality.\n2.  **Migration:** Accelerate the transition to NIST-standardized PQC algorithms (FIPS 203, 204, 205).\n3.  **Key Management:** Implement robust key rotation and lifecycle management to limit the exposure window of any single key.\n4.  **Compliance:** Update policies to address HNDL-specific threats.\n\n**Sources Cited**\n*   **NIST Special Publication 800-57 Part 1 & Part 2:** Framework for Key Management.\n*   **NIST IR 8547:** PQC Transition Timeline.\n*   **NIST FIPS 203, 204, 205:** Post-Quantum Cryptographic Standards.\n*   **ArXiv:2603.07726v1:** Post-quantum Federated Learning context.",
+  "plan": [
+    {
+      "id": 1,
+      "role": "crypto_analyst",
+      "task": "Analyze the cryptographic mechanisms and data storage requirements inherent in the 'Harvest Now, Decrypt Later' (HNDL) strategy, specifically focusing on how long-term storage of encrypted data facilitates future decryption if key material is compromised.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "threat_modeler",
+      "task": "Map the specific threat actors, attack vectors, and operational timelines associated with HNDL, distinguishing between immediate decryption attempts and the delayed decryption phase enabled by stored ciphertext.",
+      "depends_on": []
+    },
+    {
+      "id": 3,
+      "role": "standards_specialist",
+      "task": "Review current cryptographic standards (e.g., NIST SP 800-57, FIPS 140-3) and best practices regarding key rotation, data lifecycle management, and forward secrecy to identify gaps that HNDL exploits.",
+      "depends_on": []
+    },
+    {
+      "id": 4,
+      "role": "risk_assessor",
+      "task": "Synthesize the findings from the cryptographic analysis, threat modeling, and standards review to evaluate the overall risk profile of HNDL, including the impact on confidentiality, integrity, and compliance for organizations with long-term data retention policies.",
+      "depends_on": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}

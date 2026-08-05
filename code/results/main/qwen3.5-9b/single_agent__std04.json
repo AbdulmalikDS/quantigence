@@ -1,0 +1,16 @@
+{
+  "id": "std04",
+  "category": "standards",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 4,
+  "tool_calls": 1,
+  "llm_calls": 2,
+  "elapsed_s": 4.51,
+  "vram_mb": 5897,
+  "answer": "The 2024 NIST PQC FIPS standard that specifies a stateless hash-based digital signature scheme is **FIPS 205**.\n\nFIPS 205, titled \"Stateless Hash-Based Digital Signature Standard,\" standardizes the **SLH-DSA** (Stateless Hash-Based Digital Signature Algorithm). This scheme is based on SPHINCS+ and is designed to eliminate the need for maintaining state across multiple signatures, addressing a key limitation of traditional hash-based signature schemes like those standardized in FIPS 204 (which specifies XMSS and SPHINCS+).\n\nIn contrast:\n- **FIPS 203** specifies the Kyber algorithm, a lattice-based key encapsulation mechanism.\n- **FIPS 204** specifies the Dilithium algorithm, a lattice-based digital signature scheme.\n\nThus, FIPS 205 is the only one of the three 2024 NIST PQC FIPS standards that specifies a stateless hash-based digital signature scheme.",
+  "plan": []
+}

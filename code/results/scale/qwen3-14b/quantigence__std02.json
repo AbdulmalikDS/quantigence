@@ -1,0 +1,31 @@
+{
+  "id": "std02",
+  "category": "standards",
+  "condition": "quantigence",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 6,
+  "tool_calls": 2,
+  "llm_calls": 8,
+  "elapsed_s": 13.37,
+  "vram_mb": 5901,
+  "answer": "The standardized algorithm specified in FIPS 203 is **ML-KEM** (Module-Lattice-Based Key-Encapsulation Mechanism), which is a **Key-Encapsulation Mechanism (KEM)** cryptographic primitive. It is based on the **Module Learning with Errors (Module-LWE)** problem and is designed for secure key exchange, with security against quantum adversaries (standards_specialist, crypto_analyst).",
+  "plan": [
+    {
+      "id": 1,
+      "role": "standards_specialist",
+      "task": "Identify the standardized algorithm name specified in FIPS 203.",
+      "depends_on": []
+    },
+    {
+      "id": 2,
+      "role": "crypto_analyst",
+      "task": "Determine the type of cryptographic primitive associated with the algorithm identified in FIPS 203.",
+      "depends_on": [
+        1
+      ]
+    }
+  ]
+}

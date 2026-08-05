@@ -1,0 +1,16 @@
+{
+  "id": "std07",
+  "category": "standards",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 14,
+  "tool_calls": 5,
+  "llm_calls": 6,
+  "elapsed_s": 10.46,
+  "vram_mb": 5897,
+  "answer": "FIPS 204 standardizes the **ML-DSA** (Module-Lattice-Based Digital Signature Algorithm).\n\nThe mathematical structure underlying ML-DSA is the **module lattice**, specifically based on the hardness of the **Module Learning With Errors (MLWE)** problem.\n\nKey details include:\n*   **Algorithm Name:** ML-DSA (Module-Lattice-Based Digital Signature Algorithm).\n*   **Underlying Structure:** It operates over polynomial rings, specifically the ring of polynomials with coefficients in $\\mathbb{Z}_q$ modulo a prime $q$ and a fixed degree $n$ (denoted as $\\mathbb{Z}_q[X]/(X^n + 1)$). The security relies on the difficulty of distinguishing a lattice point perturbed by small noise (the error term) from a uniformly random point in the lattice.\n*   **Security Basis:** The algorithm is designed to be secure against adversaries with access to large-scale quantum computers, relying on the post-quantum hardness of lattice problems.\n\nSource: NIST FIPS 204, \"Module-Lattice-Based Digital Signature Standard\" (Published August 13, 2024).",
+  "plan": []
+}

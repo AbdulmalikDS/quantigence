@@ -1,0 +1,16 @@
+{
+  "id": "alg08",
+  "category": "algorithm",
+  "condition": "single_agent",
+  "correct": true,
+  "error": null,
+  "citation_total": 0,
+  "citation_valid": 0,
+  "n_sources": 18,
+  "tool_calls": 6,
+  "llm_calls": 7,
+  "elapsed_s": 13.88,
+  "vram_mb": 5897,
+  "answer": "**Kyber** was the submission name for the **CRYSTALS-Kyber** algorithm, which was standardized by NIST as **ML-KEM** (Module-Lattice-based Key-Encapsulation Mechanism).\n\nThe algorithm was selected by NIST in July 2024 and published as **FIPS 203** (FIPS Publication 203: Module-Lattice-Based Key-Encapsulation Mechanism Standard). While the submission was known as \"Kyber\" (or \"CRYSTALS-Kyber\"), the standardized name is **ML-KEM**.\n\n**Source:**\n*   NIST FIPS 203: \"Appendix C \u2014 Differences From the CRYSTALS-KYBER Submission\" explicitly references the original submission name.\n*   NIST IR 8413 (Status report on the third round of the NIST post-quantum cryptography standardization process) and subsequent announcements confirm the selection of CRYSTALS-Kyber as ML-KEM.",
+  "plan": []
+}
